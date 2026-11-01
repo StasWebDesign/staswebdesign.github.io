@@ -91,72 +91,70 @@ header.sc{background:rgba(13,13,12,.78);backdrop-filter:blur(14px);-webkit-backd
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (max-width:760px){.hero-b{grid-template-columns:1fr}.scroll{display:none}.hero{padding-top:110px}}
 
-/* showcase — morphing browser */
-.show{position:relative;z-index:1;padding:20px 0 120px}
+/* works — real demos in a browser frame */
+.show{position:relative;z-index:1;padding:20px 0 110px}
 .stage{position:relative;perspective:1600px}
-.browser{position:relative;border-radius:22px;background:var(--bg2);border:1px solid var(--line);overflow:hidden;box-shadow:0 60px 120px -40px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.02);transform:rotateX(14deg) scale(.94);transform-origin:50% 0;transition:transform .2s linear}
+.browser{position:relative;border-radius:22px;background:var(--bg2);border:1px solid var(--line);overflow:hidden;box-shadow:0 60px 120px -40px rgba(0,0,0,.8);transform:rotateX(14deg) scale(.94);transform-origin:50% 0;transition:transform .2s linear}
 .bar{display:flex;align-items:center;gap:14px;height:46px;padding:0 16px;border-bottom:1px solid var(--line);background:#121211}
 .dots{display:flex;gap:7px}.dots i{width:11px;height:11px;border-radius:50%;background:#2b2b29}
 .dots i:first-child{background:#ff5f57}.dots i:nth-child(2){background:#febc2e}.dots i:nth-child(3){background:#28c840}
-.url{flex:1;max-width:420px;margin:0 auto;height:28px;border-radius:8px;background:#1b1b19;display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--mono);font-size:12px;color:var(--mute)}
-.url svg{width:12px;height:12px}
-.tabs{display:flex;gap:6px}
-.tabs button{height:28px;padding:0 12px;border-radius:8px;font-size:12px;font-weight:600;color:var(--mute);border:1px solid transparent;transition:all .25s;white-space:nowrap}
-.tabs button.on{color:var(--bg);background:var(--lime)}
-@media (max-width:760px){.tabs{display:none}.url{max-width:none}}
-.screen{position:relative;aspect-ratio:16/8.4;overflow:hidden}
-@media (max-width:760px){.screen{aspect-ratio:4/5}}
-.mock{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .7s,visibility 0s .7s}
-.mock.on{opacity:1;visibility:visible;transition:opacity .7s}
-.mock .in{position:absolute;inset:0;padding:clamp(18px,4vw,56px);display:grid;grid-template-columns:1.1fr .9fr;gap:4%;align-items:center}
-@media (max-width:760px){.mock .in{grid-template-columns:1fr;align-content:center;gap:24px;padding-top:64px}}
-.mock .mnav{position:absolute;left:clamp(18px,4vw,56px);right:clamp(18px,4vw,56px);top:clamp(14px,2.4vw,28px);display:flex;justify-content:space-between;align-items:center;font-size:clamp(9px,1vw,13px);font-weight:700}
-.mock .mnav span{display:flex;gap:clamp(8px,1.6vw,22px);opacity:.6;font-weight:500}
-@media (max-width:560px){.mock .mnav span{display:none}}
-.mock h3{font-size:clamp(26px,4.6vw,68px);line-height:.95;letter-spacing:-.05em;font-weight:800}
-.mock p{font-size:clamp(11px,1.15vw,16px);margin-top:clamp(10px,1.4vw,18px);max-width:440px;opacity:.75}
-.mock .b{display:inline-flex;margin-top:clamp(14px,2vw,26px);padding:clamp(9px,1.1vw,14px) clamp(14px,1.8vw,24px);border-radius:99px;font-size:clamp(11px,1.05vw,15px);font-weight:700}
-.mock .art{justify-self:center;width:100%;max-width:420px;aspect-ratio:1;position:relative}
-@media (max-width:760px){.mock .art{max-width:240px}}
-.mock .el{transform:translateY(24px);opacity:0;transition:transform .9s cubic-bezier(.2,.8,.2,1),opacity .7s}
-.mock.on .el{transform:none;opacity:1}
-.mock.on .el:nth-child(2){transition-delay:.08s}.mock.on .el:nth-child(3){transition-delay:.16s}.mock.on .el:nth-child(4){transition-delay:.24s}
-/* mock 1 — auto */
-.m1{background:radial-gradient(60% 70% at 78% 50%,rgba(255,166,0,.16),transparent 70%),#0b0b0b;color:#fff}
-.m1 h3 em{font-style:normal;color:#FFA600}
-.m1 .b{background:#FFA600;color:#0b0b0b}
-.m1 .ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(255,255,255,.1);background:radial-gradient(circle,#1d1d1e,#0e0e0e)}
-.m1 .ring::before{content:"";position:absolute;inset:9%;border-radius:50%;border:1px dashed rgba(255,166,0,.35);animation:spin 40s linear infinite}
-.m1 .ndl{position:absolute;left:50%;top:50%;width:5%;height:76%;z-index:1;background:linear-gradient(#FFA600 50%,#3a3a3d 50%);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);transform:translate(-50%,-50%) rotate(40deg);animation:ndl 6s cubic-bezier(.65,0,.2,1) infinite}
-@keyframes ndl{0%,30%{transform:translate(-50%,-50%) rotate(40deg)}35%,63%{transform:translate(-50%,-50%) rotate(160deg)}68%,96%{transform:translate(-50%,-50%) rotate(280deg)}100%{transform:translate(-50%,-50%) rotate(400deg)}}
-.m1 .hub{position:absolute;inset:36%;z-index:2;border-radius:50%;background:#0b0b0b;border:2px solid #FFA600;display:grid;place-items:center;font-weight:800;color:#FFA600;font-size:clamp(14px,2vw,26px);letter-spacing:-.04em}
-/* mock 2 — logistics */
-.m2{background:#eef1f6;color:#0c1a33}
-.m2 h3 em{font-style:normal;color:#2f5bff}
-.m2 .b{background:#2f5bff;color:#fff}
-.m2 .art{display:grid;place-items:center}
-.m2 .globe{position:absolute;inset:6%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#d4dcef 70%);box-shadow:inset -20px -30px 60px rgba(47,91,255,.15)}
-.m2 .globe::before,.m2 .globe::after{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid rgba(47,91,255,.2)}
-.m2 .globe::after{inset:0 30%;}
-.m2 svg.route{position:absolute;inset:0;width:100%;height:100%}
-.m2 .route path{fill:none;stroke:#2f5bff;stroke-width:2;stroke-dasharray:6 8;animation:dash 1.4s linear infinite}
-@keyframes dash{to{stroke-dashoffset:-28}}
-.m2 .card{position:absolute;right:0;bottom:8%;background:#fff;border-radius:14px;padding:10px 14px;font-size:clamp(9px,1vw,13px);font-weight:700;box-shadow:0 20px 40px -18px rgba(12,26,51,.3);display:flex;gap:8px;align-items:center}
-.m2 .card i{width:8px;height:8px;border-radius:50%;background:#22c55e}
-/* mock 3 — beauty */
-.m3{background:#f4ece4;color:#2a1d17}
-.m3 h3{font-family:var(--serif);font-style:italic;font-weight:600;letter-spacing:-.02em;font-size:clamp(32px,5.4vw,82px);line-height:.92}
-.m3 .b{background:#2a1d17;color:#f4ece4}
-.m3 .arch{position:absolute;inset:4% 14%;border-radius:999px 999px 24px 24px;background:linear-gradient(160deg,#e3c9b3,#c99c7d);overflow:hidden}
-.m3 .arch::before{content:"";position:absolute;width:70%;aspect-ratio:1;border-radius:50%;left:15%;top:18%;background:radial-gradient(circle at 40% 35%,#f7e4d3,#d9a98a)}
-.m3 .arch::after{content:"";position:absolute;left:8%;right:8%;bottom:-10%;height:46%;border-radius:50% 50% 0 0;background:#2a1d17;opacity:.85}
-.m3 .tag{position:absolute;left:0;top:14%;background:#fff;border-radius:99px;padding:8px 14px;font-size:clamp(9px,1vw,13px);font-weight:700;box-shadow:0 16px 30px -14px rgba(42,29,23,.35)}
-.cap{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:22px;color:var(--mute);font-size:14px;flex-wrap:wrap}
-.cap b{color:var(--ink);font-weight:600}
-.prog{display:flex;gap:6px}
-.prog i{width:34px;height:3px;border-radius:3px;background:var(--line);overflow:hidden;position:relative}
-.prog i.on::after{content:"";position:absolute;inset:0;background:var(--lime);animation:prog 5s linear forwards}
-@keyframes prog{from{transform:translateX(-100%)}to{transform:none}}
+.url{flex:1;max-width:460px;margin:0 auto;height:28px;border-radius:8px;background:#1b1b19;display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--mono);font-size:12px;color:var(--mute);overflow:hidden;white-space:nowrap;padding:0 10px}
+.url svg{width:12px;height:12px;flex:none}
+.bar .open{height:28px;padding:0 12px;border-radius:8px;font-size:12px;font-weight:700;background:var(--lime);color:var(--bg);display:flex;align-items:center;gap:6px;white-space:nowrap;transition:background .2s}
+.bar .open:hover{background:var(--ink)}
+.bar .open svg{width:13px;height:13px}
+@media (max-width:560px){.bar .open span{display:none}.bar .open{padding:0 8px}.dots{display:none}}
+.screen{position:relative;aspect-ratio:16/10;overflow:hidden;background:#000;display:block}
+.screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;transform:scale(1.04);transition:opacity .8s,transform 1.4s cubic-bezier(.2,.8,.2,1)}
+.screen img.on{opacity:1;transform:none}
+.screen::after{content:"Открыть демо ↗";position:absolute;left:50%;top:50%;transform:translate(-50%,-40%);opacity:0;background:var(--lime);color:var(--bg);font-weight:800;padding:14px 22px;border-radius:99px;transition:opacity .3s,transform .4s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+@media (pointer:fine){.screen:hover::after{opacity:1;transform:translate(-50%,-50%)}}
+.wbar{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end;margin-top:26px}
+.wt small{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:8px}
+.wt b{display:block;font-size:clamp(26px,3.2vw,44px);font-weight:800;letter-spacing:-.045em;line-height:1}
+.wt span{display:block;color:var(--mute);margin-top:8px;font-size:15px}
+.wt .alt{display:inline-flex;margin-top:12px;font-size:13.5px;font-weight:700;color:var(--ink);border-bottom:1px solid var(--lime)}
+.wnav{display:flex;align-items:center;gap:10px}
+.wnav .n{font-family:var(--mono);font-size:13px;color:var(--mute);min-width:62px;text-align:center}
+.wnav .n b{color:var(--ink)}
+.rb{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;transition:background .25s,color .25s,border-color .25s}
+.rb:hover{background:var(--lime);color:var(--bg);border-color:var(--lime)}
+.rb svg{width:20px;height:20px}
+.thumbs{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:22px}
+.thumbs button{position:relative;aspect-ratio:16/10;border-radius:10px;overflow:hidden;border:1.5px solid transparent;opacity:.45;transition:opacity .3s,border-color .3s,transform .3s}
+.thumbs button:hover{opacity:.8}
+.thumbs button.on{opacity:1;border-color:var(--lime)}
+.thumbs img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.thumbs button i{position:absolute;left:0;bottom:0;height:2px;background:var(--lime);width:0}
+.thumbs button.on i{animation:prog 6s linear forwards}
+.thumbs.paused button.on i{animation-play-state:paused}
+@keyframes prog{from{width:0}to{width:100%}}
+@media (max-width:760px){.thumbs{grid-template-columns:repeat(4,1fr)}.wbar{grid-template-columns:1fr}}
+
+/* concepts — two rows marquee + lightbox */
+.cx{position:relative;z-index:1;padding:clamp(90px,11vw,160px) 0 clamp(80px,9vw,130px);overflow:hidden}
+.crow{display:flex;gap:16px;width:max-content;animation:cmq 70s linear infinite;margin-top:16px}
+.crow.rev{animation-direction:reverse;animation-duration:80s}
+.cxw:hover .crow{animation-play-state:paused}
+@keyframes cmq{to{transform:translateX(calc(-50% - 8px))}}
+.cc{position:relative;width:clamp(260px,30vw,460px);aspect-ratio:16/10;border-radius:18px;overflow:hidden;border:1px solid var(--line);flex:none;cursor:zoom-in;background:var(--bg2)}
+.cc img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.cc:hover img{transform:scale(1.05)}
+.cc span{position:absolute;left:12px;bottom:12px;background:rgba(13,13,12,.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:99px;padding:7px 12px;font-size:13px;font-weight:700;display:flex;gap:8px;align-items:center;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .4s}
+.cc span em{font-style:normal;color:var(--mute);font-weight:500}
+.cc:hover span{opacity:1;transform:none}
+@media (pointer:coarse){.cc span{opacity:1;transform:none}}
+.lb{position:fixed;inset:0;z-index:90;background:rgba(8,8,8,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:16px;opacity:0;visibility:hidden;transition:opacity .35s,visibility 0s .35s}
+.lb.open{opacity:1;visibility:visible;transition:opacity .35s}
+.lb img{max-width:min(1400px,100%);max-height:calc(100svh - 150px);border-radius:14px;box-shadow:0 40px 80px -30px #000;transform:scale(.96);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.lb.open img{transform:none}
+.lb .cap{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center}
+.lb .cap b{font-weight:800;font-size:18px}
+.lb .cap span{color:var(--mute)}
+.lb .x{position:absolute;right:16px;top:16px}
+.lb .pv,.lb .nx{position:absolute;top:50%;transform:translateY(-50%)}
+.lb .pv{left:16px}.lb .nx{right:16px}
+@media (max-width:760px){.lb .pv,.lb .nx{top:auto;bottom:16px;transform:none}}
 
 /* marquee */
 .marq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:26px 0;position:relative;z-index:1;background:var(--bg)}
@@ -291,6 +289,9 @@ footer{position:relative;z-index:1;padding:40px 0 30px;color:var(--mute);font-si
   <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.3 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2Zm0 17.8a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.7-1.2.2-.6.2-1 .1-1.2l-.6-.6Z" fill="currentColor"/></symbol>
   <symbol id="i-arr" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-l" viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-r" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
   <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
 </svg>
 
@@ -298,6 +299,7 @@ footer{position:relative;z-index:1;padding:40px 0 30px;color:var(--mute);font-si
   <div class="wrap nav">
     <a href="#top" class="brand" aria-label="Stas Web Design"><i>S</i>Stas Web Design</a>
     <ul>
+      <li><a href="#works">Работы</a></li>
       <li><a href="#services">Услуги</a></li>
       <li><a href="#approach">Подход</a></li>
       <li><a href="#why">Что внутри</a></li>
@@ -324,10 +326,10 @@ footer{position:relative;z-index:1;padding:40px 0 30px;color:var(--mute);font-si
         <p class="lead rv">Делаю сайты для бизнеса в его собственном стиле. <b>Сначала показываю демо вашего будущего сайта</b>, а запускаем, только когда вам всё нравится.</p>
         <div class="cta rv d1">
           <a class="pill p-lime" href="https://t.me/StasWebDesign" target="_blank" rel="noopener"><svg class="ic icf"><use href="#i-tg"/></svg>Обсудить проект</a>
-          <a class="pill p-line" href="#services">Что я делаю</a>
+          <a class="pill p-line" href="#works">Смотреть работы</a>
         </div>
       </div>
-      <a class="scroll" href="#show" aria-label="Листать вниз">
+      <a class="scroll" href="#works" aria-label="Листать вниз">
         <svg viewBox="0 0 120 120"><defs><path id="cir" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs><text><textPath href="#cir">листайте вниз · листайте вниз · </textPath></text></svg>
         <i><svg class="ic"><use href="#i-down"/></svg></i>
       </a>
@@ -335,43 +337,39 @@ footer{position:relative;z-index:1;padding:40px 0 30px;color:var(--mute);font-si
   </div>
 </section>
 
-<section class="show" id="show">
+<section class="show" id="works">
   <div class="wrap">
+    <div class="sh"><span class="mono rv">Работы / Демо-сайты</span><h2 class="h2 rv d1">Живые демо,<br>которые <span class="it">можно открыть</span></h2></div>
     <div class="stage rv">
       <div class="browser" id="browser">
         <div class="bar">
           <div class="dots"><i></i><i></i><i></i></div>
-          <div class="url"><svg><use href="#i-lock"/></svg><span id="url">auto-import.ru</span></div>
-          <div class="tabs" id="tabs"><button class="on">Автоимпорт</button><button>Логистика</button><button>Салон красоты</button></div>
+          <div class="url"><svg><use href="#i-lock"/></svg><span id="url">staswebdesign.github.io/arkodv</span></div>
+          <a class="open" id="wOpen" href="arkodv/" target="_blank" rel="noopener"><span>Открыть</span><svg><use href="#i-arr"/></svg></a>
         </div>
-        <div class="screen">
-          <div class="mock m1 on">
-            <div class="mnav"><b>AUTO·ASIA</b><span>Каталог · Калькулятор · Отзывы</span></div>
-            <div class="in">
-              <div><h3 class="el">Авто из Азии<br><em>под ключ</em></h3><p class="el">Калькулятор растаможки, каталог с карточками и заявка в WhatsApp в один клик.</p><span class="b el">Рассчитать стоимость</span></div>
-              <div class="art el"><div class="ring"></div><div class="ndl"></div><div class="hub">JP·KR·CN</div></div>
-            </div>
-          </div>
-          <div class="mock m2">
-            <div class="mnav"><b>CARGO/LINE</b><span>Услуги · Тарифы · Контакты</span></div>
-            <div class="in">
-              <div><h3 class="el">Доставим груз<br><em>без простоев</em></h3><p class="el">Маршруты, сроки и расчёт доставки — понятно с первого экрана.</p><span class="b el">Получить расчёт</span></div>
-              <div class="art el"><div class="globe"></div><svg class="route" viewBox="0 0 100 100"><path d="M22 62 Q48 18 80 40"/></svg><div class="card"><i></i>Груз в пути · 4 дня</div></div>
-            </div>
-          </div>
-          <div class="mock m3">
-            <div class="mnav"><b>Lumière</b><span>Услуги · Мастера · Запись</span></div>
-            <div class="in">
-              <div><h3 class="el">Красота<br>в деталях</h3><p class="el">Онлайн-запись, прайс и мастера — всё, чтобы клиентка записалась сама.</p><span class="b el">Записаться</span></div>
-              <div class="art el"><div class="arch"></div><div class="tag">Свободно завтра 12:00</div></div>
-            </div>
-          </div>
-        </div>
+        <a class="screen" id="screen" href="arkodv/" target="_blank" rel="noopener" aria-label="Открыть демо"></a>
       </div>
     </div>
-    <div class="cap"><span>Примеры стилистики · <b id="capT">автоимпорт</b></span><div class="prog" id="prog"><i class="on"></i><i></i><i></i></div></div>
+    <div class="wbar">
+      <div class="wt" id="wt"></div>
+      <div class="wnav"><button class="rb" id="wPrev" aria-label="Предыдущая работа"><svg class="ic"><use href="#i-l"/></svg></button><span class="n" id="wN"></span><button class="rb" id="wNext" aria-label="Следующая работа"><svg class="ic"><use href="#i-r"/></svg></button></div>
+    </div>
+    <div class="thumbs" id="thumbs"></div>
   </div>
 </section>
+
+<section class="cx" id="concepts">
+  <div class="wrap"><div class="sh"><span class="mono rv">Работы / Концепты</span><h2 class="h2 rv d1">Первые экраны<br>для <span class="it">разных ниш</span></h2></div></div>
+  <div class="cxw"><div class="crow" id="row1"></div><div class="crow rev" id="row2"></div></div>
+</section>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Концепт">
+  <button class="rb x" data-x aria-label="Закрыть"><svg class="ic"><use href="#i-x"/></svg></button>
+  <button class="rb pv" data-p aria-label="Предыдущий"><svg class="ic"><use href="#i-l"/></svg></button>
+  <img id="lbImg" alt="">
+  <div class="cap"><b id="lbT"></b><span id="lbS"></span></div>
+  <button class="rb nx" data-n aria-label="Следующий"><svg class="ic"><use href="#i-r"/></svg></button>
+</div>
 
 <div class="marq" aria-hidden="true"><div class="marq-t" id="marq"></div></div>
 
@@ -488,10 +486,45 @@ addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
 const br=$('#browser');
 function tilt(){const r=br.getBoundingClientRect(),p=Math.min(Math.max(1-(r.top-innerHeight*.15)/(innerHeight*.75),0),1);br.style.transform=`rotateX(${14*(1-p)}deg) scale(${.94+.06*p})`}
 addEventListener('scroll',tilt,{passive:true});tilt();
-/* mock carousel */
-(()=>{const ms=$$('.mock'),tb=$$('#tabs button'),pg=$$('#prog i'),urls=['auto-import.ru','cargo-line.ru','lumiere-beauty.ru'],caps=['автоимпорт','логистика','салон красоты'];let i=0,t;
-  function go(n){i=n;ms.forEach((m,k)=>m.classList.toggle('on',k===n));tb.forEach((b,k)=>b.classList.toggle('on',k===n));pg.forEach((p,k)=>{p.classList.remove('on');if(k===n){void p.offsetWidth;p.classList.add('on')}});$('#url').textContent=urls[n];$('#capT').textContent=caps[n];clearTimeout(t);t=setTimeout(()=>go((i+1)%ms.length),5000)}
-  tb.forEach((b,k)=>b.onclick=()=>go(k));go(0)})();
+/* works slider */
+const DEMOS=[
+ ['arkodv','АркоДВ-Авто','Автоимпорт и растаможка · Владивосток','Калькулятор под ключ, каталог с карточками авто, заявки в WhatsApp'],
+ ['arkon','Аркон Авто','Авто под заказ из Японии, Кореи и Китая','Расчёт стоимости, маршруты доставки, привезённые авто'],
+ ['dimax','DiMax Auto','Аренда автомобилей · Владивосток','Витрина автопарка с ценами по срокам и бронью'],
+ ['gorizont','Горизонт','Таможня и логистика из Азии','Тёмная и светлая версии сайта',['gorizont-light','Светлая версия ↗']],
+ ['kogustoff','Kogustoff','Перевозка авто автовозом по России','Калькулятор перевозки и трекинг рейса'],
+ ['elcadro','Elcadro','Фото- и видеотехника · Хабаровск','Каталог, комплекты и корзина'],
+ ['nikita','Никита покупает','Байер авто и товаров из Азии','Личный бренд и услуги для частных лиц и бизнеса'],
+];
+(()=>{const sc=$('#screen'),th=$('#thumbs');let i=0,t,paused=false;
+  sc.innerHTML=DEMOS.map((d,k)=>`<img src="works/demo-${d[0]}.jpg" alt="Демо-сайт ${d[1]}" ${k?'loading="lazy"':''}>`).join('');
+  th.innerHTML=DEMOS.map(d=>`<button aria-label="${d[1]}"><img src="works/demo-${d[0]}.jpg" alt="" loading="lazy"><i></i></button>`).join('');
+  const imgs=[...sc.children],tb=[...th.children];
+  function go(n){i=(n+DEMOS.length)%DEMOS.length;const d=DEMOS[i];
+    imgs.forEach((im,k)=>im.classList.toggle('on',k===i));
+    tb.forEach((b,k)=>{b.classList.remove('on');if(k===i){void b.offsetWidth;b.classList.add('on')}});
+    $('#url').textContent='staswebdesign.github.io/'+d[0];sc.href=d[0]+'/';$('#wOpen').href=d[0]+'/';
+    $('#wt').innerHTML=`<small>${d[2]}</small><b>${d[1]}</b><span>${d[3]}</span>${d[4]?`<a class="alt" href="${d[4][0]}/" target="_blank" rel="noopener">${d[4][1]}</a>`:''}`;
+    $('#wN').innerHTML=`<b>${String(i+1).padStart(2,'0')}</b> / ${String(DEMOS.length).padStart(2,'0')}`;
+    clearTimeout(t);if(!paused)t=setTimeout(()=>go(i+1),6000)}
+  tb.forEach((b,k)=>b.onclick=()=>go(k));$('#wPrev').onclick=()=>go(i-1);$('#wNext').onclick=()=>go(i+1);
+  const st=$('.stage');st.addEventListener('pointerenter',e=>{if(e.pointerType!=='mouse')return;paused=true;clearTimeout(t);th.classList.add('paused')});
+  st.addEventListener('pointerleave',e=>{if(e.pointerType!=='mouse')return;paused=false;th.classList.remove('paused');go(i)});
+  go(0)})();
+/* concepts */
+const CONC=[['glock','Glock','барбершоп'],['levira','Levira','спа для волос и головы'],['myata','Мята','студия депиляции'],['beauty-magic','Beauty Magic','студия красоты'],['amur','Amur Laser','лазерная эпиляция'],['atmosfera','Атмосфера','барбершоп'],['summer','Summer','студия загара'],['vtoroe','Второе дыхание','мультипространство'],
+ ['sunbuka','Sunbuka','студия загара'],['voitkova','Voitkova Nails','маникюр и педикюр'],['ve','VE','фитнес-студия'],['dinamo','Динамо','барбершоп'],['barbaris','Барбарис','семейная парикмахерская'],['matreshka','Матрёшка','студия красоты'],['lokaciya','Локация 135','салон красоты'],['stil-tela','Стиль тела','студия загара']];
+(()=>{const card=(c,k)=>`<button class="cc" data-k="${k}"><img src="works/c-${c[0]}.jpg" alt="Концепт первого экрана: ${c[1]}" loading="lazy"><span>${c[1]}<em>${c[2]}</em></span></button>`;
+  const a=CONC.slice(0,8).map((c,k)=>card(c,k)).join(''),b=CONC.slice(8).map((c,k)=>card(c,k+8)).join('');
+  $('#row1').innerHTML=a+a;$('#row2').innerHTML=b+b;
+  const lb=$('#lb');let ci=0;
+  function show(k){ci=(k+CONC.length)%CONC.length;const c=CONC[ci];$('#lbImg').src=`works/c-${c[0]}.jpg`;$('#lbImg').alt=c[1];$('#lbT').textContent=c[1];$('#lbS').textContent=c[2]+` · ${ci+1} / ${CONC.length}`}
+  function close(){lb.classList.remove('open');document.body.style.overflow=''}
+  $('#concepts').addEventListener('click',e=>{const b=e.target.closest('.cc');if(!b)return;show(+b.dataset.k);lb.classList.add('open');document.body.style.overflow='hidden'});
+  lb.addEventListener('click',e=>{if(e.target===lb||e.target.closest('[data-x]'))close();else if(e.target.closest('[data-p]'))show(ci-1);else if(e.target.closest('[data-n]'))show(ci+1)});
+  addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(ci-1);if(e.key==='ArrowRight')show(ci+1)});
+  let sx=0;lb.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});lb.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>50)show(ci+(d<0?1:-1))});
+})();
 /* marquee */
 const mw=['Лендинги','<span class="it">Демо-сайты</span>','Tilda','<span class="it">Калькуляторы</span>','Каталоги','<span class="it">Первый экран</span>','Адаптив'];
 $('#marq').innerHTML=[...mw,...mw].map(x=>`<span>${x}</span>`).join('');

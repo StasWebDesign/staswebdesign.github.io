@@ -1,15 +1,20 @@
-# Демо-сайты для клиентов
+# Stas Web Design — сайт-визитка и демо-сайты
 
-Каждое демо — отдельная папка с `index.html`. Адрес: `https://staswebdesign.github.io/<папка>/`
+Главная (`index.html`) — сайт-визитка с работами. Демо — отдельные папки с `index.html`, адрес: `https://staswebdesign.github.io/<папка>/`. Демо закрыты от поисковиков (`noindex`).
 
-| Папка | Клиент | Ссылка |
-|---|---|---|
-| `arkodv` | АркоДВ-Авто | https://staswebdesign.github.io/arkodv/ |
-| `dimax` | DiMax Auto | https://staswebdesign.github.io/dimax/ |
+| Папка | Проект |
+|---|---|
+| `arkodv` | АркоДВ-Авто |
+| `arkon` | Аркон Авто |
+| `dimax` | DiMax Auto |
+| `gorizont`, `gorizont-light` | Горизонт (тёмная и светлая версии) |
+| `kogustoff` | Kogustoff |
+| `elcadro` | Elcadro |
+| `nikita` | Никита покупает |
+
+`works/` — скриншоты демо (`demo-*.jpg`) и концепты первых экранов (`c-*.jpg`) для слайдера и галереи на главной.
 
 ## Как добавить или обновить демо через браузер
 1. Откройте репозиторий → **Add file → Upload files**.
-2. Перетащите папку клиента (внутри `index.html`, при желании `og.jpg` для превью).
+2. Перетащите папку клиента (внутри `index.html`).
 3. Нажмите **Commit changes**. Через 1–2 минуты сайт обновится по той же ссылке.
-
-Главная (`index.html`) — сайт-визитка Stas Web Design. Демо-папки закрыты от поисковиков (`noindex`).

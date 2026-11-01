@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ELCADRO — фото- и видеотехника в Хабаровске</title>
+<meta name="description" content="Камеры, объективы, свет, звук, стабилизаторы и дроны. Соберём комплект под задачу, бесплатная доставка по России. Хабаровск, Амурский бульвар, 11.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#EC4039; --red-d:#D2322B; --ink:#141414; --ink-2:#55555a; --mute:#8b8b90;
+  --bg:#ffffff; --soft:#f4f3f1; --line:#e7e5e2;
+  --r:22px; --pad:clamp(16px,4vw,56px); --max:1320px;
+  --disp:'Unbounded',system-ui,sans-serif; --text:'Onest',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden;overflow-x:clip}
+body{font-family:var(--text);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+img,svg{display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+.disp{font-family:var(--disp);letter-spacing:-.02em}
+.red{color:var(--red)}
+
+/* ---------- logo ---------- */
+.mark{width:1em;height:1em;flex:none}
+.logo{display:flex;align-items:center;font-family:var(--disp);font-weight:800;font-size:22px;letter-spacing:-.01em;line-height:1}
+.logo .c{color:var(--red)}
+.logo .mark{width:.92em;height:.92em;margin-left:.04em}
+
+/* ---------- header ---------- */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s,transform .35s}
+header.scrolled{background:rgba(255,255,255,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+header.hide{transform:translateY(-100%)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+.nav ul{display:flex;gap:34px;list-style:none;font-weight:500;font-size:15px}
+.nav ul a{position:relative;padding:6px 0}
+.nav ul a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--red);transform:scaleX(0);transform-origin:right;transition:transform .35s}
+.nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-r{display:flex;align-items:center;gap:10px}
+.cart-btn{position:relative;display:flex;align-items:center;gap:10px;height:46px;padding:0 18px;border-radius:99px;background:var(--ink);color:#fff;font-weight:600;font-size:14px;transition:background .25s}
+.cart-btn:hover{background:var(--red)}
+.cart-btn .n{min-width:22px;height:22px;border-radius:99px;background:var(--red);display:grid;place-items:center;font-size:12px;padding:0 6px;transition:transform .3s}
+.cart-btn:hover .n{background:#fff;color:var(--red)}
+.cart-btn .n.bump{animation:bump .45s}
+@keyframes bump{40%{transform:scale(1.45)}}
+.burger{display:none;width:46px;height:46px;border-radius:99px;border:1px solid var(--line);place-items:center}
+@media (max-width:900px){.nav ul{display:none}.burger{display:grid}}
+@media (max-width:520px){.cart-btn .lbl{display:none}.cart-btn{padding:0 14px}}
+.mnav{position:fixed;inset:0;z-index:60;background:var(--ink);color:#fff;padding:0 var(--pad) 28px;display:flex;flex-direction:column;overflow-y:auto;overflow-x:hidden;
+  clip-path:circle(0px at calc(100% - var(--pad) - 23px) 38px);visibility:hidden;
+  transition:clip-path .75s cubic-bezier(.7,0,.2,1),visibility 0s .75s}
+.mnav.open{clip-path:circle(150% at calc(100% - var(--pad) - 23px) 38px);visibility:visible;transition:clip-path .8s cubic-bezier(.7,0,.2,1)}
+.mnav-bg{position:absolute;right:-35%;bottom:-12%;width:115%;height:auto;aspect-ratio:1;opacity:.07;transform:rotate(-40deg) scale(.7);transition:transform 1.4s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.mnav.open .mnav-bg{transform:rotate(0) scale(1)}
+.mtop{position:relative;display:flex;justify-content:space-between;align-items:center;height:76px;flex:none}
+.logo.light{color:#fff}
+.mx2{position:relative;width:46px;height:46px;border-radius:99px;background:var(--red)}
+.mx2 i{position:absolute;left:14px;right:14px;top:22px;height:2px;background:#fff;border-radius:2px;transition:transform .5s cubic-bezier(.7,0,.2,1) .25s}
+.mnav.open .mx2 i:first-child{transform:rotate(45deg)}
+.mnav.open .mx2 i:last-child{transform:rotate(-45deg)}
+.mlinks{position:relative;display:flex;flex-direction:column;margin:auto 0;padding:24px 0}
+.mlinks a{display:flex;align-items:baseline;gap:14px;font-family:var(--disp);font-weight:800;font-size:clamp(32px,10vw,46px);letter-spacing:-.04em;line-height:1.18;padding:4px 0;border-bottom:1px solid #262628}
+.mlinks a em{font-style:normal;font-family:var(--text);font-size:12px;font-weight:600;color:var(--red);letter-spacing:.05em;transform:translateY(-1.4em)}
+.mlinks a:active{color:var(--red)}
+.mnav .mlinks a,.mnav .mbtns,.mnav .minfo{opacity:0;transform:translateY(50px);transition:opacity .3s,transform .3s}
+.mnav.open .mlinks a,.mnav.open .mbtns,.mnav.open .minfo{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.2,.8,.2,1) calc(.28s + var(--i)*.06s),transform .9s cubic-bezier(.2,.8,.2,1) calc(.28s + var(--i)*.06s)}
+.mbtns{position:relative;display:flex;gap:8px;margin-bottom:22px}
+.mbtns .btn{flex:1;justify-content:center;height:54px;padding:0 16px;font-size:15px;white-space:nowrap}
+.mcart{border:1.5px solid #3a3a3d;color:#fff}
+.mcart .n{min-width:22px;height:22px;border-radius:99px;background:var(--red);display:grid;place-items:center;font-size:12px;padding:0 6px}
+.minfo{position:relative;display:flex;flex-direction:column;gap:6px;font-size:14px;color:#9a9aa0}
+.mphone{font-family:var(--disp);font-weight:700;font-size:20px;color:#fff;letter-spacing:-.02em}
+.msoc{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.msoc a{height:38px;padding:0 14px;border-radius:99px;border:1px solid #3a3a3d;display:flex;align-items:center;color:#fff;font-size:13px;font-weight:600}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:12px;height:58px;padding:0 28px;border-radius:99px;font-weight:600;font-size:16px;transition:transform .25s,background .25s,color .25s;will-change:transform}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--ink)}
+.btn-ghost{border:1.5px solid var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+.btn .arr{transition:transform .3s}
+.btn:hover .arr{transform:translateX(4px)}
+
+/* ---------- hero ---------- */
+.hero{min-height:100svh;display:flex;align-items:center;padding:110px 0 60px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:500;color:var(--ink-2);padding:8px 14px 8px 10px;border:1px solid var(--line);border-radius:99px}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(236,64,57,.5);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(236,64,57,0)}100%{box-shadow:0 0 0 0 rgba(236,64,57,0)}}
+.h1{font-family:var(--disp);font-weight:800;font-size:clamp(46px,8.2vw,124px);line-height:.92;letter-spacing:-.045em;margin:26px 0 28px}
+.rot{display:block;height:1em;overflow:hidden;position:relative;color:var(--red)}
+.rot span{display:block;position:absolute;left:0;top:0;white-space:nowrap;transform:translateY(105%);transition:transform .7s cubic-bezier(.7,0,.2,1)}
+.rot span.on{transform:none}
+.rot span.out{transform:translateY(-105%)}
+.lead{font-size:clamp(17px,1.5vw,20px);line-height:1.55;color:var(--ink-2);max-width:520px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+
+.vf{position:relative;aspect-ratio:1;width:100%;max-width:560px;justify-self:end}
+.vf .big{position:absolute;inset:8%;width:84%;height:84%;transition:transform .2s ease-out}
+.vf .big .mk{width:100%;height:100%;animation:spin-in 1.4s cubic-bezier(.2,.8,.2,1) both}
+@keyframes spin-in{from{transform:scale(.6) rotate(-25deg);opacity:0}}
+.corner{position:absolute;width:44px;height:44px;border:3px solid var(--ink)}
+.corner.tl{top:0;left:0;border-right:0;border-bottom:0}
+.corner.tr{top:0;right:0;border-left:0;border-bottom:0}
+.corner.bl{bottom:0;left:0;border-right:0;border-top:0}
+.corner.br{bottom:0;right:0;border-left:0;border-top:0}
+.focus{position:absolute;width:70px;height:70px;border:2px solid #fff;border-radius:6px;left:52%;top:36%;transition:left .6s cubic-bezier(.7,0,.2,1),top .6s cubic-bezier(.7,0,.2,1),border-color .2s;mix-blend-mode:difference}
+.focus.lock{border-color:#00ff7a;mix-blend-mode:normal}
+.readout{position:absolute;left:6%;right:6%;bottom:-38px;display:flex;justify-content:space-between;font-family:var(--disp);font-size:12px;font-weight:500;letter-spacing:.06em;color:var(--ink-2)}
+.rec{position:absolute;top:14px;right:58px;display:flex;align-items:center;gap:6px;font-family:var(--disp);font-size:12px;font-weight:700}
+.rec i{width:9px;height:9px;border-radius:50%;background:var(--red);animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;border-radius:50%}
+.flash.go{animation:flash .5s}
+@keyframes flash{10%{opacity:.9}100%{opacity:0}}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .vf{max-width:360px;justify-self:center;margin:0 0 40px;order:-1;width:68%}
+  .hero{padding-top:96px}
+}
+
+/* ---------- facts ---------- */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fact{padding:30px 26px;border-right:1px solid var(--line);display:flex;gap:16px;align-items:flex-start}
+.fact:last-child{border-right:0}
+.fact b{display:block;font-family:var(--disp);font-weight:700;font-size:16px;margin-bottom:6px}
+.fact p{font-size:14px;color:var(--ink-2);line-height:1.45}
+.fact .mark{width:22px;height:22px;margin-top:2px}
+@media (max-width:900px){.facts{grid-template-columns:1fr 1fr}.fact:nth-child(2){border-right:0}.fact:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media (max-width:520px){.facts{grid-template-columns:1fr}.fact{border-right:0;border-bottom:1px solid var(--line)}.fact:last-child{border-bottom:0}}
+
+/* ---------- marquee ---------- */
+.marq{overflow:hidden;padding:46px 0;user-select:none}
+.marq-t{display:flex;gap:64px;width:max-content;animation:marq 32s linear infinite}
+.marq:hover .marq-t{animation-play-state:paused}
+.marq-t span{font-family:var(--disp);font-weight:800;font-size:clamp(34px,5vw,64px);letter-spacing:-.03em;color:transparent;-webkit-text-stroke:1.5px #c9c7c3;display:flex;align-items:center;gap:64px;transition:color .3s}
+.marq-t span:hover{color:var(--ink);-webkit-text-stroke-color:var(--ink)}
+.marq-t span::after{content:"";width:18px;height:18px;border-radius:50%;background:var(--red);flex:none}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ---------- section heads ---------- */
+section{position:relative}
+.sec{padding:clamp(80px,10vw,140px) 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:46px;flex-wrap:wrap}
+.tag{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--red);display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.tag::before{content:"";width:26px;height:2px;background:var(--red)}
+.h2{font-family:var(--disp);font-weight:800;font-size:clamp(36px,5.4vw,76px);line-height:.98;letter-spacing:-.04em}
+.sh p{max-width:380px;color:var(--ink-2);line-height:1.55}
+
+/* ---------- catalog ---------- */
+.ctrl{min-width:0;display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:28px}
+.chips{min-width:0;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;flex:1 1 auto;padding:2px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;height:42px;padding:0 18px;border-radius:99px;border:1px solid var(--line);font-size:14px;font-weight:500;transition:all .2s;white-space:nowrap}
+.chip:hover{border-color:var(--ink)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.chip sup{font-size:10px;margin-left:3px;opacity:.55}
+.search{position:relative;flex:0 1 280px}
+.search input{width:100%;height:42px;border-radius:99px;border:1px solid var(--line);padding:0 16px 0 42px;font:inherit;font-size:14px;outline:none;transition:border .2s;background:#fff}
+.search input:focus{border-color:var(--ink)}
+.search svg{position:absolute;left:15px;top:50%;transform:translateY(-50%)}
+.sort{height:42px;border-radius:99px;border:1px solid var(--line);padding:0 14px;font:inherit;font-size:14px;background:#fff;cursor:pointer;outline:none}
+@media (max-width:700px){.search{flex:1 1 100%}.chips{order:3;flex-basis:100%}}
+
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+@media (max-width:1100px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}}
+.card{min-width:0;position:relative;display:flex;flex-direction:column;border-radius:var(--r);background:#fff;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.card .pic{position:relative;aspect-ratio:1/1;border-radius:var(--r);background:var(--soft);display:grid;place-items:center;overflow:hidden}
+.card .pic::before{content:"";position:absolute;width:62%;aspect-ratio:1;border-radius:50%;background:var(--red);transform:scale(0);transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+.card:hover .pic::before{transform:scale(1)}
+.card .pic svg{position:relative;width:62%;height:auto;transition:transform .55s cubic-bezier(.2,.8,.2,1)}
+.card:hover .pic svg{transform:scale(1.08) rotate(-4deg)}
+.card:hover .pic svg .ac{stroke:#fff}
+.card:hover .pic svg .acf{fill:#fff}
+.badge{position:absolute;top:14px;left:14px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;border-radius:99px;background:#fff;z-index:1}
+.badge.new{background:var(--ink);color:#fff}
+.badge.sale{background:var(--red);color:#fff}
+.card .info{padding:16px 6px 6px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card .cat{font-size:12px;color:var(--mute);font-weight:500}
+.card h3{font-size:16px;font-weight:600;line-height:1.3}
+.card .row{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:10px;gap:8px}
+.price{font-family:var(--disp);font-weight:700;font-size:17px;letter-spacing:-.02em;white-space:nowrap}
+.price.q{font-family:var(--text);font-size:14px;font-weight:600;color:var(--ink-2)}
+.add{width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;flex:none;transition:background .2s,transform .2s}
+.add:hover{background:var(--red);transform:rotate(90deg)}
+.stp{display:flex;align-items:center;gap:2px;height:44px;padding:4px;border-radius:99px;background:var(--red);color:#fff;margin-left:auto;animation:stpIn .45s cubic-bezier(.2,.8,.2,1)}
+.stp button{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:#fff;transition:background .2s}
+.stp button:hover{background:rgba(0,0,0,.18)}
+.stp .sq{min-width:26px;text-align:center;font-family:var(--disp);font-weight:700;font-size:15px}
+.stp .sq.tick{animation:tick .35s}
+@keyframes stpIn{from{transform:scale(.5);opacity:0}}
+@keyframes tick{40%{transform:scale(1.35)}}
+.row.has{flex-wrap:wrap;row-gap:10px}
+@media (max-width:760px){.row.has .stp{flex:1 1 100%;justify-content:space-between;height:40px}.stp button{width:32px;height:32px}.card h3{font-size:14px}.price{font-size:15px}.add{width:38px;height:38px}.badge{top:8px;left:8px;font-size:9px}}
+.empty{grid-column:1/-1;text-align:center;padding:70px 0;color:var(--ink-2)}
+.cat-note{margin-top:30px;font-size:14px;color:var(--mute);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.cat-note a{color:var(--ink);font-weight:600;border-bottom:1.5px solid var(--red)}
+
+/* ---------- kits ---------- */
+.kits{background:var(--ink);color:#fff;border-radius:clamp(26px,4vw,48px);margin:0 clamp(8px,1.5vw,20px);overflow:hidden}
+.kits .h2 .ol{color:transparent;-webkit-text-stroke:1.5px #fff}
+.kits .sh p{color:#a9a9ae}
+.kit-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:900px){.kit-grid{grid-template-columns:1fr}}
+.kit{border:1px solid #2c2c2f;border-radius:var(--r);padding:30px;display:flex;flex-direction:column;gap:20px;transition:border-color .3s,background .3s}
+.kit:hover{border-color:var(--red);background:#1b1b1d}
+.kit .num{font-family:var(--disp);font-size:13px;color:var(--red);font-weight:700}
+.kit h3{font-family:var(--disp);font-size:26px;font-weight:700;letter-spacing:-.02em}
+.kit ul{list-style:none;display:flex;flex-direction:column;gap:10px;font-size:15px;color:#cfcfd3}
+.kit li{display:flex;gap:10px;align-items:baseline}
+.kit li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--red);flex:none;transform:translateY(-2px)}
+.kit .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:20px;border-top:1px solid #2c2c2f}
+.kit .sum{font-family:var(--disp);font-weight:700;font-size:20px}
+.kit .sum small{display:block;font-family:var(--text);font-size:12px;color:#8a8a90;font-weight:400}
+.kit button{height:46px;padding:0 20px;border-radius:99px;background:#fff;color:var(--ink);font-weight:600;font-size:14px;transition:background .2s,color .2s}
+.kit button:hover{background:var(--red);color:#fff}
+.custom{margin-top:16px;border-radius:var(--r);background:var(--red);padding:30px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.custom b{font-family:var(--disp);font-size:clamp(20px,2.4vw,28px);font-weight:700;letter-spacing:-.02em}
+.custom p{opacity:.85;margin-top:6px}
+.custom a{height:54px;padding:0 26px;border-radius:99px;background:#fff;color:var(--ink);font-weight:600;display:flex;align-items:center;justify-content:center;gap:10px;white-space:nowrap;transition:background .2s,color .2s}
+.custom a:hover{background:var(--ink);color:#fff}
+@media (max-width:560px){.custom{padding:26px 22px}.custom a{width:100%;padding:0 18px}}
+
+/* ---------- services ---------- */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+@media (max-width:900px){.svc{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.svc{grid-template-columns:1fr}}
+.sv{padding:36px 30px 40px 0;border-bottom:1px solid var(--line);position:relative;display:flex;flex-direction:column;gap:12px}
+.sv .i{font-family:var(--disp);font-size:13px;color:var(--mute)}
+.sv h3{font-family:var(--disp);font-size:22px;font-weight:700;letter-spacing:-.02em;transition:color .25s}
+.sv p{color:var(--ink-2);line-height:1.55;font-size:15px;max-width:340px}
+.sv .p{font-family:var(--disp);font-weight:700;color:var(--red);font-size:15px}
+.sv:hover h3{color:var(--red)}
+
+/* ---------- community ---------- */
+.comm{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:900px){.comm{grid-template-columns:1fr}}
+.ev{border-radius:var(--r);padding:34px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;gap:30px;position:relative;overflow:hidden;background:var(--soft);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.ev:hover{transform:translateY(-6px)}
+.ev.dark{background:var(--ink);color:#fff}
+.ev.redb{background:var(--red);color:#fff}
+.ev .t{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+.ev h3{font-family:var(--disp);font-weight:700;font-size:clamp(24px,2.6vw,34px);letter-spacing:-.03em;line-height:1.05;max-width:420px}
+.ev p{opacity:.8;line-height:1.5;max-width:420px}
+.ev .lnk{display:inline-flex;align-items:center;gap:8px;font-weight:600;border-bottom:1.5px solid currentColor;align-self:flex-start;padding-bottom:3px}
+.ev .bg-mark{position:absolute;right:-60px;bottom:-60px;width:240px;height:240px;opacity:.12;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.ev:hover .bg-mark{transform:rotate(-18deg) scale(1.08)}
+.collab{display:flex;flex-wrap:wrap;gap:8px}
+.collab span{font-size:13px;font-weight:600;padding:7px 13px;border-radius:99px;border:1px solid rgba(255,255,255,.35)}
+.ev:not(.dark):not(.redb) .collab span{border-color:#d4d2ce}
+
+/* ---------- contacts ---------- */
+.ct{display:grid;grid-template-columns:.9fr 1.1fr;gap:16px}
+@media (max-width:900px){.ct{grid-template-columns:1fr}}
+.ct-info{border-radius:var(--r);background:var(--soft);padding:38px;display:flex;flex-direction:column;gap:30px}
+.ct-info .l{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin-bottom:8px}
+.ct-info .v{font-family:var(--disp);font-size:clamp(20px,2.2vw,26px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.ct-info .s{color:var(--ink-2);margin-top:6px;font-size:15px}
+.soc{display:flex;flex-wrap:wrap;gap:8px}
+.soc a{height:46px;padding:0 18px;border-radius:99px;background:#fff;display:flex;align-items:center;gap:8px;font-weight:600;font-size:14px;transition:background .2s,color .2s}
+.soc a:hover{background:var(--ink);color:#fff}
+.pay{display:flex;flex-wrap:wrap;gap:6px}
+.pay span{font-size:13px;padding:6px 12px;border-radius:99px;border:1px solid #d9d7d3;color:var(--ink-2)}
+.map{border-radius:var(--r);overflow:hidden;min-height:460px;background:var(--soft);position:relative}
+.map iframe{width:100%;height:100%;min-height:460px;border:0;filter:grayscale(1) contrast(1.05)}
+.map .pin{position:absolute;left:16px;bottom:16px;background:#fff;border-radius:16px;padding:14px 16px;display:flex;gap:12px;align-items:center;box-shadow:0 10px 30px rgba(0,0,0,.12);font-size:14px}
+.map .pin .mark{width:36px;height:36px}
+.map .pin a{font-weight:600;color:var(--red)}
+
+/* ---------- footer ---------- */
+footer{padding:80px 0 34px;overflow:hidden}
+.big-word{font-family:var(--disp);font-weight:800;font-size:120px;letter-spacing:-.05em;line-height:.8;display:flex;align-items:center;justify-content:center;white-space:nowrap;width:100%}
+.big-word .in{display:inline-flex;align-items:center}
+.big-word .c{color:var(--red)}
+.big-word .mark{width:.74em;height:.74em;margin-left:.03em}
+.fbar{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:50px;padding-top:24px;border-top:1px solid var(--line);font-size:14px;color:var(--mute)}
+.fbar a:hover{color:var(--red)}
+
+/* ---------- drawer ---------- */
+.ov{position:fixed;inset:0;background:rgba(10,10,10,.45);opacity:0;pointer-events:none;transition:opacity .35s;z-index:70}
+.ov.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(460px,100%);background:#fff;z-index:80;transform:translateX(100%);visibility:hidden;transition:transform .5s cubic-bezier(.7,0,.2,1),visibility 0s .5s;display:flex;flex-direction:column}
+.drawer.open{transform:none;visibility:visible;transition:transform .5s cubic-bezier(.7,0,.2,1)}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:24px 26px;border-bottom:1px solid var(--line)}
+.dh b{font-family:var(--disp);font-size:22px;font-weight:700}
+.dh button{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);font-size:20px}
+.dl{flex:1;overflow:auto;padding:10px 26px}
+.li{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.li .th{width:64px;height:64px;border-radius:14px;background:var(--soft);display:grid;place-items:center}
+.li .th svg{width:46px}
+.li .nm{font-weight:600;font-size:14px;line-height:1.3}
+.li .pr{font-size:13px;color:var(--ink-2);margin-top:4px}
+.qty{display:flex;align-items:center;gap:4px}
+.qty button{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);font-size:16px}
+.qty span{min-width:22px;text-align:center;font-weight:600;font-size:14px}
+.df{padding:22px 26px 26px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.tot{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.tot b{font-family:var(--disp);font-size:24px}
+.tot small{color:var(--mute);font-size:12px;display:block}
+.df .btn{justify-content:center;height:54px}
+.dempty{text-align:center;padding:70px 10px;color:var(--ink-2)}
+.dempty .mark{width:70px;height:70px;margin:0 auto 18px;opacity:.9}
+.toast{position:fixed;left:50%;bottom:26px;max-width:calc(100% - 32px);transform:translate(-50%,220%);visibility:hidden;background:var(--ink);color:#fff;padding:14px 20px;border-radius:99px;font-size:14px;font-weight:500;z-index:90;transition:transform .45s cubic-bezier(.2,.8,.2,1);display:flex;gap:10px;align-items:center;white-space:nowrap}
+.toast.show{transform:translate(-50%,0);visibility:visible}
+.toast i{width:8px;height:8px;border-radius:50%;background:var(--red)}
+
+/* ---------- modal ---------- */
+.modal{position:fixed;inset:0;z-index:95;display:grid;place-items:center;padding:16px;background:rgba(10,10,10,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:opacity .35s,visibility 0s .35s}
+.modal.open{opacity:1;visibility:visible;transition:opacity .35s}
+.mcard{position:relative;overflow:hidden;background:#fff;border-radius:30px;padding:40px 36px 34px;max-width:500px;width:100%;transform:translateY(40px) scale(.95);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.modal.open .mcard{transform:none}
+.mbull{position:absolute;right:-90px;top:-90px;width:280px;height:280px;opacity:.08;transform:rotate(-30deg);transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.modal.open .mbull{transform:rotate(0)}
+.mx{position:absolute;top:18px;right:18px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);font-size:20px;background:#fff;z-index:1;transition:background .2s,color .2s}
+.mx:hover{background:var(--ink);color:#fff}
+.mhead{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);position:relative}
+.mhead .mark{width:26px;height:26px}
+.mcard h3{position:relative;font-family:var(--disp);font-weight:800;font-size:clamp(26px,5vw,34px);letter-spacing:-.035em;line-height:1.02;margin:18px 0 16px}
+.mcard p{position:relative;color:var(--ink-2);line-height:1.55;font-size:16px}
+.mcard .m2{margin-top:10px;font-size:14px;color:var(--mute)}
+.mact{position:relative;display:flex;gap:10px;margin-top:28px;flex-wrap:wrap}
+.mact .btn{flex:1 1 100%;justify-content:center;height:58px;font-size:17px}
+.mready{position:relative;margin-top:26px;padding-top:22px;border-top:1px solid var(--line);font-family:var(--disp);font-weight:700;font-size:19px;letter-spacing:-.02em}
+.mact{margin-top:16px!important}
+@media (max-width:520px){.mcard{padding:34px 22px 22px;border-radius:26px}}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- Bull mark (logo symbol) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <mask id="bullcut" maskUnits="userSpaceOnUse" x="0" y="0" width="640" height="640">
+      <rect width="640" height="640" fill="#fff"/>
+      <path fill="#000" d="M-20 150 L50 144 C66 170 77 198 79 226 C130 200 205 206 262 196 C286 191 290 168 306 154 C334 138 382 134 420 121 C458 108 478 100 492 87 C489 119 472 136 441 146 C404 157 372 164 366 186 C362 206 386 224 400 242 C416 264 410 292 421 321 C431 350 460 368 470 386 C482 412 462 450 431 465 C411 472 399 462 389 455 C369 446 321 455 290 450 C270 447 255 440 240 451 C210 478 181 518 160 540 C145 556 129 566 127 579 L-20 660 Z"/>
+    </mask>
+    <symbol id="bull" viewBox="0 0 640 640">
+      <circle cx="330" cy="322" r="298" fill="#EC4039" mask="url(#bullcut)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header id="hd">
+  <div class="wrap nav">
+    <a href="#top" class="logo" aria-label="ELCADRO">EL<span class="c">CADR</span><svg class="mark"><use href="#bull"/></svg></a>
+    <ul>
+      <li><a href="#catalog">Каталог</a></li>
+      <li><a href="#kits">Комплекты</a></li>
+      <li><a href="#services">Сервис</a></li>
+      <li><a href="#community">Сообщество</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+    </ul>
+    <div class="nav-r">
+      <button class="cart-btn" id="openCart" aria-label="Корзина">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 7h14l-1.2 12.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 7Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+        <span class="lbl">Корзина</span><span class="n" id="cartN">0</span>
+      </button>
+      <button class="burger" id="burger" aria-label="Меню"><svg width="20" height="20" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8h18M3 16h18"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<nav class="mnav" id="mnav" aria-label="Меню">
+  <svg class="mnav-bg" viewBox="0 0 640 640" aria-hidden="true"><use href="#bull"/></svg>
+  <div class="mtop">
+    <a href="#top" class="logo light" aria-label="ELCADRO">EL<span class="c">CADR</span><svg class="mark"><use href="#bull"/></svg></a>
+    <button class="mx2" id="mclose" aria-label="Закрыть меню"><i></i><i></i></button>
+  </div>
+  <div class="mlinks">
+    <a href="#catalog" style="--i:0"><em>01</em>Каталог</a>
+    <a href="#kits" style="--i:1"><em>02</em>Комплекты</a>
+    <a href="#services" style="--i:2"><em>03</em>Сервис</a>
+    <a href="#community" style="--i:3"><em>04</em>Сообщество</a>
+    <a href="#contacts" style="--i:4"><em>05</em>Контакты</a>
+  </div>
+  <div class="mbtns" style="--i:5">
+    <a href="https://t.me/Elcadr0" target="_blank" rel="noopener" class="btn btn-red">Подобрать технику</a>
+    <button class="btn mcart" id="mCart">Корзина <span class="n" id="mCartN">0</span></button>
+  </div>
+  <div class="minfo" style="--i:6">
+    <a href="tel:+79241219118" class="mphone">+7 924 121-91-18</a>
+    <span>Амурский бульвар, 11 · 2 этаж</span>
+    <div class="msoc">
+      <a href="https://t.me/ElcadroKHV" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://wa.me/79241219118" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://vk.com/elcadrokhv" target="_blank" rel="noopener">VK</a>
+      <a href="https://www.instagram.com/elcadro.ru/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow rv"><span class="dot"></span>Фотомагазин · Хабаровск, Амурский бульвар, 11</span>
+      <h1 class="h1 rv d1">Снимай<span class="rot" id="rot"><span class="on">фото</span><span>видео</span><span>с неба</span><span>в 360°</span><span>кино</span></span></h1>
+      <p class="lead rv d2">Камеры, объективы, свет, звук, стабилизаторы и дроны топовых брендов. Соберём комплект под твои задачи и бесплатно доставим по всей России.</p>
+      <div class="hero-cta rv d3">
+        <a href="#catalog" class="btn btn-red">Открыть каталог <span class="arr">→</span></a>
+        <a href="https://t.me/Elcadr0" target="_blank" rel="noopener" class="btn btn-ghost">Подобрать технику</a>
+      </div>
+    </div>
+    <div class="vf" id="vf">
+      <div class="big" id="bigMark"><svg class="mk" viewBox="0 0 640 640"><use href="#bull"/></svg><div class="flash" id="flash"></div></div>
+      <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+      <div class="rec"><i></i>REC</div>
+      <div class="focus" id="focus"></div>
+      <div class="readout"><span id="ss">1/250</span><span id="ap">f/2.8</span><span id="iso">ISO 100</span><span id="shots">[ 0001 ]</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FACTS -->
+<div class="wrap">
+  <div class="facts rv">
+    <div class="fact"><svg class="mark"><use href="#bull"/></svg><div><b>Доставка бесплатно</b><p>По всей России, плюс пункт выдачи в магазине</p></div></div>
+    <div class="fact"><svg class="mark"><use href="#bull"/></svg><div><b>Комплект под задачу</b><p>Подберём камеру, оптику, свет и звук под твой бюджет</p></div></div>
+    <div class="fact"><svg class="mark"><use href="#bull"/></svg><div><b>Консультация — 0 ₽</b><p>Пиши менеджеру в Telegram, ответим по делу</p></div></div>
+    <div class="fact"><svg class="mark"><use href="#bull"/></svg><div><b>Рассрочка и кредит</b><p>Карта, наличные, QR и СБП, безнал для юрлиц</p></div></div>
+  </div>
+</div>
+
+<!-- BRANDS -->
+<div class="marq" aria-hidden="true"><div class="marq-t" id="marq"></div></div>
+
+<!-- CATALOG -->
+<section class="sec" id="catalog" style="padding-top:40px">
+  <div class="wrap">
+    <div class="sh">
+      <div><div class="tag rv">Каталог</div><h2 class="h2 rv d1">Техника,<br>которая снимает</h2></div>
+      <p class="rv d2">Добавляй в корзину — оформим заказ в мессенджере за пару минут. Наличие и точную цену подтвердит менеджер.</p>
+    </div>
+    <div class="ctrl rv">
+      <div class="chips" id="chips"></div>
+      <label class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8b8b90" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Поиск: Sony, RODE, дрон…"></label>
+      <select class="sort" id="sort" aria-label="Сортировка">
+        <option value="pop">Сначала популярные</option>
+        <option value="asc">Сначала дешевле</option>
+        <option value="desc">Сначала дороже</option>
+      </select>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="cat-note">Не нашёл нужную модель? Привезём под заказ —<a href="https://t.me/Elcadr0" target="_blank" rel="noopener">написать @Elcadr0</a></div>
+  </div>
+</section>
+
+<!-- KITS -->
+<section class="kits sec" id="kits">
+  <div class="wrap">
+    <div class="sh">
+      <div><div class="tag rv">Комплекты</div><h2 class="h2 rv d1">Соберём <span class="ol">сетап</span><br>под твои задачи</h2></div>
+      <p class="rv d2">Готовые связки, которые мы советуем чаще всего. Добавь в корзину целиком — или попроси собрать свой.</p>
+    </div>
+    <div class="kit-grid" id="kitGrid"></div>
+    <div class="custom rv">
+      <div><b>Нужен свой комплект?</b><p>Расскажи, что снимаешь и на какой бюджет — соберём и посчитаем.</p></div>
+      <a href="https://t.me/Elcadr0" target="_blank" rel="noopener">Собрать с менеджером →</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sh">
+      <div><div class="tag rv">Сервис</div><h2 class="h2 rv d1">Не только<br>продаём</h2></div>
+      <p class="rv d2">Помогаем с техникой и после покупки: чистка, ремонт дронов, доставка и удобная оплата.</p>
+    </div>
+    <div class="svc">
+      <div class="sv rv"><span class="i">01</span><h3>Чистка матрицы</h3><p>Профессиональная чистка матриц фото- и видеокамер. Без пятен на небе и пыли на кадрах.</p><span class="p">1 800 ₽</span></div>
+      <div class="sv rv d1"><span class="i">02</span><h3>Ремонт дронов</h3><p>Диагностика и ремонт квадрокоптеров. Вернём в небо как можно быстрее.</p><span class="p">по диагностике</span></div>
+      <div class="sv rv d2"><span class="i">03</span><h3>Доставка по России</h3><p>Бесплатно отправим в любой город. В Хабаровске — самовывоз из магазина.</p><span class="p">0 ₽</span></div>
+      <div class="sv rv"><span class="i">04</span><h3>Рассрочка и кредит</h3><p>Возьми камеру сейчас, плати частями. Оплата картой, наличными, по QR и СБП.</p><span class="p">оформим на месте</span></div>
+      <div class="sv rv d1"><span class="i">05</span><h3>Подарочные сертификаты</h3><p>Лучший подарок для того, кто снимает — пусть выберет технику сам.</p><span class="p">любой номинал</span></div>
+      <div class="sv rv d2"><span class="i">06</span><h3>Тест-драйв техники</h3><p>Покрути камеру в руках до покупки — на наших тест-драйвах и прямо в магазине.</p><span class="p">бесплатно</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="sec" id="community" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh">
+      <div><div class="tag rv">Сообщество</div><h2 class="h2 rv d1">Снимаем<br>вместе</h2></div>
+      <p class="rv d2">Фотопрогулки с моделью и преподавателем, тест-драйвы на фестивалях, фотозоны и коллаборации с фотографами Хабаровска.</p>
+    </div>
+    <div class="comm">
+      <div class="ev dark rv">
+        <div><div class="t">Фотопрогулки</div></div>
+        <div><h3>Бесплатные прогулки с моделью и преподавателем</h3><p style="margin-top:12px">Регистрация — в нашем боте, ссылку на чат и место встречи пришлём туда.</p></div>
+        <a class="lnk" href="https://t.me/Elcadro_bot" target="_blank" rel="noopener">Записаться в @Elcadro_bot →</a>
+        <svg class="bg-mark" viewBox="0 0 640 640"><use href="#bull"/></svg>
+      </div>
+      <div class="ev redb rv d1">
+        <div class="t">Фотофестиваль ДВ</div>
+        <div><h3>Тест-драйв техники на главном фотособытии города</h3><p style="margin-top:12px">Приносим камеры и оптику — снимай на всё, что давно хотел попробовать.</p></div>
+        <a class="lnk" href="https://t.me/ElcadroKHV" target="_blank" rel="noopener">Следить за анонсами →</a>
+      </div>
+      <div class="ev rv">
+        <div class="t">Коллаборации</div>
+        <h3>Делаем движ с теми, кто живёт съёмкой</h3>
+        <div class="collab"><span>MarkaMarka</span><span>Фотошкола К2</span><span>Фотоклуб_КХВ</span><span>ХК «СКА-Нефтяник»</span></div>
+      </div>
+      <div class="ev rv d1" style="background:#ecebe8">
+        <div class="t">Чат фотографов</div>
+        <h3>Спроси, поделись кадром, найди команду</h3>
+        <a class="lnk" href="https://t.me/Elcadrochat" target="_blank" rel="noopener">Вступить в @Elcadrochat →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTS -->
+<section class="sec" id="contacts" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh"><div><div class="tag rv">Контакты</div><h2 class="h2 rv d1">Заходи<br>подержать в руках</h2></div></div>
+    <div class="ct">
+      <div class="ct-info rv">
+        <div><div class="l">Адрес</div><div class="v">Хабаровск,<br>Амурский бульвар, 11</div><div class="s">Вход со стороны Амурского бульвара, 2 этаж</div></div>
+        <div><div class="l">Телефон</div><a class="v" href="tel:+79241219118">+7 924 121-91-18</a><div class="s">Поможем с выбором — пиши <a href="https://t.me/Elcadr0" target="_blank" rel="noopener" style="color:var(--red);font-weight:600">@Elcadr0</a></div></div>
+        <div class="soc">
+          <a href="https://t.me/Elcadr0" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://wa.me/79241219118" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://t.me/ElcadroKHV" target="_blank" rel="noopener">Канал</a>
+          <a href="https://vk.com/elcadrokhv" target="_blank" rel="noopener">ВКонтакте</a>
+          <a href="https://www.instagram.com/elcadro.ru/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <div><div class="l">Оплата</div><div class="pay"><span>Карта</span><span>Наличные</span><span>QR / СБП</span><span>Безнал</span><span>Кредит</span></div></div>
+      </div>
+      <div class="map rv d1">
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=135.058747%2C48.478892&z=16&oid=132294049403&ol=biz" loading="lazy" title="ELCADRO на карте"></iframe>
+        <div class="pin"><svg class="mark"><use href="#bull"/></svg><div><b>ELCADRO</b><br><a href="https://go.2gis.com/MeRfc" target="_blank" rel="noopener">2ГИС</a> · <a href="https://yandex.ru/maps/-/CXuVY4i2" target="_blank" rel="noopener">Яндекс Карты</a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="big-word rv" id="bigWord"><span class="in" id="bigIn">EL<span class="c">CADR</span><svg class="mark"><use href="#bull"/></svg></span></div>
+    <div class="fbar">
+      <span>© ELCADRO, 2026 · Магазин фото- и видеооборудования, Хабаровск</span>
+      <span><a href="tel:+79241219118">+7 924 121-91-18</a> · <a href="https://t.me/ElcadroKHV" target="_blank" rel="noopener">@ElcadroKHV</a></span>
+      <a href="https://t.me/StasWebDesign" target="_blank" rel="noopener">Разработка сайта</a>
+    </div>
+  </div>
+</footer>
+
+<!-- CART -->
+<div class="ov" id="ov"></div>
+<aside class="drawer" id="drawer" aria-label="Корзина">
+  <div class="dh"><b>Корзина</b><button id="closeCart" aria-label="Закрыть">×</button></div>
+  <div class="dl" id="dl"></div>
+  <div class="df" id="df">
+    <div class="tot"><div><small>Итого</small><b id="tot">0 ₽</b></div><small id="totNote"></small></div>
+    <button class="btn btn-red" id="checkout">Оформить заказ</button>
+    <button class="btn btn-ghost" id="sendTg">Написать в Telegram</button>
+  </div>
+</aside>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="mcard">
+    <button class="mx" id="mClose" aria-label="Закрыть">×</button>
+    <svg class="mbull" viewBox="0 0 640 640"><use href="#bull"/></svg>
+    <div class="mhead"><svg class="mark"><use href="#bull"/></svg><span>Демо-версия сайта</span></div>
+    <h3 id="mTitle">Здесь будет онлайн-оформление заказа</h3>
+    <p>Сейчас вы смотрите демонстрационную версию. На реальном сайте покупатель сможет оформить заказ прямо здесь: выбрать доставку, оставить контакты и оплатить онлайн — без переписки в мессенджерах.</p>
+    <p class="m2">Эта функция подключается при полноценной разработке и запуске сайта.</p>
+    <div class="mready">Всё нравится и готовы к разработке?</div>
+    <div class="mact"><a class="btn btn-red" href="https://t.me/StasWebDesign" target="_blank" rel="noopener">Поехали! <span class="arr">→</span></a></div>
+  </div>
+</div>
+<div class="toast" id="toast"><i></i><span id="toastT"></span></div>
+
+<script>
+/* ===== Icons ===== */
+const I = {
+  camera:`<svg viewBox="0 0 120 90" fill="none" stroke="#141414" stroke-width="3" stroke-linejoin="round"><path d="M40 26l6-10h28l6 10"/><rect x="14" y="26" width="92" height="50" rx="9"/><circle cx="60" cy="51" r="17"/><circle class="ac" cx="60" cy="51" r="9" stroke="#EC4039"/><circle class="acf" cx="92" cy="36" r="3" fill="#EC4039" stroke="none"/><path d="M22 34h10"/></svg>`,
+  lens:`<svg viewBox="0 0 120 90" fill="none" stroke="#141414" stroke-width="3" stroke-linejoin="round"><rect x="16" y="28" width="62" height="34" rx="4"/><rect x="78" y="20" width="24" height="50" rx="4"/><path d="M34 28v34M44 28v34"/><path class="ac" d="M60 28v34" stroke="#EC4039"/><path d="M10 36v18"/></svg>`,
+  mic:`<svg viewBox="0 0 120 90" fill="none" stroke="#141414" stroke-width="3" stroke-linejoin="round"><rect x="40" y="14" width="40" height="62" rx="10"/><circle class="ac" cx="60" cy="34" r="9" stroke="#EC4039"/><path d="M50 58h20M50 66h20"/><path d="M80 30h10v28"/></svg>`,
+  shotgun:`<svg viewBox="0 0 120 90" fill="none" stroke="#141414" stroke-width="3" stroke-linejoin="round"><rect x="14" y="36" width="80" height="16" rx="8"/><path class="ac" d="M94 40h10v8H94" stroke="#EC4039"/><path d="M30 36v-4M44 36v-4M58 36v-4M72 36v-4"/><path d="M50 52v14h16V52"/></svg>`,
+  light:`<svg viewBox="0 0 120 90" fill="none" stroke="#141414" stroke-width="3" stroke-linejoin="round"><rect x="28" y="10" width="64" height="44" rx="5"/><path class="ac" d="M42 22h36M42 32h36M42 42h36" stroke="#EC4039"/><path d="M60 54v18M60 72l-14 12M60 72l14 12M60 72v12"/></svg>`,
+  drone:`<svg viewBox="0 0 120 90" fill="none" stroke="#141414" stroke-width="3" stroke-linejoin="round"><rect x="46" y="36" width="28" height="18" rx="6"/><path d="M46 40L28 26M74 40l18-14M46 50L28 64M74 50l18 14"/><ellipse cx="24" cy="24" rx="14" ry="4"/><ellipse cx="96" cy="24" rx="14" ry="4"/><ellipse cx="24" cy="66" rx="14" ry="4"/><ellipse cx="96" cy="66" rx="14" ry="4"/><circle class="ac" cx="60" cy="58" r="4" stroke="#EC4039"/></svg>`,
+  gimbal:`<svg viewBox="0 0 120 90" fill="none" stroke="#141414" stroke-width="3" stroke-linejoin="round"><rect x="52" y="52" width="16" height="34" rx="6"/><path d="M60 52V42h26V16H54"/><rect x="30" y="12" width="30" height="22" rx="4"/><circle class="ac" cx="45" cy="23" r="6" stroke="#EC4039"/></svg>`,
+  cam360:`<svg viewBox="0 0 120 90" fill="none" stroke="#141414" stroke-width="3" stroke-linejoin="round"><rect x="44" y="8" width="32" height="74" rx="12"/><circle class="ac" cx="60" cy="28" r="10" stroke="#EC4039"/><circle cx="60" cy="28" r="4"/><rect x="52" y="52" width="16" height="12" rx="2"/></svg>`,
+  card:`<svg viewBox="0 0 120 90" fill="none" stroke="#141414" stroke-width="3" stroke-linejoin="round"><path d="M38 10h36l10 10v58a4 4 0 0 1-4 4H38a4 4 0 0 1-4-4V14a4 4 0 0 1 4-4Z"/><path d="M44 10v12M52 10v12M60 10v12M68 10v12"/><rect class="ac" x="42" y="44" width="36" height="22" rx="3" stroke="#EC4039"/></svg>`,
+  battery:`<svg viewBox="0 0 120 90" fill="none" stroke="#141414" stroke-width="3" stroke-linejoin="round"><rect x="22" y="24" width="72" height="42" rx="6"/><path d="M94 36h6v18h-6"/><path class="ac" d="M56 32l-8 14h12l-8 14" stroke="#EC4039"/></svg>`,
+  bag:`<svg viewBox="0 0 120 90" fill="none" stroke="#141414" stroke-width="3" stroke-linejoin="round"><path d="M38 20h44a8 8 0 0 1 8 8v52H30V28a8 8 0 0 1 8-8Z"/><path d="M48 20v-6h24v6"/><rect class="ac" x="42" y="44" width="36" height="18" rx="4" stroke="#EC4039"/></svg>`,
+  gift:`<svg viewBox="0 0 120 90" fill="none" stroke="#141414" stroke-width="3" stroke-linejoin="round"><rect x="20" y="22" width="80" height="50" rx="8"/><path class="ac" d="M20 40h80M48 22v50" stroke="#EC4039"/><path d="M48 22c-8-12-20-6-14 0M48 22c8-12 20-6 14 0"/></svg>`
+};
+
+/* ===== Data (цены ориентировочные — заменить на актуальные) ===== */
+const CATS = [
+  ['all','Все'],['cam','Камеры'],['lens','Объективы'],['sound','Звук'],['light','Свет'],
+  ['stab','Стабилизаторы'],['drone','Дроны'],['action','360° и экшн'],['acc','Аксессуары']
+];
+const P = [
+  {id:1,c:'cam',n:'Sony Alpha a7 IV Body',p:199990,i:'camera',b:'hit',pop:99},
+  {id:2,c:'cam',n:'Sony Alpha a7R VI Body',p:389990,i:'camera',b:'new',pop:95},
+  {id:3,c:'cam',n:'Canon EOS R6 V Body',p:289990,i:'camera',b:'new',pop:92},
+  {id:4,c:'cam',n:'Canon EOS RP Body',p:109990,i:'camera',b:'last',pop:90},
+  {id:5,c:'cam',n:'Sony ZV-E10 II Kit 16-50',p:94990,i:'camera',pop:85},
+  {id:6,c:'lens',n:'7Artisans Floral Bloom',p:24990,i:'lens',b:'hit',pop:88},
+  {id:7,c:'lens',n:'Sony FE 24-70mm f/2.8 GM II',p:229990,i:'lens',pop:80},
+  {id:8,c:'lens',n:'Sony FE 70-200mm f/4 G OSS II',p:149990,i:'lens',pop:76},
+  {id:9,c:'lens',n:'Canon RF 50mm f/1.8 STM',p:21990,i:'lens',pop:82},
+  {id:10,c:'sound',n:'RODE Wireless GO (Gen 3)',p:32990,i:'mic',b:'hit',pop:91},
+  {id:11,c:'sound',n:'RODE Wireless Micro',p:18990,i:'mic',pop:84},
+  {id:12,c:'sound',n:'RODE VideoMic NTG',p:27990,i:'shotgun',pop:70},
+  {id:13,c:'light',n:'Godox SL60IIBi',p:19990,i:'light',pop:72},
+  {id:14,c:'light',n:'Amaran 200x S',p:29990,i:'light',pop:68},
+  {id:15,c:'stab',n:'DJI RS 4',p:49990,i:'gimbal',pop:78},
+  {id:16,c:'stab',n:'DJI RS 4 Mini',p:34990,i:'gimbal',pop:74},
+  {id:17,c:'drone',n:'DJI Mini 4 Pro',p:99990,i:'drone',b:'hit',pop:89},
+  {id:18,c:'drone',n:'DJI Avata 2 Fly More Combo',p:119990,i:'drone',pop:73},
+  {id:19,c:'action',n:'Insta360 X6',p:69990,i:'cam360',b:'new',pop:93},
+  {id:20,c:'acc',n:'SanDisk Extreme PRO SD 128 ГБ',p:3490,i:'card',pop:66},
+  {id:21,c:'acc',n:'Аккумулятор Sony NP-FZ100',p:8990,i:'battery',pop:64},
+  {id:22,c:'acc',n:'Рюкзак для фототехники',p:9990,i:'bag',pop:60},
+  {id:23,c:'acc',n:'Подарочный сертификат 10 000 ₽',p:10000,i:'gift',pop:62},
+];
+const CATNAME = Object.fromEntries(CATS);
+const BADGE = {hit:['Хит',''],new:['Новинка','new'],last:['Последние','sale']};
+const KITS = [
+  {n:'Старт блогера',t:'Для Reels, YouTube и первых коммерческих съёмок',ids:[5,11,16,20]},
+  {n:'Видеограф',t:'Свадьбы, клипы, реклама — сразу в работу',ids:[1,10,15,13,21]},
+  {n:'Фотограф',t:'Портрет, репортаж и путешествия',ids:[1,9,8,20,22]},
+];
+
+const rub = v => v==null ? 'Цена по запросу' : v.toLocaleString('ru-RU').replace(/,/g,' ')+' ₽';
+const byId = id => P.find(x=>x.id===id);
+
+/* ===== Catalog ===== */
+const PLUS='<svg width="16" height="16" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4" fill="none"><path d="M12 5v14M5 12h14"/></svg>';
+const MINUS='<svg width="14" height="14" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.6" fill="none"><path d="M5 12h14"/></svg>';
+function rowInner(x){const q=cart[x.id]||0;
+  return `<span class="price ${x.p==null?'q':''}">${rub(x.p)}</span>`+(q
+    ?`<div class="stp"><button data-a="-1" data-id="${x.id}" aria-label="Убрать одну">${MINUS}</button><span class="sq">${q}</span><button data-a="1" data-id="${x.id}" aria-label="Добавить ещё">${PLUS}</button></div>`
+    :`<button class="add" data-id="${x.id}" aria-label="В корзину">${PLUS}</button>`)}
+function syncCards(){document.querySelectorAll('[data-row]').forEach(r=>{const x=byId(+r.dataset.row),q=cart[x.id]||0;
+  const had=r.classList.contains('has');const cur=r.querySelector('.sq');
+  if(had&&q&&cur){if(cur.textContent!=q){cur.textContent=q;cur.classList.remove('tick');void cur.offsetWidth;cur.classList.add('tick')}return}
+  r.classList.toggle('has',!!q);r.innerHTML=rowInner(x)})}
+let cat='all', q='', sort='pop';
+const grid=document.getElementById('grid'), chips=document.getElementById('chips');
+function renderChips(){
+  chips.innerHTML = CATS.map(([k,v])=>{
+    const n = k==='all'?P.length:P.filter(x=>x.c===k).length;
+    return `<button class="chip ${k===cat?'on':''}" data-k="${k}">${v}<sup>${n}</sup></button>`;
+  }).join('');
+}
+function renderGrid(){
+  let list = P.filter(x=>(cat==='all'||x.c===cat) && x.n.toLowerCase().includes(q));
+  if(sort==='pop') list.sort((a,b)=>b.pop-a.pop);
+  if(sort==='asc') list.sort((a,b)=>(a.p??1e9)-(b.p??1e9));
+  if(sort==='desc') list.sort((a,b)=>(b.p??-1)-(a.p??-1));
+  if(!list.length){grid.innerHTML='<div class="empty">Ничего не нашли — но можем привезти под заказ. Напиши <a href="https://t.me/Elcadr0" style="color:var(--red);font-weight:600">@Elcadr0</a></div>';return}
+  grid.innerHTML = list.map((x,k)=>`
+    <article class="card rv ${'d'+(k%4)}">
+      <div class="pic">${x.b?`<span class="badge ${BADGE[x.b][1]}">${BADGE[x.b][0]}</span>`:''}${I[x.i]}</div>
+      <div class="info">
+        <span class="cat">${CATNAME[x.c]}</span>
+        <h3>${x.n}</h3>
+        <div class="row ${cart[x.id]?'has':''}" data-row="${x.id}">${rowInner(x)}</div>
+      </div>
+    </article>`).join('');
+  observe();
+}
+chips.addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;cat=b.dataset.k;renderChips();renderGrid()});
+document.getElementById('q').addEventListener('input',e=>{q=e.target.value.trim().toLowerCase();renderGrid()});
+document.getElementById('sort').addEventListener('change',e=>{sort=e.target.value;renderGrid()});
+grid.addEventListener('click',e=>{const a=e.target.closest('.add');if(a){add(+a.dataset.id);return}const st=e.target.closest('[data-a]');if(st)setQ(+st.dataset.id,+st.dataset.a)});
+
+/* ===== Kits ===== */
+document.getElementById('kitGrid').innerHTML = KITS.map((k,j)=>{
+  const items=k.ids.map(byId), sum=items.reduce((s,x)=>s+(x.p||0),0);
+  return `<div class="kit rv d${j}"><span class="num">0${j+1} / Комплект</span><h3>${k.n}</h3><p style="color:#a9a9ae;margin-top:-8px">${k.t}</p>
+  <ul>${items.map(x=>`<li>${x.n}</li>`).join('')}</ul>
+  <div class="foot"><div class="sum">${rub(sum)}<small>ориентировочно за комплект</small></div><button data-kit="${j}">В корзину</button></div></div>`;
+}).join('');
+document.getElementById('kitGrid').addEventListener('click',e=>{
+  const b=e.target.closest('[data-kit]');if(!b)return;
+  KITS[+b.dataset.kit].ids.forEach(id=>add(id,true));
+  toast(`Комплект «${KITS[+b.dataset.kit].n}» в корзине`);
+});
+
+/* ===== Cart ===== */
+let cart={};
+try{cart=JSON.parse(localStorage.getItem('elcadro_cart')||'{}')}catch(e){cart={}}
+const save=()=>{try{localStorage.setItem('elcadro_cart',JSON.stringify(cart))}catch(e){}};
+function add(id,silent){cart[id]=(cart[id]||0)+1;save();renderCart();syncCards();bump();if(!silent)toast(`${byId(id).n} — в корзине`)}
+function setQ(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];save();renderCart();syncCards();bump()}
+function bump(){const n=document.getElementById('cartN');n.classList.remove('bump');void n.offsetWidth;n.classList.add('bump')}
+function orderText(){
+  const lines=Object.entries(cart).map(([id,qn])=>{const x=byId(+id);return `• ${x.n} × ${qn}${x.p?' — '+rub(x.p*qn):''}`});
+  return `Здравствуйте! Хочу оформить заказ с сайта ELCADRO:\n${lines.join('\n')}\n\nИтого: ${document.getElementById('tot').textContent}`;
+}
+function renderCart(){
+  const ids=Object.keys(cart), dl=document.getElementById('dl'), df=document.getElementById('df');
+  const cnt=ids.reduce((s,i)=>s+cart[i],0);document.getElementById('cartN').textContent=cnt;const mc=document.getElementById('mCartN');if(mc)mc.textContent=cnt;
+  if(!ids.length){dl.innerHTML=`<div class="dempty"><svg class="mark"><use href="#bull"/></svg>Пока пусто.<br>Загляни в каталог — там много интересного.</div>`;df.style.display='none';return}
+  df.style.display='';
+  let sum=0, ask=false;
+  dl.innerHTML=ids.map(id=>{const x=byId(+id),qn=cart[id];if(x.p)sum+=x.p*qn;else ask=true;
+    return `<div class="li"><div class="th">${I[x.i]}</div><div><div class="nm">${x.n}</div><div class="pr">${rub(x.p)}</div></div>
+    <div class="qty"><button data-d="-1" data-id="${id}">−</button><span>${qn}</span><button data-d="1" data-id="${id}">+</button></div></div>`}).join('');
+  document.getElementById('tot').textContent=rub(sum);
+  document.getElementById('totNote').textContent=ask?'+ позиции по запросу':'';
+}
+document.getElementById('dl').addEventListener('click',e=>{const b=e.target.closest('[data-d]');if(b)setQ(+b.dataset.id,+b.dataset.d)});
+const modal=document.getElementById('modal');
+const openModal=()=>modal.classList.add('open'), closeModal=()=>modal.classList.remove('open');
+document.getElementById('checkout').onclick=openModal;
+document.getElementById('mClose').onclick=closeModal;
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+document.getElementById('sendTg').addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText(orderText());toast('Заказ скопирован — вставь его в чат')}catch(e){}
+  window.open('https://t.me/Elcadr0','_blank');
+});
+const ov=document.getElementById('ov'), dr=document.getElementById('drawer');
+const openCart=()=>{ov.classList.add('open');dr.classList.add('open')}, closeCart=()=>{ov.classList.remove('open');dr.classList.remove('open')};
+document.getElementById('openCart').onclick=openCart;document.getElementById('closeCart').onclick=closeCart;ov.onclick=closeCart;
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){if(modal.classList.contains('open'))closeModal();else{closeCart();closeMenu()}}});
+
+let tt;function toast(t){const el=document.getElementById('toast');document.getElementById('toastT').textContent=t;el.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>el.classList.remove('show'),2200)}
+
+/* ===== Marquee ===== */
+const brands=['SONY','CANON','RODE','DJI','INSTA360','7ARTISANS','GODOX','AMARAN','SANDISK'];
+document.getElementById('marq').innerHTML=[...brands,...brands].map(b=>`<span>${b}</span>`).join('');
+
+/* ===== Hero: rotating word ===== */
+(()=>{const s=[...document.querySelectorAll('#rot span')];let i=0;
+  const snap=(el,fn)=>{el.style.transition='none';fn();void el.offsetWidth;el.style.transition=''};
+  setInterval(()=>{
+    const c=s[i];i=(i+1)%s.length;const n=s[i];
+    snap(n,()=>{n.classList.remove('out','on')});
+    c.classList.remove('on');c.classList.add('out');n.classList.add('on');
+    setTimeout(()=>snap(c,()=>c.classList.remove('out')),800);
+  },2400)})();
+
+/* ===== Hero: viewfinder ===== */
+(()=>{
+  const f=document.getElementById('focus'), fl=document.getElementById('flash');
+  const SS=['1/125','1/250','1/500','1/1000','1/60'], AP=['f/1.8','f/2.8','f/4','f/5.6'], ISO=['ISO 100','ISO 200','ISO 400','ISO 800'];
+  let shots=1;
+  setInterval(()=>{
+    f.classList.remove('lock');
+    f.style.left=(25+Math.random()*50)+'%';f.style.top=(20+Math.random()*50)+'%';
+    setTimeout(()=>{f.classList.add('lock');
+      document.getElementById('ss').textContent=SS[Math.random()*SS.length|0];
+      document.getElementById('ap').textContent=AP[Math.random()*AP.length|0];
+      document.getElementById('iso').textContent=ISO[Math.random()*ISO.length|0];
+      setTimeout(()=>{fl.classList.remove('go');void fl.offsetWidth;fl.classList.add('go');document.getElementById('shots').textContent='[ '+String(++shots).padStart(4,'0')+' ]'},350);
+    },700);
+  },2600);
+  const vf=document.getElementById('vf'), big=document.getElementById('bigMark');
+  if(matchMedia('(pointer:fine)').matches){
+    window.addEventListener('mousemove',e=>{const x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;big.style.transform=`translate(${x*-18}px,${y*-18}px) rotate(${x*6}deg)`});
+  }
+})();
+
+/* ===== Header hide on scroll ===== */
+(()=>{let ly=0;const h=document.getElementById('hd');addEventListener('scroll',()=>{const y=scrollY;h.classList.toggle('scrolled',y>20);h.classList.toggle('hide',y>ly&&y>400&&!dr.classList.contains('open'));ly=y},{passive:true})})();
+
+/* ===== Mobile nav ===== */
+const mn=document.getElementById('mnav');
+function closeMenu(){mn.classList.remove('open');document.body.style.overflow=''}
+document.getElementById('burger').onclick=()=>{mn.classList.add('open');document.body.style.overflow='hidden'};
+document.getElementById('mclose').onclick=closeMenu;
+mn.querySelectorAll('.mlinks a,.mtop .logo').forEach(a=>a.addEventListener('click',closeMenu));
+document.getElementById('mCart').onclick=()=>{closeMenu();setTimeout(openCart,350)};
+
+/* ===== Footer logo: fit to width ===== */
+function fitBig(){const w=document.getElementById('bigWord'),inn=document.getElementById('bigIn');if(!w)return;
+  let fs=100;inn.style.fontSize=fs+'px';for(let n=0;n<4;n++){fs=fs*w.clientWidth/inn.getBoundingClientRect().width;inn.style.fontSize=(fs*0.998)+'px'}}
+fitBig();addEventListener('resize',fitBig);if(document.fonts)document.fonts.ready.then(fitBig);
+
+/* ===== Reveal ===== */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+function observe(){document.querySelectorAll('.rv:not(.in)').forEach(el=>io.observe(el))}
+
+renderChips();renderGrid();renderCart();observe();
+</script>
+</body>
+</html>
