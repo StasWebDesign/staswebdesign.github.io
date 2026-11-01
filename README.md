@@ -5,6 +5,7 @@
 | Папка | Клиент | Ссылка |
 |---|---|---|
 | `arkodv` | АркоДВ-Авто | https://staswebdesign.github.io/arkodv/ |
+| `dimax` | DiMax Auto | https://staswebdesign.github.io/dimax/ |
 
 ## Как добавить или обновить демо через браузер
 1. Откройте репозиторий → **Add file → Upload files**.
