@@ -976,3 +976,39 @@ textarea.inp{height:auto;min-height:84px;padding-top:14px;padding-bottom:14px;re
   .mnav-top img{height:40px}
 }
 .pay-sum .r span:last-child{white-space:nowrap;padding-left:10px}
+
+/* v6: hero adapts to any screen. In one-column layouts the art block height drives the disc and the shoe, so the disc never runs under the header or over the text */
+@media (max-width:900px){
+  .hero-art{--h:clamp(250px,min(92vw,52vh),500px);height:var(--h);min-height:0;margin-bottom:8px}
+  .hero-disc{width:calc(var(--h) - 64px)}
+  .hero-shoe{width:min(112%,calc((var(--h) - 64px) * 1.32));margin-left:0}
+  .hero-wings{width:min(150px,calc(var(--h) * .3));right:max(4%,calc(50% - var(--h) * .55))}
+  .hero-shadow{left:calc(50% - var(--h) * .25);width:calc(var(--h) * .5);bottom:12%}
+  .hero-tag{left:max(0px,calc(50% - var(--h) * .52));bottom:9%}
+}
+@media (max-width:900px) and (orientation:landscape) and (max-height:520px){
+  .hero-in{grid-template-columns:1fr 1fr;min-height:0}
+  .hero-art{order:0;--h:clamp(220px,78vh,380px);align-self:start;margin-top:12px}
+  .hero-tag{display:none}
+  .hero h1{font-size:clamp(30px,5vw,44px)}
+}
+@media (max-width:360px){
+  .hero h1{font-size:38px}
+}
+/* v6: brand cards never clip the logo */
+.fam{grid-template-columns:minmax(0,1fr) auto}
+.fam .lg{width:clamp(150px,19vw,280px)}
+@media (min-width:901px) and (max-width:1180px){.fam{padding:28px;gap:18px}.fam h3{font-size:34px}}
+@media (max-width:640px){.fam{grid-template-columns:1fr}.fam .lg{width:160px}}
+/* v6: tablets get a two-column product page, the photo no longer fills the whole screen */
+@media (min-width:700px) and (max-width:900px){
+  .pdp{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px}
+  .gallery{position:sticky;top:84px}
+  .thumbs button{width:64px;height:70px}
+}
+@media (min-width:641px) and (max-width:699px){
+  .main-img{aspect-ratio:auto;height:min(70vh,560px)}
+}
+.pbuy .fav{flex:none}
+.pbuy .btn-ink{min-width:0}
+@media (min-width:700px) and (max-width:1100px){.pbuy .btn-ink{font-size:15px;padding:0 16px}}
