@@ -249,9 +249,8 @@
 @media (max-width:480px){.send{grid-template-columns:1fr}}
 .send .pill{height:56px;font-size:15.5px}
 .p-wa{background:#25D366;color:#06210f}.p-wa:hover{background:var(--ink)}
+.p-tg{background:#229ED9;color:#fff}.p-tg:hover{background:var(--ink);color:var(--bg)}
 .form small.hint{color:var(--mute);font-size:13px;margin-top:-8px}
-.toast{position:fixed;left:50%;bottom:24px;z-index:95;transform:translate(-50%,30px);opacity:0;background:var(--ink);color:var(--bg);font-weight:700;padding:14px 20px;border-radius:14px;transition:opacity .3s,transform .4s var(--ease);pointer-events:none;max-width:calc(100% - 32px);text-align:center}
-.toast.on{opacity:1;transform:translate(-50%,0)}
 @media (prefers-reduced-motion:reduce){.h1 .ln>span{transform:none}.big .w{opacity:1}.nt{opacity:1;transform:none}}
 </style>
 </head>
@@ -530,9 +529,9 @@
         <div><label for="fName">Как к вам обращаться</label><input class="fld" id="fName" placeholder="Имя"></div>
         <div class="send">
           <button class="pill p-wa" type="button" id="sWa"><svg class="ic icf"><use href="#i-wa"/></svg>В WhatsApp</button>
-          <button class="pill p-lime" type="button" id="sTg"><svg class="ic icf"><use href="#i-tg"/></svg>В Telegram</button>
+          <button class="pill p-tg" type="button" id="sTg"><svg class="ic icf"><use href="#i-tg"/></svg>В Telegram</button>
         </div>
-        <small class="hint">Откроется чат со мной, и сообщение будет уже готово. Для Telegram текст копируется, останется вставить.</small>
+        <small class="hint">Откроется чат со мной, и сообщение будет уже готово. Останется нажать «Отправить».</small>
       </form>
       <div class="links">
         <a class="lk rv" href="https://t.me/StasWebDesign" target="_blank" rel="noopener"><span class="ico"><svg><use href="#i-tg"/></svg></span><span class="t"><small>Telegram</small><b>@StasWebDesign</b></span><span class="go"><svg class="ic"><use href="#i-arr"/></svg></span></a>
@@ -550,7 +549,6 @@
     <div class="fbar"><span>© 2026 Stas Web Design · Разработка сайтов по всей России</span><nav><a href="#works">Работы</a><a href="#prices">Цены</a><a href="#faq">Вопросы</a><a href="projects/">Все проекты</a></nav><a href="#top">Наверх ↑</a></div>
   </div>
 </footer>
-<div class="toast" id="toast"></div>
 
 <script src="assets/projects.js"></script>
 <script>
@@ -601,12 +599,10 @@ $$('.rv,.st,.wy').forEach(el=>io.observe(el));
 /* FAQ: one open at a time */
 $$('.qa details').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)$$('.qa details').forEach(o=>{if(o!==d)o.open=false})}));
 /* lead form -> messenger */
-(()=>{const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('on'),3500)};
-  const msg=()=>{const t=$('#lead input[name=t]:checked').value,b=$('#fBiz').value.trim(),n=$('#fName').value.trim();
+(()=>{const msg=()=>{const t=$('#lead input[name=t]:checked').value,b=$('#fBiz').value.trim(),n=$('#fName').value.trim();
     return ['Здравствуйте, Стас! Хочу бесплатное демо сайта.','Тип сайта: '+t,b?'О бизнесе: '+b:'',n?'Меня зовут '+n:''].filter(Boolean).join('\n')};
   $('#sWa').onclick=()=>window.open('https://wa.me/79808852180?text='+encodeURIComponent(msg()),'_blank','noopener');
-  $('#sTg').onclick=async()=>{const m=msg();let ok=false;try{await navigator.clipboard.writeText(m);ok=true}catch(e){}
-    window.open('https://t.me/StasWebDesign','_blank','noopener');toast(ok?'Текст скопирован. Вставьте его в чат Telegram':'Напишите мне в Telegram: @StasWebDesign')};
+  $('#sTg').onclick=()=>window.open('https://t.me/StasWebDesign?text='+encodeURIComponent(msg()),'_blank','noopener');
   $$('.pr .pill').forEach(a=>a.addEventListener('click',()=>{const v={'Хочу лендинг':'Лендинг','Хочу сайт':'Многостраничный сайт','Хочу магазин':'Интернет-магазин'}[a.textContent.trim()];const r=v&&$(`#lead input[value="${v}"]`);if(r)r.checked=true}));
 })();
 </script>

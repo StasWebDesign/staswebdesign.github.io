@@ -18,3 +18,19 @@ window.renderProjects = function (el, limit, base) {
       '<div class="pj-m"><div><b>' + p.name + '</b><p>' + p.desc + '</p></div><span class="tag">' + p.tag + '</span></div></a>';
   }).join('');
 };
+
+/* Крупная надпись в подвале: подгоняем размер, чтобы занимала ровно ширину блока */
+(function () {
+  function fit() {
+    document.querySelectorAll('.fbig').forEach(function (el) {
+      el.style.fontSize = '100px';
+      var r = document.createRange(); r.selectNodeContents(el);
+      var w = r.getBoundingClientRect().width, cw = el.clientWidth;
+      if (w && cw) el.style.fontSize = (100 * cw / w * 0.99) + 'px';
+    });
+  }
+  window.addEventListener('resize', fit);
+  window.addEventListener('load', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  if (document.readyState !== 'loading') fit(); else document.addEventListener('DOMContentLoaded', fit);
+})();
