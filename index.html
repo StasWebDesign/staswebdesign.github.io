@@ -63,17 +63,23 @@
 .cc span em{font-style:normal;color:var(--mute);font-weight:500}
 .cc:hover span{opacity:1;transform:none}
 @media (pointer:coarse){.cc span{opacity:1;transform:none}}
-.lb{position:fixed;inset:0;z-index:90;background:rgba(8,8,8,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:16px;opacity:0;visibility:hidden;transition:opacity .35s,visibility 0s .35s}
+.lb{position:fixed;inset:0;z-index:90;background:rgba(8,8,8,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;opacity:0;visibility:hidden;transition:opacity .35s,visibility 0s .35s;--sw:min(70vw,calc((100svh - 200px)*1.6),1240px);--g:clamp(14px,2vw,30px)}
+@media (max-width:760px){.lb{--sw:min(74vw,calc((100svh - 220px)*1.6));--g:12px}}
 .lb.open{opacity:1;visibility:visible;transition:opacity .35s}
-.lb img{max-width:min(1400px,100%);max-height:calc(100svh - 150px);border-radius:14px;box-shadow:0 40px 80px -30px #000;transform:scale(.96);transition:transform .5s var(--ease)}
-.lb.open img{transform:none}
-.lb .cap{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center}
+.lb-vp{width:100%;overflow:hidden;padding:10px 0;touch-action:pan-y}
+.lb-tr{display:flex;gap:var(--g);will-change:transform}
+.lb-tr.an{transition:transform .7s var(--ease)}
+.ls{flex:none;width:var(--sw);aspect-ratio:16/10;border-radius:16px;overflow:hidden;background:var(--bg2);cursor:pointer;filter:brightness(.32) blur(3px);transform:scale(.86);transition:filter .7s var(--ease),transform .7s var(--ease)}
+.ls.on{filter:none;transform:none;cursor:default;box-shadow:0 40px 90px -30px #000}
+.lb-tr:not(.an) .ls{transition:none}
+.ls img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;pointer-events:none;user-select:none}
+.lb .cap{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center;padding:0 16px}
 .lb .cap b{font-weight:800;font-size:18px}
 .lb .cap span{color:var(--mute)}
 .rb{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;transition:background .25s,color .25s,border-color .25s}
 .rb:hover{background:var(--lime);color:var(--bg);border-color:var(--lime)}
-.lb .x{position:absolute;right:16px;top:16px}
-.lb .pv,.lb .nx{position:absolute;top:50%;transform:translateY(-50%)}
+.lb .x{position:absolute;right:16px;top:16px;z-index:2}
+.lb .pv,.lb .nx{position:absolute;top:50%;transform:translateY(-50%);z-index:2;background:rgba(13,13,12,.6)}
 .lb .pv{left:16px}.lb .nx{right:16px}
 @media (max-width:760px){.lb .pv,.lb .nx{top:auto;bottom:16px;transform:none}}
 
@@ -248,8 +254,6 @@
 .send{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media (max-width:480px){.send{grid-template-columns:1fr}}
 .send .pill{height:56px;font-size:15.5px}
-.p-wa{background:#25D366;color:#06210f}.p-wa:hover{background:var(--ink)}
-.p-tg{background:#229ED9;color:#fff}.p-tg:hover{background:var(--ink);color:var(--bg)}
 .form small.hint{color:var(--mute);font-size:13px;margin-top:-8px}
 @media (prefers-reduced-motion:reduce){.h1 .ln>span{transform:none}.big .w{opacity:1}.nt{opacity:1;transform:none}}
 </style>
@@ -344,7 +348,7 @@
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Просмотр">
   <button class="rb x" data-x aria-label="Закрыть"><svg class="ic"><use href="#i-x"/></svg></button>
   <button class="rb pv" data-p aria-label="Предыдущий"><svg class="ic"><use href="#i-l"/></svg></button>
-  <img id="lbImg" alt="">
+  <div class="lb-vp" id="lbVp"><div class="lb-tr" id="lbTr"></div></div>
   <div class="cap"><b id="lbT"></b><span id="lbS"></span></div>
   <button class="rb nx" data-n aria-label="Следующий"><svg class="ic"><use href="#i-r"/></svg></button>
 </div>
@@ -536,7 +540,7 @@
       <div class="links">
         <a class="lk rv" href="https://t.me/StasWebDesign" target="_blank" rel="noopener"><span class="ico"><svg><use href="#i-tg"/></svg></span><span class="t"><small>Telegram</small><b>@StasWebDesign</b></span><span class="go"><svg class="ic"><use href="#i-arr"/></svg></span></a>
         <a class="lk rv d1" href="https://wa.me/79808852180?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%A1%D1%82%D0%B0%D1%81!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82." target="_blank" rel="noopener"><span class="ico"><svg><use href="#i-wa"/></svg></span><span class="t"><small>WhatsApp</small><b>@Stas.Web.Design</b></span><span class="go"><svg class="ic"><use href="#i-arr"/></svg></span></a>
-        <a class="lk rv d2" href="https://www.instagram.com/stas.web.design/" target="_blank" rel="noopener"><span class="ico"><svg><use href="#i-ig"/></svg></span><span class="t"><small>Instagram</small><b>@stas.web.design</b></span><span class="go"><svg class="ic"><use href="#i-arr"/></svg></span></a>
+        <a class="lk rv d2" href="https://www.instagram.com/stas.web.design/" target="_blank" rel="noopener"><span class="ico"><svg><use href="#i-ig"/></svg></span><span class="t"><small>Instagram*</small><b>@stas.web.design</b></span><span class="go"><svg class="ic"><use href="#i-arr"/></svg></span></a>
       </div>
     </div>
   </div>
@@ -545,8 +549,9 @@
 
 <footer>
   <div class="wrap">
-    <div class="fbig" aria-hidden="true">StasWebDesign</div>
+    <svg class="fbig" aria-hidden="true" viewBox="0 0 1300 170"><text x="0" y="160">StasWebDesign</text></svg>
     <div class="fbar"><span>© 2026 Stas Web Design · Разработка сайтов по всей России</span><nav><a href="#works">Работы</a><a href="#prices">Цены</a><a href="#faq">Вопросы</a><a href="projects/">Все проекты</a></nav><a href="#top">Наверх ↑</a></div>
+    <p class="fnote">* Instagram принадлежит компании Meta, деятельность которой признана экстремистской и запрещена на территории России.</p>
   </div>
 </footer>
 
@@ -573,13 +578,26 @@ const CONC=[
 (()=>{const card=(c,k)=>`<button class="cc" data-k="${k}" aria-label="${c[1]}, ${c[2]}"><img src="works/${c[0]}.jpg" alt="Дизайн сайта: ${c[1]}" loading="lazy"><span>${c[1]}<em>${c[2]}</em></span></button>`;
   const h=Math.ceil(CONC.length/2),a=CONC.slice(0,h).map((c,k)=>card(c,k)).join(''),b=CONC.slice(h).map((c,k)=>card(c,k+h)).join('');
   $('#row1').innerHTML=a+a;$('#row2').innerHTML=b+b;
-  const lb=$('#lb');let ci=0;
-  function show(k){ci=(k+CONC.length)%CONC.length;const c=CONC[ci];$('#lbImg').src=`works/${c[0]}.jpg`;$('#lbImg').alt=c[1];$('#lbT').textContent=c[1];$('#lbS').textContent=c[2]+` · ${ci+1} / ${CONC.length}`}
+  const lb=$('#lb'),tr=$('#lbTr'),vp=$('#lbVp'),N=CONC.length;let pos=N,busy=null;
+  tr.innerHTML=[0,1,2].map(r=>CONC.map((c,k)=>`<div class="ls" data-i="${r*N+k}"><img src="works/${c[0]}.jpg" alt="${c[1]}" loading="lazy"></div>`).join('')).join('');
+  const sl=[...tr.children];
+  function place(anim){const w=sl[0].offsetWidth,g=parseFloat(getComputedStyle(tr).columnGap)||0;
+    tr.classList.toggle('an',!!anim);tr.style.transform=`translateX(${vp.clientWidth/2-w/2-pos*(w+g)}px)`;
+    sl.forEach((s,i)=>s.classList.toggle('on',i===pos));
+    const ci=((pos%N)+N)%N,c=CONC[ci];$('#lbT').textContent=c[1];$('#lbS').textContent=c[2]+` · ${ci+1} / ${N}`}
+  function norm(){if(pos<N||pos>=2*N){pos=N+((pos%N)+N)%N;place(false);void tr.offsetWidth}}
+  function step(d){norm();pos+=d;place(true)}
+  tr.addEventListener('transitionend',e=>{if(e.target===tr)norm()});
+  function open(k){pos=N+k;lb.classList.add('open');document.body.style.overflow='hidden';requestAnimationFrame(()=>place(false))}
   function close(){lb.classList.remove('open');document.body.style.overflow=''}
-  $('#design').addEventListener('click',e=>{const b=e.target.closest('.cc');if(!b)return;show(+b.dataset.k);lb.classList.add('open');document.body.style.overflow='hidden'});
-  lb.addEventListener('click',e=>{if(e.target===lb||e.target.closest('[data-x]'))close();else if(e.target.closest('[data-p]'))show(ci-1);else if(e.target.closest('[data-n]'))show(ci+1)});
-  addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(ci-1);if(e.key==='ArrowRight')show(ci+1)});
-  let sx=0;lb.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});lb.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>50)show(ci+(d<0?1:-1))});
+  $('#design').addEventListener('click',e=>{const b=e.target.closest('.cc');if(!b)return;open(+b.dataset.k)});
+  lb.addEventListener('click',e=>{const s=e.target.closest('.ls');
+    if(s){const p=+s.dataset.i;if(p!==pos){pos=p;place(true)}return}
+    if(e.target.closest('[data-x]')||e.target===lb||e.target===vp||e.target===tr)close();else if(e.target.closest('[data-p]'))step(-1);else if(e.target.closest('[data-n]'))step(1)});
+  addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1)});
+  addEventListener('resize',()=>{if(lb.classList.contains('open'))place(false)});
+  let sx=0,sy=0;vp.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
+  vp.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(d)>40&&Math.abs(d)>Math.abs(dy))step(d<0?1:-1)});
 })();
 /* marquee */
 const mw=['Лендинги','<span class="it">Многостраничные сайты</span>','Интернет-магазины','<span class="it">Демо бесплатно</span>','Заявки в мессенджер','<span class="it">Адаптив</span>','SEO'];
