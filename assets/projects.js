@@ -14,7 +14,7 @@ window.renderProjects = function (el, limit, base) {
   el.innerHTML = list.map(function (p, k) {
     return '<a class="pj rv' + (k % 2 ? ' d1' : '') + '" href="' + p.url + '" target="_blank" rel="noopener">' +
       '<div class="pj-f"><div class="pj-bar"><i></i><i></i><i></i></div>' +
-      '<div class="pj-s"><img src="' + base + p.img + '" alt="Сайт ' + p.name + '" loading="lazy" width="1280" height="800"></div></div>' +
+      '<div class="pj-s"><img src="' + base + p.img + '" alt="' + p.name + ': ' + p.tag.toLowerCase() + ', первый экран сайта" loading="lazy" width="1280" height="800"></div></div>' +
       '<div class="pj-m"><div><b>' + p.name + '</b><p>' + p.desc + '</p></div><span class="tag">' + p.tag + '</span></div></a>';
   }).join('');
 };

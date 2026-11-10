@@ -1,3 +1,16 @@
+/* fonts (self-hosted, fontsource) */
+@font-face { font-family: 'Manrope'; font-style: normal; font-display: swap; font-weight: 200 800; src: url(fonts/manrope-cyrillic-wght-normal.woff2) format('woff2'); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family: 'Manrope'; font-style: normal; font-display: swap; font-weight: 200 800; src: url(fonts/manrope-latin-ext-wght-normal.woff2) format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'Manrope'; font-style: normal; font-display: swap; font-weight: 200 800; src: url(fonts/manrope-latin-wght-normal.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-display: swap; font-weight: 500; src: url(fonts/cormorant-garamond-cyrillic-500-italic.woff2) format('woff2'); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-display: swap; font-weight: 500; src: url(fonts/cormorant-garamond-latin-ext-500-italic.woff2) format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-display: swap; font-weight: 500; src: url(fonts/cormorant-garamond-latin-500-italic.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-display: swap; font-weight: 600; src: url(fonts/cormorant-garamond-cyrillic-600-italic.woff2) format('woff2'); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-display: swap; font-weight: 600; src: url(fonts/cormorant-garamond-latin-ext-600-italic.woff2) format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'Cormorant Garamond'; font-style: italic; font-display: swap; font-weight: 600; src: url(fonts/cormorant-garamond-latin-600-italic.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-display: swap; font-weight: 500; src: url(fonts/jetbrains-mono-cyrillic-500-normal.woff2) format('woff2'); unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116; }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-display: swap; font-weight: 500; src: url(fonts/jetbrains-mono-latin-ext-500-normal.woff2) format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-display: swap; font-weight: 500; src: url(fonts/jetbrains-mono-latin-500-normal.woff2) format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
 :root{
   --bg:#0d0d0c;--bg2:#151514;--bg3:#1d1d1b;--ink:#f3f1ea;--mute:#9a9890;--soft:#c9c7bf;--line:rgba(243,241,234,.1);
   --lime:#D7FF3B;--lime-d:#b9e01c;
@@ -154,3 +167,5 @@ html.lenis{scroll-behavior:auto}
 .cur-text .cur-r,.cur-text .cur-d{opacity:0}
 html.has-cur,html.has-cur *{cursor:none!important}
 html.has-cur input:not([type=radio]):not([type=checkbox]),html.has-cur textarea{cursor:text!important}
+.fbar span a{color:var(--soft);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(243,241,234,.25);transition:color .2s}
+.fbar span a:hover{color:var(--lime)}
