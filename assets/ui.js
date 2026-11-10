@@ -52,3 +52,16 @@
     requestAnimationFrame(loop);
   })();
 })();
+
+/* цели Метрики: клики в мессенджеры */
+(()=>{
+  const goal=g=>{try{window.ym&&ym(114169391,'reachGoal',g)}catch(e){}};
+  document.addEventListener('click',e=>{
+    const el=e.target.closest('a,button');if(!el)return;
+    const h=el.getAttribute('href')||'';
+    if(el.id==='sTg'||/t\.me\//.test(h))goal('click_tg');
+    else if(el.id==='sWa'||/wa\.me\//.test(h))goal('click_wa');
+    else if(/instagram\.com/.test(h))goal('click_ig');
+    if(el.id==='sTg'||el.id==='sWa')goal('form_send');
+  },true);
+})();
