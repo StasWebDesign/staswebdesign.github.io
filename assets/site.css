@@ -123,3 +123,34 @@ footer{position:relative;z-index:1;padding:40px 0 30px;color:var(--mute);font-si
 .rv.in{opacity:1;transform:none}
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+/* ---------- smooth scroll (Lenis) ---------- */
+html.lenis,html.lenis body{height:auto}
+html.lenis{scroll-behavior:auto}
+.lenis.lenis-stopped{overflow:clip}
+.lenis [data-lenis-prevent]{overscroll-behavior:contain}
+
+/* ---------- scrollbar ---------- */
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:#34342f;border:3px solid var(--bg);border-radius:99px;min-height:60px}
+::-webkit-scrollbar-thumb:hover{background:var(--lime)}
+::-webkit-scrollbar-thumb:active{background:var(--lime-d)}
+::-webkit-scrollbar-corner{background:var(--bg)}
+@supports not selector(::-webkit-scrollbar){html{scrollbar-color:#34342f var(--bg);scrollbar-width:thin}}
+
+/* ---------- cursor ---------- */
+.cur-r,.cur-d{position:fixed;left:0;top:0;z-index:2147483000;pointer-events:none;opacity:0;transition:opacity .3s}
+.cur-on .cur-r,.cur-on .cur-d{opacity:1}
+.cur-d{width:0;height:0}
+.cur-d::before{content:"";position:absolute;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--lime);transition:transform .3s var(--ease)}
+.cur-r{width:0;height:0}
+.cur-r span{position:absolute;width:38px;height:38px;margin:-19px 0 0 -19px;border-radius:50%;border:1.5px solid rgba(243,241,234,.45);display:grid;place-items:center;font:800 0px/1 var(--sans);letter-spacing:-.01em;color:var(--bg);white-space:nowrap;transition:width .45s var(--ease),height .45s var(--ease),margin .45s var(--ease),background .3s,border-color .3s,font-size .3s,transform .3s var(--ease)}
+.cur-hot .cur-r span{width:62px;height:62px;margin:-31px 0 0 -31px;border-color:var(--lime);background:rgba(215,255,59,.12)}
+.cur-hot .cur-d::before{transform:scale(.6)}
+.cur-view .cur-r span{width:96px;height:96px;margin:-48px 0 0 -48px;border-color:var(--lime);background:var(--lime);font-size:14px}
+.cur-view .cur-d::before{transform:scale(0)}
+.cur-down .cur-r span{transform:scale(.82)}
+.cur-text .cur-r,.cur-text .cur-d{opacity:0}
+html.has-cur,html.has-cur *{cursor:none!important}
+html.has-cur input:not([type=radio]):not([type=checkbox]),html.has-cur textarea{cursor:text!important}

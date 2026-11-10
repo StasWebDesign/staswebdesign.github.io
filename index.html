@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=5">
+<link rel="stylesheet" href="assets/site.css?v=6">
 <style>
 /* hero */
 .hero{position:relative;min-height:100svh;padding:130px 0 60px;display:flex;flex-direction:column;justify-content:center;z-index:1}
@@ -237,7 +237,9 @@
 .qa summary i::before,.qa summary i::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2px;background:currentColor;transform:translate(-50%,-50%)}
 .qa summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
 .qa details[open] summary i{transform:rotate(45deg);background:var(--lime);border-color:var(--lime);color:var(--bg)}
-.qa .ans{color:var(--soft);padding:0 56px 26px 0;font-size:16px;display:flex;flex-direction:column;gap:10px}
+.qa .ans{color:var(--soft);padding:0 56px 26px 0;font-size:16px;display:flex;flex-direction:column;gap:10px;overflow:hidden}
+.qa details.closing summary i{transform:none;background:transparent;border-color:var(--line);color:inherit}
+.qa details.closing summary{color:inherit}
 .qa .ans b{color:var(--ink)}
 
 /* contact */
@@ -563,6 +565,8 @@
   </div>
 </footer>
 
+<script src="assets/lenis.min.js?v=1"></script>
+<script src="assets/ui.js?v=1"></script>
 <script src="assets/projects.js?v=4"></script>
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
@@ -596,8 +600,8 @@ const CONC=[
   function norm(){if(pos<N||pos>=2*N){pos=N+((pos%N)+N)%N;place(false);void tr.offsetWidth}}
   function step(d){norm();pos+=d;place(true)}
   tr.addEventListener('transitionend',e=>{if(e.target===tr)norm()});
-  function open(k){pos=N+k;lb.classList.add('open');document.body.style.overflow='hidden';requestAnimationFrame(()=>place(false))}
-  function close(){lb.classList.remove('open');document.body.style.overflow=''}
+  function open(k){pos=N+k;lb.classList.add('open');document.body.style.overflow='hidden';window.lenis&&lenis.stop();requestAnimationFrame(()=>place(false))}
+  function close(){lb.classList.remove('open');document.body.style.overflow='';window.lenis&&lenis.start()}
   $('#design').addEventListener('click',e=>{const b=e.target.closest('.cc');if(!b)return;open(+b.dataset.k)});
   lb.addEventListener('click',e=>{const s=e.target.closest('.ls');
     if(s){const p=+s.dataset.i;if(p!==pos){pos=p;place(true)}return}
@@ -623,7 +627,16 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return
   if(t.querySelector('#edP'))runEdit();if(t.querySelector('#bars'))runBars()}),{threshold:.15});
 $$('.rv,.st,.wy').forEach(el=>io.observe(el));
 /* FAQ: one open at a time */
-$$('.qa details').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)$$('.qa details').forEach(o=>{if(o!==d)o.open=false})}));
+(()=>{const all=$$('.qa details'),rm=matchMedia('(prefers-reduced-motion: reduce)').matches,E='cubic-bezier(.2,.8,.2,1)';
+  const ans=d=>d.querySelector('.ans'),pb=a=>getComputedStyle(a).paddingBottom;
+  function show(d){const a=ans(d),from=d.open?a.offsetHeight:0;a.getAnimations().forEach(x=>x.cancel());d.classList.remove('closing');d.open=true;
+    const to=a.offsetHeight,p=pb(a);all.forEach(o=>{if(o!==d&&o.open&&!o.classList.contains('closing'))hide(o)});if(rm)return;
+    a.animate([{height:from+'px',paddingBottom:from?p:'0px',opacity:from?1:0,transform:from?'none':'translateY(-6px)'},{height:to+'px',paddingBottom:p,opacity:1,transform:'none'}],{duration:520,easing:E})}
+  function hide(d){const a=ans(d),from=a.offsetHeight;a.getAnimations().forEach(x=>x.cancel());d.classList.add('closing');
+    if(rm){d.open=false;d.classList.remove('closing');return}
+    a.animate([{height:from+'px',opacity:1},{height:'0px',paddingBottom:'0px',opacity:0}],{duration:380,easing:E}).onfinish=()=>{d.open=false;d.classList.remove('closing')}}
+  all.forEach(d=>d.querySelector('summary').addEventListener('click',e=>{e.preventDefault();(d.open&&!d.classList.contains('closing'))?hide(d):show(d)}));
+})();
 /* lead form -> messenger */
 (()=>{const msg=()=>{const t=$('#lead input[name=t]:checked').value,b=$('#fBiz').value.trim(),n=$('#fName').value.trim();
     return ['Здравствуйте, Стас! Хочу бесплатное демо сайта.','Тип сайта: '+t,b?'О бизнесе: '+b:'',n?'Меня зовут '+n:''].filter(Boolean).join('\n')};
