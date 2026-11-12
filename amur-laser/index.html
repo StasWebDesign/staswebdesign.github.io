@@ -997,9 +997,10 @@ html.lenis{scroll-behavior:auto}
   function onScroll(){
     var y=W.scrollY,h=innerHeight;
     hd.classList.toggle('sc',y>40);
-    hd.classList.toggle('hide',y>ly&&y>h*.9&&!b.classList.contains('mopen'));
+    var dy=y-ly;
+    if(y<h*.9||b.classList.contains('mopen')){hd.classList.remove('hide');ly=y}
+    else if(Math.abs(dy)>12){hd.classList.toggle('hide',dy>0);ly=y}
     var stk=hd.classList.contains('hide')?24:hd.offsetHeight+24;if(stk!==W._stk){W._stk=stk;d.documentElement.style.setProperty('--stk',stk+'px')}
-    ly=y;
     mbar.classList.toggle('on',y>h*.8&&y<d.documentElement.scrollHeight-h*1.4);
     if(!rm&&y<h*1.2){
       arch.style.transform='translate3d(0,'+(y*.18)+'px,0)';
