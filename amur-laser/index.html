@@ -320,6 +320,8 @@ a:hover .arr,button:hover .arr{width:34px}
 .faq summary i::after{transform:rotate(90deg)}
 .faq details[open] summary i::after{transform:rotate(0)}
 .faq .ans{overflow:hidden}
+.faq .ans p{transition:opacity .6s var(--ease),transform .7s var(--ease)}
+.faq details:not([open]) .ans p,.faq details.closing .ans p{opacity:0;transform:translateY(-8px)}
 .faq .ans p{margin:0 0 28px;max-width:640px;opacity:.74;font-size:15.5px}
 
 /* booking + contacts */
@@ -399,6 +401,42 @@ a:hover .arr,button:hover .arr{width:34px}
 .im{clip-path:inset(12% 0 0 0);transition:clip-path 1.4s var(--ease)}
 .im img{transform:scale(1.15);transition:transform 1.8s var(--ease)}
 .im.in{clip-path:inset(0)}.im.in img{transform:none}
+
+
+/* smooth scroll (Lenis) */
+html.lenis,html.lenis body{height:auto}
+html.lenis{scroll-behavior:auto}
+.lenis.lenis-stopped{overflow:clip}
+.lenis [data-lenis-prevent]{overscroll-behavior:contain}
+
+/* scrollbar */
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:var(--ink)}
+::-webkit-scrollbar-thumb{background:#8d8783;border-radius:10px;border:3px solid var(--ink);min-height:60px}
+::-webkit-scrollbar-thumb:hover{background:var(--cr)}
+::-webkit-scrollbar-corner{background:var(--ink)}
+.md .bx::-webkit-scrollbar-track{background:var(--g)}
+.md .bx::-webkit-scrollbar-thumb{border-color:var(--g)}
+@supports not selector(::-webkit-scrollbar){html{scrollbar-width:thin;scrollbar-color:#8d8783 var(--ink)}}
+
+/* cursor */
+.cur{display:none}
+@media (hover:hover) and (pointer:fine){
+  html.has-cur,html.has-cur *{cursor:none!important}
+  html.has-cur input,html.has-cur textarea{cursor:text!important}
+  html.has-cur select{cursor:default!important}
+  .cur{display:block;position:fixed;inset:0;z-index:999;pointer-events:none;mix-blend-mode:difference;opacity:0;transition:opacity .4s}
+  .cur.on{opacity:1}.cur.hid{opacity:0}
+  .cur .w{position:fixed;left:0;top:0;will-change:transform}
+  .cur .cd{display:block;width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:#f1ece6;transition:transform .35s var(--ease)}
+  .cur .cr{display:grid;place-items:center;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;border:1px solid rgba(241,236,230,.75);transition:width .5s var(--ease),height .5s var(--ease),margin .5s var(--ease),background .4s,border-color .4s,transform .35s var(--ease)}
+  .cur .cr span{font:400 11px/1 var(--cap);letter-spacing:.18em;text-transform:uppercase;color:#000;opacity:0;transition:opacity .3s;white-space:nowrap;padding-left:.18em}
+  .cur.hov .cr{width:64px;height:64px;margin:-32px 0 0 -32px;background:#f1ece6;border-color:transparent}
+  .cur.hov .cd,.cur.lbl .cd{transform:scale(0)}
+  .cur.lbl .cr{width:92px;height:92px;margin:-46px 0 0 -46px;background:#f1ece6;border-color:transparent}
+  .cur.lbl .cr span{opacity:1;transition-delay:.12s}
+  .cur.dn .cr{transform:scale(.82)}
+}
 
 /* responsive */
 @media (max-width:1240px){.hd .ph{display:none}}
@@ -492,7 +530,7 @@ a:hover .arr,button:hover .arr{width:34px}
   </div>
 </header>
 
-<div class="mnav" id="mnav">
+<div class="mnav" id="mnav" data-lenis-prevent>
   <a class="l" href="#epil"><small>I</small>Эпиляция</a>
   <a class="l" href="#body"><small>II</small>Коррекция фигуры</a>
   <a class="l" href="#face"><small>III</small>Лицо</a>
@@ -860,7 +898,7 @@ a:hover .arr,button:hover .arr{width:34px}
 
 <div class="md" id="md" role="dialog" aria-modal="true" aria-labelledby="md-t">
   <div class="bg" data-close></div>
-  <div class="bx">
+  <div class="bx" data-lenis-prevent>
     <button class="x" data-close aria-label="Закрыть"></button>
     <p class="kick">Запись</p>
     <h3 class="h3" id="md-t">Записаться <em>на процедуру</em></h3>
@@ -877,13 +915,31 @@ a:hover .arr,button:hover .arr{width:34px}
 </div>
 
 <div class="mbar" id="mbar"><button class="btn" data-book><span>Записаться</span></button><a class="wa" href="https://wa.me/79242087887" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a></div>
+<div class="cur" id="cur" aria-hidden="true"><div class="w" id="cr"><i class="cr"><span></span></i></div><div class="w" id="cd"><i class="cd"></i></div></div>
 <div class="toast" id="toast">Открываем WhatsApp с вашей заявкой…</div>
 
+<script src="js/lenis.min.js"></script>
 <script>
 (function(){
   var d=document,b=d.body,W=window,rm=W.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var $=function(s,c){return (c||d).querySelector(s)},$$=function(s,c){return [].slice.call((c||d).querySelectorAll(s))};
   var WA='79242087887';
+
+  /* smooth scroll */
+  var lenis=null;
+  if(!rm&&W.Lenis){
+    lenis=new Lenis({lerp:.075,wheelMultiplier:.95,smoothWheel:true,autoRaf:true});
+    W.lenis=lenis;
+  }
+  function lock(on){if(lenis){on?lenis.stop():lenis.start()}else{b.style.overflow=on?'hidden':''}}
+  d.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]');if(!a)return;
+    var id=a.getAttribute('href'),t=id==='#top'?0:d.querySelector(id);if(t===null)return;
+    e.preventDefault();
+    if(b.classList.contains('mopen'))menu(false);
+    if(lenis)lenis.scrollTo(t,{offset:id==='#top'?0:-70,duration:1.5,force:true,easing:function(x){return 1-Math.pow(1-x,4)}});
+    else (t===0?W.scrollTo({top:0,behavior:'smooth'}):t.scrollIntoView({behavior:'smooth'}));
+  });
   var SERVICES=['Лазерная эпиляция','Лазерная эпиляция (мужчинам)','Массаж сферами','Обёртывание','RF-лифтинг лица','RF-лифтинг тела','Фотоомоложение','Интимное отбеливание','Консультация'];
 
   /* intro */
@@ -918,9 +974,8 @@ a:hover .arr,button:hover .arr{width:34px}
 
   /* burger */
   var bg=$('#burger');
-  function menu(o){b.classList.toggle('mopen',o);bg.setAttribute('aria-expanded',o);b.style.overflow=o?'hidden':''}
+  function menu(o){b.classList.toggle('mopen',o);bg.setAttribute('aria-expanded',o);lock(o)}
   bg.addEventListener('click',function(){menu(!b.classList.contains('mopen'))});
-  $$('#mnav a').forEach(function(a){a.addEventListener('click',function(){menu(false)})});
 
   /* tabs */
   $$('.tabs button').forEach(function(t){t.addEventListener('click',function(){
@@ -968,15 +1023,67 @@ a:hover .arr,button:hover .arr{width:34px}
     last=d.activeElement;
     var s=$('select',mf);if(svc&&SERVICES.indexOf(svc)>-1)s.value=svc;else s.selectedIndex=0;
     setZone(mf,zone);$('input[name=friend]',mf).checked=!!friend;
-    md.classList.add('on');b.style.overflow='hidden';setTimeout(function(){$('input',mf).focus({preventScroll:true})},350);
+    md.classList.add('on');lock(true);setTimeout(function(){$('input',mf).focus({preventScroll:true})},350);
   }
-  function closeMd(){if(!md.classList.contains('on'))return;md.classList.remove('on');if(!b.classList.contains('mopen'))b.style.overflow='';if(last)last.focus({preventScroll:true})}
+  function closeMd(){if(!md.classList.contains('on'))return;md.classList.remove('on');if(!b.classList.contains('mopen'))lock(false);if(last)last.focus({preventScroll:true})}
   d.addEventListener('click',function(e){
     var t=e.target.closest('[data-book]');
     if(t){e.preventDefault();if(b.classList.contains('mopen'))menu(false);openMd(t.dataset.book,t.dataset.zone,t.dataset.friend);return}
     if(e.target.closest('[data-close]'))closeMd();
   });
-  d.addEventListener('keydown',function(e){if(e.key==='Escape'){closeMd();menu(false)}});
+  d.addEventListener('keydown',function(e){if(e.key==='Escape'){closeMd();if(b.classList.contains('mopen'))menu(false)}});
+
+  /* faq: smooth open/close */
+  var EZ='cubic-bezier(.22,1,.36,1)';
+  function toggleDet(det,open){
+    var a=det.querySelector('.ans');
+    if(det._an){det._an.cancel();det._an=null}
+    if(rm||!a.animate){det.open=open;return}
+    if(open){
+      det.open=true;det.classList.remove('closing');
+      var h=a.scrollHeight;
+      det._an=a.animate([{height:'0px'},{height:h+'px'}],{duration:700,easing:EZ});
+      det._an.onfinish=function(){det._an=null};
+    }else{
+      var h2=a.offsetHeight;det.classList.add('closing');
+      det._an=a.animate([{height:h2+'px'},{height:'0px'}],{duration:550,easing:EZ});
+      det._an.onfinish=function(){det.open=false;det.classList.remove('closing');det._an=null};
+    }
+  }
+  $$('.faq details').forEach(function(det){
+    det.querySelector('summary').addEventListener('click',function(e){
+      e.preventDefault();
+      var willOpen=!det.open||det.classList.contains('closing');
+      if(willOpen)$$('.faq details').forEach(function(o){if(o!==det&&o.open&&!o.classList.contains('closing'))toggleDet(o,false)});
+      toggleDet(det,willOpen);
+    });
+  });
+
+  /* cursor */
+  var cur=$('#cur');
+  if(W.matchMedia('(hover:hover) and (pointer:fine)').matches&&!rm){
+    d.documentElement.classList.add('has-cur');
+    var cr=$('#cr'),cdt=$('#cd'),lab=$('span',cr),mx=-100,my=-100,rx=-100,ry=-100;
+    W.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cur.classList.add('on');cdt.style.transform='translate3d('+mx+'px,'+my+'px,0)'},{passive:true});
+    (function loop(){rx+=(mx-rx)*.16;ry+=(my-ry)*.16;cr.style.transform='translate3d('+rx+'px,'+ry+'px,0)';requestAnimationFrame(loop)})();
+    d.addEventListener('mouseleave',function(){cur.classList.remove('on')});
+    W.addEventListener('mousedown',function(){cur.classList.add('dn')});
+    W.addEventListener('mouseup',function(){cur.classList.remove('dn')});
+    d.addEventListener('mouseover',function(e){
+      var t=e.target;
+      if(t.closest('input,textarea,select,iframe')){cur.classList.add('hid');return}
+      cur.classList.remove('hid');
+      var l='';
+      if(t.closest('[data-book]'))l='Запись';
+      else if(t.closest('.card'))l='Смотреть';
+      else if(t.closest('.rv-track'))l='Листать';
+      else if(t.closest('.hero .arch'))l='в сердце';
+      var h=!l&&t.closest('a,button,summary,label');
+      if(l)lab.textContent=l;
+      cur.classList.toggle('lbl',!!l);
+      cur.classList.toggle('hov',!!h);
+    });
+  }
 })();
 </script>
 </body>
