@@ -186,8 +186,8 @@ a:hover .arr,button:hover .arr{width:34px}
 
 /* epilation */
 .epi{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,7vw,120px);align-items:start}
-.epi .vis{position:sticky;top:110px}
-.epi .vis .ar{aspect-ratio:4/5.2;border-radius:999px 999px 0 0;overflow:hidden}
+.epi .vis{position:sticky;top:var(--stk,24px);transition:top .6s var(--ease)}
+.epi .vis .ar{aspect-ratio:4/5.2;max-height:calc(100vh - 48px);width:100%;border-radius:999px 999px 0 0;overflow:hidden}
 .epi .vis img{width:100%;height:100%;object-fit:cover}
 .epi .vis .bd{position:absolute;right:-28px;bottom:40px;width:150px;height:150px}
 .seal{position:relative;overflow:hidden;border-radius:50%;background:var(--cr);color:var(--ink);display:grid;place-items:center}
@@ -635,7 +635,7 @@ html.lenis{scroll-behavior:auto}
       <div class="vis">
         <div class="ar im"><img src="img/legs.jpg" alt="Мастер проводит лазерную эпиляцию ног" loading="lazy" style="object-position:55% 50%"></div>
         <div class="bd seal" aria-hidden="true">
-          <svg class="ring" viewBox="0 0 150 150"><defs><path id="rp1" d="M75 75m-58 0a58 58 0 1 1 116 0a58 58 0 1 1-116 0"/></defs><text><textPath href="#rp1">без боли · диодный лазер · без боли · диодный лазер ·</textPath></text></svg>
+          <svg class="ring" viewBox="0 0 150 150"><defs><path id="rp1" d="M75 75m-58 0a58 58 0 1 1 116 0a58 58 0 1 1-116 0"/></defs><text><textPath href="#rp1" textLength="356" lengthAdjust="spacing">без боли · диодный лазер · без боли · диодный лазер ·</textPath></text></svg>
           <i class="mk cupid"></i>
         </div>
       </div>
@@ -780,7 +780,7 @@ html.lenis{scroll-behavior:auto}
     <div class="promo">
       <div class="pr-main rv">
         <div class="seal" aria-hidden="true">
-          <svg class="ring" viewBox="0 0 150 150"><defs><path id="rp2" d="M75 75m-58 0a58 58 0 1 1 116 0a58 58 0 1 1-116 0"/></defs><text><textPath href="#rp2">если вы приходите не одна · −20% · подружки ·</textPath></text></svg>
+          <svg class="ring" viewBox="0 0 150 150"><defs><path id="rp2" d="M75 75m-58 0a58 58 0 1 1 116 0a58 58 0 1 1-116 0"/></defs><text><textPath href="#rp2" textLength="356" lengthAdjust="spacing">если вы приходите не одна · −20% · подружки ·</textPath></text></svg>
           <i class="mk cupid"></i>
         </div>
         <p class="pct">−20%</p>
@@ -998,6 +998,7 @@ html.lenis{scroll-behavior:auto}
     var y=W.scrollY,h=innerHeight;
     hd.classList.toggle('sc',y>40);
     hd.classList.toggle('hide',y>ly&&y>h*.9&&!b.classList.contains('mopen'));
+    var stk=hd.classList.contains('hide')?24:hd.offsetHeight+24;if(stk!==W._stk){W._stk=stk;d.documentElement.style.setProperty('--stk',stk+'px')}
     ly=y;
     mbar.classList.toggle('on',y>h*.8&&y<d.documentElement.scrollHeight-h*1.4);
     if(!rm&&y<h*1.2){
