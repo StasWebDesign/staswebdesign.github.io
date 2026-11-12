@@ -454,6 +454,11 @@ html.lenis{scroll-behavior:auto}
   .cur.lbl .cr{width:92px;height:92px;margin:-46px 0 0 -46px;background:#f1ece6;border-color:transparent}
   .cur.lbl .cr span{opacity:1;transition-delay:.12s}
   .cur.dn .cr{transform:scale(.82)}
+  .cur.ph{mix-blend-mode:normal}
+  .cur.ph .cd{transform:scale(0)}
+  .cur.ph .cr{width:44px;height:44px;margin:-22px 0 0 -22px;background:rgba(45,42,41,.88);border-color:transparent;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+  .cur.ph.lbl .cr{width:96px;height:96px;margin:-48px 0 0 -48px}
+  .cur.ph .cr span{color:var(--cr)}
 }
 
 /* responsive */
@@ -1106,13 +1111,14 @@ html.lenis{scroll-behavior:auto}
       var t=e.target;
       if(t.closest('input,textarea,select,iframe,.leaflet-control')){cur.classList.add('hid');return}
       cur.classList.remove('hid');
-      var l='';
-      if(t.closest('[data-book]'))l='Запись';
+      var l='',ph=!t.closest('#map')&&!t.closest('[data-book]')&&(t.tagName==='IMG'||!!t.closest('.card,.hero .arch'));
+      if(t.closest('[data-book]'))l='';
       else if(t.closest('.card'))l='Смотреть';
       else if(t.closest('.rv-track'))l='Листать';
       else if(t.closest('.hero .arch'))l='в сердце';
-      var h=!l&&t.closest('a,button,summary,label');
+      var h=!l&&!ph&&t.closest('a,button,summary,label');
       if(l)lab.textContent=l;
+      cur.classList.toggle('ph',ph);
       cur.classList.toggle('lbl',!!l);
       cur.classList.toggle('hov',!!h);
     });
