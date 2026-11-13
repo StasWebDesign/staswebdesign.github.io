@@ -128,7 +128,7 @@ svg.i{width:20px;height:20px;flex:none;display:block}
 .big{position:absolute;left:0;right:0;top:calc(13svh + 6px);text-align:center;font-weight:800;font-size:var(--F);line-height:.86;letter-spacing:-.045em;color:var(--pe);z-index:1;white-space:nowrap;user-select:none;transform:translate3d(0,var(--p,0px),0)}
 .big span{display:inline-block;transition:transform 1.3s var(--ez),opacity 1s var(--ez);transition-delay:calc(var(--i)*.06s)}
 .duo-w{position:absolute;left:0;right:0;bottom:0;top:0;z-index:2;pointer-events:none}
-.duo{position:absolute;left:50%;bottom:-4.6svh;height:min(80svh,64vw);width:auto;max-width:none;transform:translate3d(-50%,var(--q,0px),0);transition:opacity 1.2s var(--ez),translate 1.5s var(--ez);pointer-events:auto}
+.duo{position:absolute;left:50%;bottom:-4.6svh;height:min(80svh,64vw);width:auto;max-width:none;transform:translate3d(-50%,var(--q,0px),0);transition:opacity 1.2s var(--ez),translate 1.5s var(--ez);pointer-events:none;user-select:none;-webkit-user-drag:none}
 .hl{position:absolute;left:var(--pad);bottom:21svh;width:330px;z-index:3;font-size:15px;line-height:1.6;color:rgba(255,243,230,.9)}
 .hl h1{font-size:25px;line-height:1.24;font-weight:700;letter-spacing:-.015em;color:var(--cr);margin-bottom:14px}
 .hl .btn{margin-top:26px}
@@ -274,12 +274,9 @@ svg.i{width:20px;height:20px;flex:none;display:block}
 
 /* creams */
 .cr-g{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.cr-ph{position:relative;padding:0 13% 15% 0}
-.cr-ph .a{border-radius:30px;aspect-ratio:4/4.6;box-shadow:0 30px 60px -30px rgba(43,27,18,.5)}
-.cr-ph .a img,.cr-ph .b img{width:100%;height:100%;object-fit:cover}
-.cr-ph .b{position:absolute;right:0;bottom:0;width:44%;aspect-ratio:3/3.8;border-radius:24px;border:8px solid var(--sand);box-shadow:0 24px 50px -20px rgba(43,27,18,.5)}
-.cr-ph .b img{object-position:30% 50%}
-.cr-ph .tag{left:22px;bottom:calc(15% + 22px)}
+.cr-ph{position:relative}
+.cr-ph .a{border-radius:30px;aspect-ratio:4/4.4;box-shadow:0 30px 60px -30px rgba(43,27,18,.5)}
+.cr-ph .a img{width:100%;height:100%;object-fit:cover}
 .cls{margin-top:40px;border-top:1px solid var(--ln)}
 .cl{display:grid;grid-template-columns:52px 1fr;gap:18px;align-items:start;padding:22px 0;border-bottom:1px solid var(--ln)}
 .cl i{width:52px;height:52px;border-radius:50%;background:var(--bg2);display:grid;place-items:center;color:var(--em);font-style:normal;font-weight:800;font-size:15px}
@@ -351,7 +348,30 @@ svg.i{width:20px;height:20px;flex:none;display:block}
 .faq .ans p{padding:0 70px 28px 0;color:var(--mut);font-size:16px;line-height:1.65}
 
 /* contacts */
-.ct{display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:start}
+.ct{display:grid;grid-template-columns:.95fr 1.05fr;gap:80px;align-items:center}
+.bk-l .opts{margin-top:40px;gap:12px}
+.bk-l .opt{padding:18px 20px 18px 18px;background:var(--bg);border-radius:22px}
+.bk-l .opt .oi{width:54px;height:54px}
+.bk-l .opt b{font-size:17px}
+.bk-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.bk-chips .chip{border-color:rgba(43,27,18,.16);color:var(--mut)}
+.bk-chips .chip svg{width:17px;height:17px;color:var(--em)}
+.fcard{background:var(--ch);color:var(--cr);border-radius:32px;padding:46px 44px 40px;position:relative;box-shadow:0 40px 80px -40px rgba(43,27,18,.7)}
+.fcard:before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at 100% 0,rgba(229,185,147,.26),rgba(229,185,147,0) 42%);pointer-events:none}
+.fcard h3{font-weight:800;font-size:clamp(26px,2.4vw,34px);letter-spacing:-.03em;line-height:1.1}
+.fcard .fsub{color:rgba(255,243,230,.68);margin-top:12px;font-size:16px}
+.fcard .form{margin-top:30px;position:relative}
+.fcard .fld input,.fcard .fld textarea,.fcard .sel>button{background:rgba(255,243,230,.06);border-color:rgba(255,243,230,.18);color:var(--cr)}
+.fcard .fld label{color:rgba(255,243,230,.6)}
+.fcard .fld input:focus,.fcard .fld textarea:focus,.fcard .sel.op>button{border-color:var(--pe);box-shadow:0 0 0 4px rgba(229,185,147,.16)}
+.fcard .fld input:focus+label,.fcard .fld input:not(:placeholder-shown)+label,.fcard .fld textarea:focus+label,.fcard .fld textarea:not(:placeholder-shown)+label,.fcard .fld.has label{color:var(--pe)}
+.fcard .sel>button svg{color:var(--pe)}
+.fcard .sel ul{color:var(--ch)}
+.fcard .consent{color:rgba(255,243,230,.55)}
+.fcard .consent a{color:var(--cr)}
+.fcard input:-webkit-autofill{-webkit-text-fill-color:var(--cr);-webkit-box-shadow:0 0 0 40px #3a2519 inset;caret-color:var(--cr)}
+.cbox{background:var(--bg);border-radius:28px;padding:40px 40px 34px}
+.cbox .cinfo{margin-top:24px}
 .form{display:grid;gap:14px;margin-top:40px}
 .form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .fld{position:relative}
@@ -374,8 +394,10 @@ svg.i{width:20px;height:20px;flex:none;display:block}
 .consent{font-size:13px;color:var(--mut);line-height:1.5}
 .consent a{text-decoration:underline;text-underline-offset:3px;color:var(--ch)}
 .cinfo{margin-top:40px;display:grid}
-.cinfo .r{display:grid;grid-template-columns:140px 1fr;gap:20px;padding:22px 0;border-top:1px solid var(--ln)}
+.cinfo .r{display:grid;grid-template-columns:130px 1fr;gap:20px;padding:22px 0;border-top:1px solid var(--ln)}
 .cinfo .r:last-child{border-bottom:1px solid var(--ln)}
+.cbox .cinfo .r:first-child{border-top:0;padding-top:4px}
+.cbox .cinfo .r:last-child{border-bottom:0;padding-bottom:0}
 .cinfo span{font-size:14px;color:var(--mut);font-weight:600}
 .cinfo .v{font-size:18px;font-weight:700;line-height:1.45}
 .cinfo .v small{display:block;font-size:14px;color:var(--mut);font-weight:500;margin-top:2px}
@@ -384,10 +406,7 @@ svg.i{width:20px;height:20px;flex:none;display:block}
 .soc a{height:44px;padding:0 16px;border-radius:30px;border:1px solid rgba(43,27,18,.2);display:inline-flex;align-items:center;gap:9px;font-size:14px;font-weight:700;transition:background .4s var(--ez),color .4s var(--ez),border-color .4s var(--ez)}
 .soc a:hover,.cinfo .v.soc a:hover{background:var(--ch);color:var(--cr);border-color:var(--ch)}
 .soc svg.i{width:18px;height:18px}
-.mapw{display:grid;grid-template-columns:.8fr 1.2fr;gap:20px;margin-top:72px}
-.door{border-radius:28px;position:relative;min-height:440px;background:var(--ch)}
-.door img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
-.door .tag{top:18px;bottom:auto;left:18px}
+.mapw{display:grid;grid-template-columns:.85fr 1.15fr;gap:20px;margin-top:96px;align-items:stretch}
 .mapf{border-radius:28px;overflow:hidden;position:relative;min-height:440px;background:#eadbc8;isolation:isolate}
 #map{position:absolute;inset:0;z-index:1}
 .route{position:absolute;right:18px;bottom:18px;z-index:500;background:var(--ch);color:var(--cr);border-radius:30px;height:48px;padding:0 20px;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;transition:background .4s var(--ez)}
@@ -506,6 +525,8 @@ svg.i{width:20px;height:20px;flex:none;display:block}
  .hl{width:270px;font-size:14px}.hl h1{font-size:22px}
  .duo{height:min(76svh,58vw)}
  .ab,.pr-g,.fq,.ct,.col,.cr-g{gap:52px}
+ .mapw{grid-template-columns:1fr 1fr}
+ .cinfo .r{grid-template-columns:1fr;gap:4px}
  .cab{grid-template-columns:1fr}.cab .ph{min-height:340px}
  .abn{grid-template-columns:repeat(3,minmax(0,1fr))}
  .steps{grid-template-columns:1fr 1fr}.st:after{display:none}
@@ -527,7 +548,7 @@ svg.i{width:20px;height:20px;flex:none;display:block}
  .cabs{grid-template-columns:1fr}
  .cab{grid-template-columns:.9fr 1.1fr}
  .mapw{grid-template-columns:1fr}
- .door{min-height:300px}
+ .mapf{min-height:420px}
  .fwa{display:grid}
  .col-ph{aspect-ratio:4/3.4;max-width:640px}
  .cr-ph{max-width:640px}
@@ -606,10 +627,7 @@ svg.i{width:20px;height:20px;flex:none;display:block}
  .ac .btn{grid-area:b;margin-top:14px;height:44px}
  .ac.best{padding-top:52px}
  .ac .badge{left:18px;right:auto;top:16px}
- .cr-ph{padding:0 10% 14% 0}
- .cr-ph .a{border-radius:24px}
- .cr-ph .b{border-width:6px;border-radius:18px}
- .cr-ph .tag{bottom:calc(14% + 14px)}
+ .cr-ph .a{border-radius:24px;aspect-ratio:4/4.2}
  .cr-g .btn{width:100%}
  .cl{grid-template-columns:44px 1fr;gap:14px;padding:18px 0}.cl i{width:44px;height:44px;font-size:14px}.cl h3{font-size:16px}.cl p{font-size:14px}
  .steps{grid-template-columns:1fr;gap:12px;margin-top:40px}
@@ -634,8 +652,14 @@ svg.i{width:20px;height:20px;flex:none;display:block}
  .cinfo .r{grid-template-columns:1fr;gap:4px;padding:18px 0}
  .cinfo .v{font-size:16px}
  .mapw{margin-top:48px;gap:12px}
- .door,.mapf{min-height:300px;border-radius:22px}
- .door{min-height:0;aspect-ratio:16/9}
+ .mapf{min-height:340px;border-radius:22px}
+ .cbox{padding:26px 20px 22px;border-radius:22px}
+ .fcard{padding:30px 20px 26px;border-radius:24px}
+ .fcard .fsub{font-size:15px}
+ .bk-l .opts{margin-top:28px;gap:8px}
+ .bk-l .opt{padding:12px 14px 12px 12px;border-radius:18px}
+ .bk-l .opt .oi{width:46px;height:46px}
+ .bk-l .opt b{font-size:15px}
  .cta{padding-top:88px}
  .cta-btns{grid-template-columns:1fr}
  .wm{padding-top:48px}
@@ -863,8 +887,7 @@ svg.i{width:20px;height:20px;flex:none;display:block}
   <div class="wrap cr-g">
     <div class="cr-ph rv">
       <div class="a im"><img src="img/cosm.jpg" alt="Витрина с кремами для загара в студии SUNBUKA" loading="lazy" style="object-position:40% 50%"></div>
-      <div class="b im"><img src="img/cosm2.jpg" alt="Кремы и лосьоны на ресепшене SUNBUKA" loading="lazy"></div>
-      <span class="tag"><svg class="i"><use href="#i-droplet"/></svg>Витрина на ресепшене</span>
+      <span class="tag"><svg class="i"><use href="#i-droplet"/></svg>Витрина на ресепшене</span><div class="stk">Кремы<br>для любого<br>оттенка</div>
     </div>
     <div>
       <p class="kick rv">Кремы</p>
@@ -921,7 +944,7 @@ svg.i{width:20px;height:20px;flex:none;display:block}
     <figure class="gi im"><img src="img/buddha.jpg" alt="Зона ожидания со статуэткой Будды" loading="lazy" width="960" height="1222"><span>Зона ожидания</span></figure>
     <figure class="gi im"><img src="img/turbo.jpg" alt="Турбосолярий внутри" loading="lazy" width="1100" height="1401"><span>Кабина 02</span></figure>
     <figure class="gi im"><img src="img/corridor.jpg" alt="Коридор студии" loading="lazy" width="1000" height="1698"><span>Коридор</span></figure>
-    <figure class="gi im"><img src="img/collagen.jpg" alt="Коллагенарий в красном свете" loading="lazy" width="909" height="896"><span>Коллагенарий</span></figure>
+    <figure class="gi im"><img src="img/collagen.jpg" alt="Коллагенарий в красном свете" loading="lazy" width="1100" height="1100"><span>Коллагенарий</span></figure>
   </div>
 </section>
 
@@ -946,10 +969,21 @@ svg.i{width:20px;height:20px;flex:none;display:block}
 <section class="sec light" id="contacts">
   <div class="wrap">
     <div class="ct">
-      <div>
+      <div class="bk-l">
         <p class="kick rv">Запись</p>
-        <h2 class="h2 rv d1">Оставьте <em>заявку</em></h2>
-        <form class="form rv d2" id="form" novalidate>
+        <h2 class="h2 rv d1">Запишитесь <em>как удобно</em></h2>
+        <p class="lead rv d2">Можно прийти без записи. Если хотите к определённому времени, напишите администратору, позвоните или оставьте заявку: ответим в мессенджере.</p>
+        <div class="opts rv d3">
+          <a class="opt" href="https://wa.me/79625873133" data-wa="Здравствуйте! Хочу записаться в Санбуку." target="_blank" rel="noopener"><span class="oi"><svg class="i"><use href="#i-whatsapp"/></svg></span><span><b>Написать в WhatsApp</b><small>+7 962 587-31-33</small></span><svg class="i arr"><use href="#i-arrow-up-right"/></svg></a>
+          <a class="opt" href="https://t.me/+79625873133" target="_blank" rel="noopener"><span class="oi"><svg class="i"><use href="#i-tg"/></svg></span><span><b>Написать в Telegram</b><small>+7 962 587-31-33</small></span><svg class="i arr"><use href="#i-arrow-up-right"/></svg></a>
+          <a class="opt" href="tel:+74212693133"><span class="oi"><svg class="i"><use href="#i-phone"/></svg></span><span><b>Позвонить администратору</b><small>+7 (4212) 69-31-33</small></span><svg class="i arr"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+        <div class="bk-chips rv d3"><span class="chip"><svg class="i"><use href="#i-clock"/></svg>Ежедневно с 10:00 до 20:00</span><span class="chip"><svg class="i"><use href="#i-door"/></svg>Можно без записи</span></div>
+      </div>
+      <div class="fcard rv d1">
+        <h3>Оставьте заявку</h3>
+        <p class="fsub">Выберите услугу и удобный мессенджер, администратор ответит в рабочее время.</p>
+        <form class="form" id="form" novalidate>
           <div class="row">
             <div class="fld"><input name="name" id="f-name" autocomplete="given-name" placeholder=" " required><label for="f-name">Ваше имя</label></div>
             <div class="fld"><input name="phone" id="f-phone" type="tel" autocomplete="tel" inputmode="tel" placeholder=" " required><label for="f-phone">Телефон</label></div>
@@ -959,13 +993,15 @@ svg.i{width:20px;height:20px;flex:none;display:block}
             <div class="fld sel has" data-name="msg"><button type="button" aria-haspopup="listbox" aria-expanded="false"><span>WhatsApp</span><svg class="i"><use href="#i-chevron-down"/></svg></button><label>Куда ответить</label><ul role="listbox"><li class="on" role="option">WhatsApp</li><li role="option">Telegram</li></ul></div>
           </div>
           <div class="fld"><textarea name="comment" id="f-com" placeholder=" "></textarea><label for="f-com">Удобное время или вопрос</label></div>
-          <button class="btn dk" type="submit" id="f-btn"><svg class="i" id="f-ic"><use href="#i-whatsapp"/></svg><span>Отправить в WhatsApp</span></button>
+          <button class="btn wh" type="submit" id="f-btn"><svg class="i" id="f-ic"><use href="#i-whatsapp"/></svg><span>Отправить в WhatsApp</span></button>
           <p class="consent">Нажимая кнопку, вы соглашаетесь с <a href="policy/">политикой обработки персональных данных</a></p>
         </form>
       </div>
-      <div>
-        <p class="kick rv">Контакты</p>
-        <div class="cinfo rv d1">
+    </div>
+    <div class="mapw">
+      <div class="cbox rv">
+        <p class="kick">Контакты</p>
+        <div class="cinfo">
           <div class="r"><span>Адрес</span><div class="v">Хабаровск, Ленинградская, 23<small>2 этаж, офис 31. Парковка у здания</small></div></div>
           <div class="r"><span>Часы</span><div class="v">Ежедневно с 10:00 до 20:00<small>Без выходных, можно без записи</small></div></div>
           <div class="r"><span>Телефон</span><div class="v"><a href="tel:+74212693133">+7 (4212) 69-31-33</a></div></div>
@@ -977,9 +1013,6 @@ svg.i{width:20px;height:20px;flex:none;display:block}
           </div></div>
         </div>
       </div>
-    </div>
-    <div class="mapw">
-      <div class="door im rv"><img src="img/sign.jpg" alt="Вывеска SUNBUKA с часами работы 10:00–20:00 и телефоном 69-31-33" loading="lazy"><span class="tag"><svg class="i"><use href="#i-clock"/></svg>2 этаж, офис 31</span></div>
       <div class="mapf rv d1"><div id="map" role="region" aria-label="SUNBUKA на карте"></div><a class="route" href="https://2gis.ru/khabarovsk/firm/4926340373428036" target="_blank" rel="noopener">Маршрут в 2ГИС<svg class="i"><use href="#i-arrow-up-right"/></svg></a></div>
     </div>
   </div>
@@ -1278,7 +1311,7 @@ svg.i{width:20px;height:20px;flex:none;display:block}
       cur.classList.toggle('ph',ph);
       cur.classList.toggle('lbl',!!l);
       cur.classList.toggle('hov',!!bk);
-      cur.classList.toggle('inv',!ph&&!!t.closest('.dark,.cara,.glow,.calc,.ftr,.mq,.ac.best,.qt,.mnav'));
+      cur.classList.toggle('inv',!ph&&!!t.closest('.dark,.cara,.glow,.calc,.fcard,.ftr,.mq,.ac.best,.qt,.mnav'));
     });
   }
 })();
