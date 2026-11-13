@@ -275,7 +275,7 @@ svg.i{width:20px;height:20px;flex:none;display:block}
 /* creams */
 .cr-g{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .cr-ph{position:relative}
-.cr-ph .a{border-radius:30px;aspect-ratio:4/4.4;box-shadow:0 30px 60px -30px rgba(43,27,18,.5)}
+.cr-ph .a{position:relative;border-radius:30px;aspect-ratio:4/4.4;box-shadow:0 30px 60px -30px rgba(43,27,18,.5)}
 .cr-ph .a img{width:100%;height:100%;object-fit:cover}
 .cls{margin-top:40px;border-top:1px solid var(--ln)}
 .cl{display:grid;grid-template-columns:52px 1fr;gap:18px;align-items:start;padding:22px 0;border-bottom:1px solid var(--ln)}
@@ -577,12 +577,15 @@ svg.i{width:20px;height:20px;flex:none;display:block}
  .burger{width:46px;height:46px}
  .burger i{left:14px;right:14px}.burger i:nth-child(1){top:18px}.burger i:nth-child(2){top:25px}
  .mopen .burger i{top:21.5px}
- .hero{padding-top:74px}
- .big{font-size:20vw;margin-top:5vw}
- .duo-w{min-height:104vw}
- .duo{width:126vw;left:51%}
- .hl{margin-top:-8vw;padding-bottom:26px}
- .hl p{font-size:15px}
+ .hero{padding-top:74px;height:auto;min-height:0}
+ .big{font-size:20vw;margin-top:4vw;flex:none}
+ .duo-w{flex:none;min-height:0;height:var(--dh,92vw);margin-top:-2.2vw;-webkit-mask:linear-gradient(0deg,transparent 0,#000 16%);mask:linear-gradient(0deg,transparent 0,#000 16%)}
+ .duo{top:0;height:109%;width:auto;left:50.5%}
+ .hl{margin-top:0;padding-bottom:max(22px,env(safe-area-inset-bottom));flex:none}
+ .hl h1{font-size:clamp(21px,5.6vw,26px)}
+ .hl p{font-size:14.5px;line-height:1.55}
+ .mrt{margin-top:10px}
+ .hl .btn{margin-top:16px;height:54px}
  .mq{padding:16px 0}.mq-t span{font-size:16px;gap:20px;padding-right:20px}
  .lead{font-size:16px;margin-top:22px}
  .feats{grid-template-columns:1fr;gap:12px;margin-top:36px}
@@ -886,8 +889,8 @@ svg.i{width:20px;height:20px;flex:none;display:block}
 <section class="sec sand" id="creams">
   <div class="wrap cr-g">
     <div class="cr-ph rv">
-      <div class="a im"><img src="img/cosm.jpg" alt="Витрина с кремами для загара в студии SUNBUKA" loading="lazy" style="object-position:40% 50%"></div>
-      <span class="tag"><svg class="i"><use href="#i-droplet"/></svg>Витрина на ресепшене</span><div class="stk">Кремы<br>для любого<br>оттенка</div>
+      <div class="a im"><img src="img/cosm.jpg" alt="Витрина с кремами для загара в студии SUNBUKA" loading="lazy" style="object-position:40% 50%"><div class="stk">Кремы<br>для любого<br>оттенка</div></div>
+      <span class="tag"><svg class="i"><use href="#i-droplet"/></svg>Витрина на ресепшене</span>
     </div>
     <div>
       <p class="kick rv">Кремы</p>
@@ -1095,6 +1098,17 @@ svg.i{width:20px;height:20px;flex:none;display:block}
     if(a.hasAttribute('data-close-go'))closeMd();
     goTo(id);
   });
+
+  /* mobile hero: models fill the space left so the button fits on the first screen */
+  var hero=$('.hero'),dw=$('.duo-w'),lastW=0;
+  function sizeHero(){
+    var w=W.innerWidth;if(w===lastW)return;lastW=w;
+    if(w>760){dw.style.removeProperty('--dh');return}
+    dw.style.setProperty('--dh','0px');
+    var other=hero.offsetHeight,H=d.documentElement.clientHeight;
+    dw.style.setProperty('--dh',Math.round(Math.max(240,Math.min(H-other,w*.98)))+'px');
+  }
+  sizeHero();W.addEventListener('resize',sizeHero);if(d.fonts&&d.fonts.ready)d.fonts.ready.then(function(){lastW=0;sizeHero()});
 
   /* intro */
   function go(){b.classList.remove('pre')}
