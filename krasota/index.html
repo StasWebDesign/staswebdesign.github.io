@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Красота с любовью · студия красоты в Хабаровске">
 <meta property="og:description" content="Лазер, воск и шугаринг, брови и ресницы, массаж и аппаратная косметология. Онлайн-запись к Наталье, Марии и Марьяне.">
-<meta property="og:image" content="https://staswebdesign.github.io/krasota/og.jpg?v=1">
+<meta property="og:image" content="https://staswebdesign.github.io/krasota/og.jpg?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Красота с любовью, студия красоты в Хабаровске: лазерная эпиляция, депиляция, брови, массаж">
@@ -18,7 +18,7 @@
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://staswebdesign.github.io/krasota/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://staswebdesign.github.io/krasota/og.jpg?v=1">
+<meta name="twitter:image" content="https://staswebdesign.github.io/krasota/og.jpg?v=2">
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="brand/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
@@ -147,7 +147,14 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
 .hero h1{font-size:clamp(42px,4.6vw,66px);line-height:1.04;margin:26px 0 26px}
 .hero h1 span{display:block;white-space:nowrap}
 .hero .lead{font-size:17px;max-width:540px;color:var(--mut)}
-.hero .cta{display:flex;gap:12px;margin-top:38px;flex-wrap:wrap}
+.hero .cta{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+.fpill{display:inline-flex;align-items:center;gap:14px;margin-top:30px;padding:8px 18px 8px 8px;border-radius:60px;background:var(--card);border:1px solid var(--rose2);box-shadow:0 14px 30px -20px rgba(83,19,34,.45);transition:border-color .5s,box-shadow .6s var(--ez)}
+.fpill:hover{border-color:var(--rose);box-shadow:0 20px 40px -22px rgba(83,19,34,.55)}
+.fp-n{display:grid;place-items:center;height:46px;padding:0 16px;border-radius:40px;background:var(--wine);color:#FBF4F0;font:400 22px/1 var(--serif);letter-spacing:.02em;white-space:nowrap}
+.fp-t{font-weight:600;font-size:14px;color:var(--wine);line-height:1.25}
+.fp-t small{display:block;font-weight:400;font-size:12.5px;color:var(--mut);margin-top:2px}
+.fpill .ar{color:var(--rose);transition:transform .6s var(--ez)}
+.fpill:hover .ar{transform:translateX(4px)}
 .hero .cta .btn{min-width:236px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px}
 .chip{display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:40px;background:rgba(255,253,251,.75);border:1px solid var(--ln);font-size:12.5px;font-weight:500;color:var(--ink)}
@@ -193,13 +200,14 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
 
 /* natalia */
 .nat{display:grid;grid-template-columns:.95fr 1.05fr;gap:80px;align-items:start}
-.nat-v{position:sticky;top:var(--stk);display:grid;grid-template-columns:1fr .62fr;gap:16px;transition:top .6s var(--ez)}
-.nat-v .main{grid-row:span 2;border-radius:220px 220px 26px 26px;overflow:hidden;aspect-ratio:3/4.2}
-.nat-v .sm{border-radius:22px;overflow:hidden;aspect-ratio:3/4}
-.nat-v img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ez)}
-.nat-v .main img{object-position:center 18%}
-.nat-v div:hover img{transform:scale(1.05)}
-.nat-v .badge{position:absolute;left:24px;bottom:24px;z-index:2;background:var(--wine);color:#FBF4F0;border-radius:18px;padding:14px 18px;font-size:12.5px;line-height:1.4;max-width:230px}
+.nat-v{position:sticky;top:var(--stk);transition:top .6s var(--ez);max-width:500px;width:100%;justify-self:center}
+.nat-v .ring{position:absolute;left:50%;top:44%;width:116%;aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none}
+.nat-v .ring i{position:absolute;inset:0;border-radius:50%;border:1px solid var(--gold)}
+.nat-v .ring i+i{inset:12px;border-color:rgba(194,154,91,.45)}
+.nat-v .main{position:relative;z-index:1;border-radius:999px 999px 30px 30px;overflow:hidden;aspect-ratio:700/980;box-shadow:0 40px 80px -40px rgba(83,19,34,.45)}
+.nat-v img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform 1.4s var(--ez);transform-origin:center 30%}
+.nat-v .main:hover img{transform:scale(1.04)}
+.nat-v .badge{position:absolute;left:-36px;bottom:48px;z-index:2;box-shadow:0 24px 50px -24px rgba(83,19,34,.6);background:var(--wine);color:#FBF4F0;border-radius:18px;padding:14px 18px;font-size:12.5px;line-height:1.4;max-width:230px}
 .nat-v .badge b{display:block;font:400 18px/1.15 var(--serif);color:var(--gold2);margin-bottom:3px}
 .nat-t .scr-l{display:block;margin-top:16px;font-size:28px}
 .nat-t h2{margin-top:8px}
@@ -230,6 +238,10 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
 .tm .ph{position:relative;aspect-ratio:1/1.05;overflow:hidden;background:var(--bg3)}
 .tm .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ez)}
 .tm:hover .ph img{transform:scale(1.05)}
+.ph-need{display:grid;place-items:center;text-align:center;background:repeating-linear-gradient(-45deg,var(--bg2) 0 14px,var(--bg) 14px 28px)!important;border-bottom:1px dashed var(--ln2)}
+.ph-need>div{display:flex;flex-direction:column;align-items:center;gap:6px;padding:22px 26px;border-radius:20px;background:rgba(255,253,251,.92);border:1px dashed var(--ln2);font:500 12px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--mut);letter-spacing:.02em}
+.ph-need .i{width:28px;height:28px;color:var(--rose);margin-bottom:4px}
+.ph-need b{font:600 13px/1.3 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--wine);text-transform:uppercase;letter-spacing:.08em}
 .tm .ph .lb{position:absolute;left:16px;bottom:16px;padding:7px 12px;border-radius:20px;background:rgba(83,19,34,.82);color:#FBF4F0;font-size:11.5px;font-weight:500;backdrop-filter:blur(4px)}
 .tm .bd{padding:24px 26px 26px;display:flex;flex-direction:column;flex:1}
 .tm .rl{font:600 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--rose)}
@@ -302,6 +314,15 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
 .vsum{display:flex;justify-content:space-between;align-items:baseline;margin-top:18px;padding-top:16px;border-top:1px solid rgba(246,233,230,.25);position:relative}
 .vsum small{font-size:12.5px;color:rgba(246,233,230,.7)}
 .vsum b{font:400 34px/1 var(--serif);color:#FBF4F0}
+.vfirst{position:relative;display:flex;align-items:center;gap:10px;margin-top:16px;font-size:13.5px;color:#FBF4F0;cursor:pointer}
+.vfirst input{position:absolute;opacity:0;pointer-events:none}
+.vfirst .bx{flex:none;width:22px;height:22px;border-radius:7px;border:1px solid rgba(246,233,230,.45);display:grid;place-items:center;transition:background .4s,border-color .4s}
+.vfirst .bx .i{width:14px;height:14px;opacity:0;transform:scale(.6);transition:opacity .3s,transform .5s var(--ez);color:var(--wine);stroke-width:2.4}
+.vfirst input:checked+.bx{background:var(--gold2);border-color:var(--gold2)}
+.vfirst input:checked+.bx .i{opacity:1;transform:none}
+.vfirst input:focus-visible+.bx{box-shadow:0 0 0 3px rgba(221,191,138,.45)}
+.vold{font-size:12.5px;color:rgba(246,233,230,.55);text-align:right;margin-top:4px;min-height:0}
+.vold:empty{display:none}
 .vtime{font-size:12.5px;color:rgba(246,233,230,.65);margin-top:6px;text-align:right}
 .visit .btn{width:100%;margin-top:12px}
 .visit .vclr{display:block;margin:14px auto 0;font-size:12.5px;color:rgba(246,233,230,.6);border-bottom:1px solid rgba(246,233,230,.25);transition:color .3s}
@@ -386,6 +407,18 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
 .rmore .btn .i{transition:transform .6s var(--ez)}
 .rmore .btn.up .i{transform:rotate(180deg)}
 
+/* first visit */
+.first{position:relative;overflow:hidden;display:grid;grid-template-columns:auto 1fr auto;gap:44px;align-items:center;background:var(--wine);color:#F6E9E6;border-radius:var(--r);padding:40px 44px;margin-bottom:22px}
+.first::before{content:'';position:absolute;left:-80px;top:50%;width:330px;height:330px;transform:translateY(-50%);border-radius:50%;border:1px solid rgba(221,191,138,.35)}
+.first .mk{position:absolute;right:-40px;bottom:-60px;width:300px;opacity:.08;pointer-events:none}
+.first .fn{position:relative;display:grid;place-items:center;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(251,244,240,.16),rgba(251,244,240,.04));border:1px solid rgba(221,191,138,.55)}
+.first .fn span{font:400 52px/1 var(--serif);color:var(--gold2);letter-spacing:.01em}
+.first .ft{position:relative}
+.first .kick{color:var(--gold2)}
+.first h3{color:#FBF4F0;font-size:clamp(28px,3vw,38px);line-height:1.1;margin-top:12px}
+.first p{color:rgba(246,233,230,.75);font-size:15px;margin-top:12px;max-width:560px}
+.first .fb{position:relative;display:flex;flex-direction:column;gap:10px;min-width:250px}
+.first .fb .btn{width:100%}
 /* gift + promo */
 .gp{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}
 .gift{display:grid;grid-template-columns:.9fr 1.1fr;border-radius:var(--r);overflow:hidden;background:var(--card);border:1px solid var(--ln)}
@@ -557,10 +590,13 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
   .shd{grid-template-columns:1fr;gap:18px;margin-bottom:44px}
   .svc,.team{grid-template-columns:1fr 1fr}
   .nat{grid-template-columns:1fr;gap:50px}
-  .nat-v{position:relative;top:0;max-width:620px}
+  .nat-v{position:relative;top:0;max-width:440px}
   .pw{grid-template-columns:1fr}
   .visit{position:relative;top:0}
   .res,.gp,.faqw,.ct,.cons{grid-template-columns:1fr}
+  .first{grid-template-columns:auto 1fr;gap:28px 34px}
+  .first .fb{grid-column:1/-1;flex-direction:row}
+  .first .fb .btn{flex:1}
   .faqw{gap:40px}.faqw .side{position:relative;top:0}
   .care{grid-template-columns:repeat(6,1fr)}
   .c4,.c5,.c3,.c7,.c8,.c6{grid-column:span 3}
@@ -586,8 +622,7 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
   .svc,.team{grid-template-columns:1fr}
   .sv h3{font-size:25px}
   .sv .bd{padding:22px 20px 22px}
-  .nat-v{grid-template-columns:1fr .6fr;gap:10px}
-  .nat-v .badge{left:12px;bottom:12px;padding:10px 12px;font-size:11.5px;max-width:170px}
+  .nat-v .badge{left:12px;bottom:18px;padding:10px 12px;font-size:11.5px;max-width:170px}
   .nat-v .badge b{font-size:15px}
   .quote{padding:26px 22px}
   .quote p{font-size:20px}
@@ -622,6 +657,16 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
   .rgrid{gap:14px}.rcol{gap:14px}
   .rc{padding:22px 20px 18px}
   .gift{grid-template-columns:1fr}
+  .first{grid-template-columns:1fr;padding:30px 22px;gap:22px}
+  .first .fn{width:116px;height:116px}
+  .first .fn span{font-size:40px}
+  .first .fb{flex-direction:column;min-width:0}
+  .first .fb .btn{flex:none}
+  .first::before{left:-120px;top:20px;transform:none}
+  .fpill{margin-top:24px;gap:12px;padding-right:14px}
+  .fp-n{height:42px;padding:0 13px;font-size:20px}
+  .fp-t{font-size:13.5px}
+  .fp-t small{font-size:12px}
   .gift .ph{min-height:260px}
   .gift .bd,.promo{padding:30px 22px}
   .gift h3,.promo h3{font-size:29px}
@@ -651,6 +696,8 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8.5A1.5 1.5 0 0 1 5.5 7h2.2l1.5-2.2h5.6L16.3 7h2.2A1.5 1.5 0 0 1 20 8.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 17.5z"/><circle cx="12" cy="12.8" r="3.4"/></symbol>
+  <symbol id="i-pct" viewBox="0 0 24 24"><path d="M18 6 6 18"/><circle cx="7.5" cy="7.5" r="2.3"/><circle cx="16.5" cy="16.5" r="2.3"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
   <symbol id="i-wa" viewBox="0 0 24 24"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.5L3.5 20.5l1.4-4.2a8.5 8.5 0 1 1 15.6-4.7z"/><path d="M9 8.6c.2-.5.6-.6 1-.6l.6 1.5-.6.9c.5 1 1.3 1.8 2.3 2.3l.9-.6 1.5.6c0 .4-.1.8-.6 1-1.8.8-5.9-2.9-5.1-5.1z"/></symbol>
@@ -734,6 +781,7 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
       <div class="eb rv"><img src="brand/script-rose.svg" alt="с любовью" width="141" height="30"><span>Студия красоты · Хабаровск</span></div>
       <h1 class="rv d1"><span>Ваше место</span><span>для заботы <em>о себе</em></span></h1>
       <p class="lead rv d2">Лазерная эпиляция, воск и шугаринг, брови и ресницы, ручной и аппаратный массаж, RF-лифтинг и фотоомоложение. Уютный кабинет на Руднева, 81, где всё стерильно, честно и с вниманием к каждой мелочи.</p>
+      <a class="fpill rv d3" href="#first"><span class="fp-n">−20%</span><span class="fp-t">на первое посещение<small>для новых клиентов, на все услуги</small></span><svg class="i ar"><use href="#i-arrow"/></svg></a>
       <div class="cta rv d3">
         <a class="btn pr" href="#" data-yc><svg class="i"><use href="#i-cal"/></svg>Записаться онлайн</a>
         <a class="btn ol" href="#" data-wa="Здравствуйте! Хочу записаться в студию «Красота с любовью»."><svg class="i"><use href="#i-wa"/></svg>Написать в WhatsApp</a>
@@ -766,19 +814,19 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
     </div>
     <div class="svc">
       <article class="sv rv">
-        <div class="ph" data-cur="Лазер"><img src="img/laser-leg.jpg" alt="Лазерная эпиляция ног в студии" loading="lazy" width="800" height="996"><span class="pb">от 500 ₽</span></div>
+        <div class="ph" data-cur="Лазер"><img src="img/svc-laser.jpg" alt="Лазерная эпиляция ног" loading="lazy" width="900" height="697"><span class="pb">от 500 ₽</span></div>
         <div class="bd"><h3>Лазерная эпиляция</h3><p>Долгосрочно уменьшает рост волос: без бритья, раздражения и вросших волосков. Не экономим на вспышках и не пропускаем участки.</p>
           <ul><li>женская</li><li>мужская</li><li>комплексы</li><li>абонементы</li></ul>
           <div class="ft"><a class="btn ol sm" href="#prices" data-tab="0">Цены</a><a class="btn pr sm" href="#" data-yc>Записаться</a></div></div>
       </article>
       <article class="sv rv d1">
-        <div class="ph" data-cur="Воск"><img src="img/wax-beads.jpg" alt="Воск и паста для шугаринга" loading="lazy" width="800" height="1066"><span class="pb">от 300 ₽</span></div>
+        <div class="ph" data-cur="Воск"><img src="img/svc-wax.jpg" alt="Сахарная паста для шугаринга стекает с ложки" loading="lazy" width="900" height="697" style="object-position:60% center"><span class="pb">от 300 ₽</span></div>
         <div class="bd"><h3>Воск и шугаринг</h3><p>Гладкость сразу после процедуры на 3–4 недели. Работаем быстро: глубокое бикини 25–30 минут, подмышки 5–7.</p>
           <ul><li>все зоны</li><li>лицо</li><li>комплексы</li><li>для мужчин</li></ul>
           <div class="ft"><a class="btn ol sm" href="#prices" data-tab="2">Цены</a><a class="btn pr sm" href="#" data-yc>Записаться</a></div></div>
       </article>
       <article class="sv rv d2">
-        <div class="ph" data-cur="Брови"><img src="img/brows-2.jpg" alt="Оформление бровей и ламинирование ресниц" loading="lazy" width="600" height="700"><span class="pb">от 600 ₽</span></div>
+        <div class="ph" data-cur="Брови"><img src="img/svc-brows.jpg" alt="Мастер оформляет брови" loading="lazy" width="900" height="697"><span class="pb">от 600 ₽</span></div>
         <div class="bd"><h3>Брови и ресницы</h3><p>Коррекция и окрашивание, долговременная укладка, ботокс и восстановление бровей, ламинирование ресниц на 6–8 недель.</p>
           <ul><li>укладка</li><li>окрашивание</li><li>ламинирование</li></ul>
           <div class="ft"><a class="btn ol sm" href="#prices" data-tab="3">Цены</a><a class="btn pr sm" href="#" data-yc="5795928">Записаться</a></div></div>
@@ -809,9 +857,8 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
 <section class="sec alt" id="natalia">
   <div class="wrap nat">
     <div class="nat-v rv">
-      <div class="main" data-cur="Наталья"><img src="img/natalia.jpg" alt="Наталья Чапковская, основательница студии «Красота с любовью»" loading="lazy" width="800" height="800"></div>
-      <div class="sm" data-cur="Наталья"><img src="img/natalia-laser.jpg" alt="Наталья с аппаратом для лазерной эпиляции и шпателями для воска" loading="lazy" width="736" height="1518"></div>
-      <div class="sm" data-cur="Дипломы"><img src="img/natalia-certs.jpg" alt="Сертификаты Натальи на стене кабинета" loading="lazy" width="700" height="995"></div>
+      <div class="ring"><i></i><i></i></div>
+      <div class="main" data-cur="Наталья"><img src="img/natalia-arch.jpg" alt="Наталья Чапковская, основательница студии «Красота с любовью», в кабинете" loading="lazy" width="700" height="980"></div>
       <div class="badge"><b>Любит своё дело</b>и каждую клиентку встречает как близкого человека</div>
     </div>
     <div class="nat-t">
@@ -856,19 +903,19 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
     </div>
     <div class="team">
       <article class="tm rv">
-        <div class="ph" data-cur="Наталья"><img src="img/natalia-wall.jpg" alt="Наталья Чапковская" loading="lazy" width="800" height="1108" style="object-position:center 12%"></div>
+        <div class="ph" data-cur="Наталья"><img src="img/natalia-team.jpg" alt="Наталья Чапковская на фоне сертификатов" loading="lazy" width="720" height="960" style="object-position:center 22%"></div>
         <div class="bd"><span class="rl">Ведущий мастер</span><h3>Наталья</h3><p>Основательница студии. Быстро, бережно и почти без боли.</p>
           <ul><li>Лазерная и восковая эпиляция</li><li>Мужская депиляция</li><li>Аппаратный и ручной массаж тела</li><li>Коррекция фигуры: консультация и программа</li></ul>
           <a class="btn pr" href="#" data-yc="3833281">Записаться к Наталье<svg class="i ar"><use href="#i-arrow"/></svg></a></div>
       </article>
       <article class="tm rv d1">
-        <div class="ph" data-cur="Мария"><img src="img/maria.jpg" alt="Мастер Мария проводит лазерную эпиляцию" loading="lazy" width="800" height="1066" style="object-position:center 20%"></div>
+        <div class="ph ph-need"><div><svg class="i"><use href="#i-camera"/></svg><b>Нужно фото мастера</b><span>Мария · портрет 3:4, от 800 px</span></div></div>
         <div class="bd"><span class="rl">Мастер</span><h3>Мария</h3><p>Аккуратно, безболезненно и всё подробно объяснит. В отзывах её зовут «волшебницей».</p>
           <ul><li>Лазерная эпиляция</li><li>Восковая депиляция</li><li>Фотоомоложение, купероз, пигмент</li><li>Ручной массаж лица</li></ul>
           <a class="btn pr" href="#" data-yc="5364750">Записаться к Марии<svg class="i ar"><use href="#i-arrow"/></svg></a></div>
       </article>
       <article class="tm rv d2">
-        <div class="ph" data-cur="Работы"><img src="img/brows-1.jpg" alt="Брови после оформления и окрашивания у Марьяны" loading="lazy" width="600" height="700"><span class="lb">Работы Марьяны</span></div>
+        <div class="ph ph-need"><div><svg class="i"><use href="#i-camera"/></svg><b>Нужно фото мастера</b><span>Марьяна · портрет 3:4, от 800 px</span></div></div>
         <div class="bd"><span class="rl">Мастер бровей и ресниц</span><h3>Марьяна</h3><p>Точно придаёт форму с первых штрихов и подбирает цвет под ваш тон волос.</p>
           <ul><li>Коррекция и окрашивание бровей</li><li>Долговременная укладка, ботокс</li><li>Прореживание и восстановление</li><li>Ламинирование и окрашивание ресниц</li></ul>
           <a class="btn pr" href="#" data-yc="5795928">Записаться к Марьяне<svg class="i ar"><use href="#i-arrow"/></svg></a></div>
@@ -897,13 +944,15 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
             <ul role="listbox"><li class="on" data-v="0">По порядку</li><li data-v="1">Сначала дешевле</li><li data-v="2">Сначала дороже</li></ul></div>
         </div>
         <div class="pbox" id="pbox"></div>
-        <p class="pnote">Цены из актуального прайса студии. Точную стоимость и свободное время видно в онлайн-записи. Акции и скидки не суммируются, уточняйте у администратора.</p>
+        <p class="pnote">Цены из актуального прайса студии. Точную стоимость и свободное время видно в онлайн-записи. Новым клиентам скидка 20% на первое посещение. Акции и скидки не суммируются, уточняйте у администратора.</p>
       </div>
       <aside class="visit rv d2" id="visit">
         <h3>Ваш визит</h3>
         <p class="hint" id="vhint">Добавьте процедуры из прайса, и мы посчитаем сумму и время.</p>
         <ul id="vlist"></ul>
+        <label class="vfirst"><input type="checkbox" id="vfirst"><span class="bx"><svg class="i"><use href="#i-check"/></svg></span>Я впервые в студии, скидка 20%</label>
         <div class="vsum"><small>Итого</small><b id="vsum">0 ₽</b></div>
+        <div class="vold" id="vold"></div>
         <div class="vtime" id="vtime"></div>
         <a class="btn lt" href="#" data-yc><svg class="i"><use href="#i-cal"/></svg>Записаться онлайн</a>
         <a class="btn olw" href="#" id="vwa"><svg class="i"><use href="#i-wa"/></svg>Отправить в WhatsApp</a>
@@ -1013,6 +1062,19 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
 <!-- GIFT + PROMO -->
 <section class="sec alt" id="gift">
   <div class="wrap">
+    <div class="first rv" id="first">
+      <img class="mk" src="brand/mark-light.svg" alt="">
+      <div class="fn"><span>−20%</span></div>
+      <div class="ft">
+        <span class="kick">Новым клиентам</span>
+        <h3>Скидка 20% на первое посещение</h3>
+        <p>Первый визит в студию дешевле на все услуги: лазер, депиляцию, брови и ресницы, массаж и уход за лицом. Просто скажите при записи, что идёте к нам впервые.</p>
+      </div>
+      <div class="fb">
+        <a class="btn lt" href="#" data-yc><svg class="i"><use href="#i-cal"/></svg>Записаться со скидкой</a>
+        <a class="btn olw" href="#" data-wa="Здравствуйте! Я у вас впервые, хочу записаться со скидкой 20%."><svg class="i"><use href="#i-wa"/></svg>Написать в WhatsApp</a>
+      </div>
+    </div>
     <div class="gp">
       <div class="gift rv">
         <div class="ph" data-cur="Подарок"><img src="img/gift.jpg" alt="Подарочный сертификат студии «Красота с любовью»" loading="lazy" width="900" height="1125"></div>
@@ -1293,13 +1355,16 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
     ks.forEach(function(k){var o=get(k),r=o.r;sum+=r[2];if(r[3])tm+=r[3];else tmk=false;var n=r[0]+(o.t.n==='Мужской лазер'||o.g[0].indexOf('Мужская')>-1?' (муж.)':'')+(o.t.n==='Лазер'||o.t.n==='Мужской лазер'?', лазер':'');items.push('<li>'+n+'<span>'+fmt(r[2])+' ₽</span></li>');names.push(n)});
     $('#vlist').innerHTML=items.join('');
     $('#vhint').style.display=ks.length?'none':'';
-    $('#vsum').textContent=fmt(sum)+' ₽';
+    var fst=$('#vfirst').checked,tot=fst?Math.round(sum*0.8/10)*10:sum;
+    $('#vsum').textContent=fmt(tot)+' ₽';
+    $('#vold').textContent=fst&&sum?'без скидки '+fmt(sum)+' ₽':'';
     $('#vtime').textContent=tm?((tmk?'':'от ')+(tm>=60?(Math.floor(tm/60)+' ч '+(tm%60?tm%60+' мин':'')).trim():tm+' мин')):'';
-    var fb=$('#fbk');if(ks.length){fb.href='#visit';fb.removeAttribute('target');fb.lastChild.textContent='Ваш визит · '+fmt(sum)+' ₽'}else{fb.href=yc('');fb.target='_blank';fb.lastChild.textContent='Записаться'}
-    $('#vwa').href=wa(ks.length?'Здравствуйте! Хочу записаться: '+names.join(', ')+'. Ориентировочно '+fmt(sum)+' ₽.':'Здравствуйте! Хочу записаться в студию «Красота с любовью».');
+    var fb=$('#fbk');if(ks.length){fb.href='#visit';fb.removeAttribute('target');fb.lastChild.textContent='Ваш визит · '+fmt(tot)+' ₽'}else{fb.href=yc('');fb.target='_blank';fb.lastChild.textContent='Записаться'}
+    $('#vwa').href=wa(ks.length?'Здравствуйте! '+(fst?'Я у вас впервые. ':'')+'Хочу записаться: '+names.join(', ')+'. Ориентировочно '+fmt(tot)+' ₽'+(fst?' со скидкой 20% на первый визит':'')+'.':'Здравствуйте! Хочу записаться в студию «Красота с любовью».');
     if(lenis)lenis.resize();
   }
   $('#vwa').target='_blank';$('#vwa').rel='noopener';
+  $('#vfirst').addEventListener('change',upd);
   $('#vclr').addEventListener('click',function(){sel={};$$('.add.on',pbox).forEach(function(a){a.classList.remove('on')});upd()});
   render(false);upd();
 
@@ -1476,7 +1541,7 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
       cur.classList.toggle('ph',!!phel);
       cur.classList.toggle('clb',!!l&&!!phel);
       cur.classList.toggle('hov',!!bk);
-      cur.classList.toggle('inv',!phel&&!!t.closest('.dk,.mq,.visit,.cm.lz,.speed,.promo,.nat-v .badge'));
+      cur.classList.toggle('inv',!phel&&!!t.closest('.dk,.mq,.visit,.cm.lz,.speed,.promo,.first,.nat-v .badge'));
     });
   }
 })();
