@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Анастасия Киян · студия шугаринга в Хабаровске">
 <meta property="og:description" content="Бережный шугаринг и воск, уход за лицом и коррекция фигуры на Гагарина, 37. Ежедневно с 10:00 до 20:00 по записи.">
-<meta property="og:image" content="https://staswebdesign.github.io/kiyan/og.jpg?v=1">
+<meta property="og:image" content="https://staswebdesign.github.io/kiyan/og.jpg?v=2">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Анастасия Киян, студия шугаринга в Хабаровске: шугаринг, воск, уход за лицом">
@@ -18,7 +18,7 @@
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://staswebdesign.github.io/kiyan/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://staswebdesign.github.io/kiyan/og.jpg?v=1">
+<meta name="twitter:image" content="https://staswebdesign.github.io/kiyan/og.jpg?v=2">
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="brand/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
@@ -89,12 +89,12 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
 /* header */
 .hd{position:fixed;left:0;right:0;top:0;z-index:50;transition:transform .6s var(--ez),background .5s var(--ez),box-shadow .5s var(--ez)}
 .hd-in{height:90px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 var(--pad);max-width:1432px;margin:0 auto;transition:height .5s var(--ez)}
-.hd.sc{background:rgba(247,242,235,.86);-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);box-shadow:0 1px 0 var(--ln)}
-.hd.sc .hd-in{height:72px}
+.hd.scr{background:rgba(247,242,235,.86);-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);box-shadow:0 1px 0 var(--ln)}
+.hd.scr .hd-in{height:72px}
 .hd.hide{transform:translateY(-102%)}
 .logo{display:block;flex:none}
 .logo img{height:50px;width:auto;transition:height .5s var(--ez)}
-.hd.sc .logo img{height:42px}
+.hd.scr .logo img{height:42px}
 .nav{display:flex;gap:30px;font-size:14px;font-weight:500}
 .nav a{position:relative;padding:6px 0}
 .nav a:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ez)}
@@ -301,9 +301,16 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
 .rate .stars{color:#B08A5C;display:flex;gap:2px}.rate .stars svg{width:15px;height:15px}
 .rate span{font-size:13px;color:var(--mut)}
 .rate a{font-weight:600;border-bottom:1px solid currentColor}
-.rgrid{columns:3;column-gap:16px;transition:opacity .35s var(--ez)}
+.rwrap{overflow:clip}
+.rgrid{display:grid;grid-template-columns:repeat(var(--rc,3),1fr);gap:16px;align-items:start;transition:opacity .35s var(--ez)}
 .rgrid.sw{opacity:0}
-.rc{break-inside:avoid;background:var(--bg2);border-radius:24px;padding:26px 26px 22px;margin-bottom:16px;display:block}
+.rcol{display:grid;gap:16px;min-width:0}
+.rc{background:var(--bg2);border-radius:24px;padding:26px 26px 22px;display:block}
+.rc.nw{animation:rin .9s var(--ez) both}
+.rc.out{transition:opacity .45s var(--ez),transform .55s var(--ez);opacity:0;transform:translateY(16px)}
+@keyframes rin{from{opacity:0;transform:translateY(26px)}}
+.rmore .btn svg{width:16px;height:16px;transition:transform .5s var(--ez)}
+.rmore .btn.up svg{transform:rotate(180deg)}
 .rc .st{display:flex;justify-content:space-between;align-items:center}
 .rc .st .stars{color:#B08A5C;display:flex;gap:2px}.rc .st .stars svg{width:13px;height:13px}
 .rc .st .q{width:26px;height:26px;color:var(--pm)}
@@ -454,7 +461,6 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
   .visit{position:relative;top:0}
   .bodyg{grid-template-columns:1fr}
   .course{min-height:420px}
-  .rgrid{columns:2}
   .faqg{grid-template-columns:1fr}
   .faqg .side{position:relative;top:0}
   .cg{grid-template-columns:1fr}
@@ -466,8 +472,8 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
 @media(max-width:760px){
   :root{--pad:20px}
   body{font-size:15px}
-  .hd-in{height:72px}.hd.sc .hd-in{height:64px}
-  .logo img,.hd.sc .logo img{height:36px}
+  .hd-in{height:72px}.hd.scr .hd-in{height:64px}
+  .logo img,.hd.scr .logo img{height:36px}
   .hero{padding:104px 0 56px;min-height:0}
   .hero h1{font-size:clamp(40px,11.4vw,56px);margin-top:20px}
   .hero .lead{font-size:15px;margin-top:18px}
@@ -508,7 +514,6 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
   .bi .p{grid-column:2;font-size:22px}
   .course{min-height:0;border-radius:28px}
   .course .big{padding-top:32px}
-  .rgrid{columns:1}
   .rate .v{font-size:44px}
   .faq summary{font-size:20px;padding:20px 0}
   .faq .ans p{padding-right:0;font-size:14.5px}
@@ -812,8 +817,8 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
       <div class="rate rv d2"><span class="v">5,0</span><div><div class="stars"><svg class="i"><use href="#i-star"/></svg><svg class="i"><use href="#i-star"/></svg><svg class="i"><use href="#i-star"/></svg><svg class="i"><use href="#i-star"/></svg><svg class="i"><use href="#i-star"/></svg></div><span>оценка в 2ГИС · <a href="https://2gis.ru/khabarovsk/firm/70000001097312599/tab/reviews" target="_blank" rel="noopener">все отзывы ↗</a></span></div></div>
     </div>
     <div class="rtop rv"><div class="chips" id="chips"><button class="on" data-f="all">Все</button><button data-f="s">Шугаринг</button><button data-f="f">Уход за лицом</button><button data-f="a">Атмосфера</button></div></div>
-    <div class="rgrid" id="rgrid"></div>
-    <div class="rmore"><button class="btn ol" id="rmore">Показать ещё отзывы</button></div>
+    <div class="rwrap" id="rwrap"><div class="rgrid" id="rgrid"></div></div>
+    <div class="rmore"><button class="btn ol" id="rmore"><span>Показать ещё отзывы</span><svg class="i"><use href="#i-chevron-down"/></svg></button></div>
   </div>
 </section>
 
@@ -959,7 +964,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
   var hd=$('#hd'),fwa=$('#fwa'),ly=0,tick=false,wr=$('.vis .wr');
   function onScroll(){
     var y=W.scrollY,h=innerHeight;
-    hd.classList.toggle('sc',y>30);
+    hd.classList.toggle('scr',y>30);
     var dy=y-ly;
     if(y<h*.9||b.classList.contains('mopen')){hd.classList.remove('hide');ly=y}
     else if(Math.abs(dy)>12){hd.classList.toggle('hide',dy>0);ly=y}
@@ -1059,16 +1064,53 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
     ['Татьяна Балаева','f','Анастасия настоящий мастер своего дела. Её руки творят чудеса, а знания впечатляют. Она всегда готова ответить на любые вопросы и дать полезные рекомендации.'],
     ['Вера Л','s a','Хожу в данную студию на процедуры. Анастасия прекрасный мастер, всё делает быстро, комфортно и за приятными беседами. Рекомендую посетить студию Анастасии.']
   ];
-  var STAR='<svg class="i"><use href="#i-star"/></svg>',flt='all',lim=6,rg=$('#rgrid'),rmb=$('#rmore');
-  function rrender(anim){
-    var L=R.filter(function(r){return flt==='all'||r[1].indexOf(flt)>-1});
-    var h=L.slice(0,lim).map(function(r){return '<article class="rc"><div class="st"><div class="stars">'+STAR+STAR+STAR+STAR+STAR+'</div><svg class="i q"><use href="#i-quote"/></svg></div><p>'+r[2]+'</p><div class="who"><span class="av">'+r[0].charAt(0)+'</span><div><b>'+r[0]+'</b><a href="'+RU+'" target="_blank" rel="noopener">Отзыв в 2ГИС ↗</a></div></div></article>'}).join('');
-    rmb.style.display=L.length>lim?'':'none';
-    function put(){rg.innerHTML=h;requestAnimationFrame(function(){rg.classList.remove('sw')});if(lenis)lenis.resize()}
-    if(anim){rg.classList.add('sw');setTimeout(put,300)}else put();
+  var STAR='<svg class="i"><use href="#i-star"/></svg>',flt='all',STEP=6,shown=0,L=[],rg=$('#rgrid'),rw=$('#rwrap'),rmb=$('#rmore'),busy=false,ncol=0;
+  var EZR='cubic-bezier(.22,1,.36,1)';
+  function card(r){var a=d.createElement('article');a.className='rc';a.innerHTML='<div class="st"><div class="stars">'+STAR+STAR+STAR+STAR+STAR+'</div><svg class="i q"><use href="#i-quote"/></svg></div><p>'+r[2]+'</p><div class="who"><span class="av">'+r[0].charAt(0)+'</span><div><b>'+r[0]+'</b><a href="'+RU+'" target="_blank" rel="noopener">Отзыв в 2ГИС ↗</a></div></div>';return a}
+  function cols(){return W.innerWidth<761?1:W.innerWidth<981?2:3}
+  function place(el){var cs=$$('.rcol',rg),m=cs[0];cs.forEach(function(c){if(c.offsetHeight<m.offsetHeight)m=c});m.appendChild(el)}
+  function btn(){
+    var more=shown<L.length;
+    rmb.parentNode.style.display=L.length>STEP?'':'none';
+    $('span',rmb).textContent=more?'Показать ещё отзывы':'Свернуть отзывы';
+    rmb.classList.toggle('up',!more);
   }
-  $$('#chips button').forEach(function(bt){bt.addEventListener('click',function(){if(bt.classList.contains('on'))return;$$('#chips button').forEach(function(x){x.classList.toggle('on',x===bt)});flt=bt.dataset.f;lim=6;rrender(true)})});
-  rmb.addEventListener('click',function(){lim+=6;rrender(false)});
+  function build(n){
+    ncol=cols();rg.style.setProperty('--rc',ncol);rg.innerHTML='';
+    for(var i=0;i<ncol;i++){var c=d.createElement('div');c.className='rcol';rg.appendChild(c)}
+    L.slice(0,n).forEach(function(r){place(card(r))});shown=Math.min(n,L.length);btn();if(lenis)lenis.resize();
+  }
+  function rrender(anim){
+    L=R.filter(function(r){return flt==='all'||r[1].indexOf(flt)>-1});
+    if(anim){rg.classList.add('sw');setTimeout(function(){build(STEP);requestAnimationFrame(function(){rg.classList.remove('sw')})},320)}else build(STEP);
+  }
+  function animH(h0,h1,done){
+    if(rm||!rw.animate){done&&done();return}
+    var an=rw.animate([{height:h0+'px'},{height:h1+'px'}],{duration:Math.min(1100,450+Math.abs(h1-h0)*.45),easing:EZR});
+    an.onfinish=function(){done&&done();if(lenis)lenis.resize()};
+  }
+  function more(){
+    var h0=rw.offsetHeight,add=L.slice(shown,shown+STEP);
+    add.forEach(function(r,i){var c=card(r);c.classList.add('nw');c.style.animationDelay=(i*.07)+'s';place(c)});
+    shown+=add.length;btn();
+    var h1=rw.offsetHeight;busy=true;animH(h0,h1,function(){busy=false;$$('.rc.nw',rg).forEach(function(c){c.classList.remove('nw');c.style.animationDelay=''})});
+    if(lenis)lenis.resize();
+  }
+  function less(){
+    var extra=$$('.rc',rg).filter(function(c,i){return false});
+    var all=$$('.rc',rg),keep=L.slice(0,STEP).map(function(r){return r[0]});
+    extra=all.filter(function(c){return keep.indexOf($('b',c).textContent)<0});
+    var h0=rw.offsetHeight;
+    extra.forEach(function(c){c.style.display='none'});var h1=rw.offsetHeight;extra.forEach(function(c){c.style.display=''});
+    extra.forEach(function(c){c.classList.add('out')});
+    busy=true;
+    var top=$('#reviews').getBoundingClientRect().top;
+    if(top<0)goTo('#reviews');
+    animH(h0,h1,function(){extra.forEach(function(c){c.remove()});shown=STEP;btn();busy=false});
+  }
+  $$('#chips button').forEach(function(bt){bt.addEventListener('click',function(){if(bt.classList.contains('on')||busy)return;$$('#chips button').forEach(function(x){x.classList.toggle('on',x===bt)});flt=bt.dataset.f;rrender(true)})});
+  rmb.addEventListener('click',function(){if(busy)return;if(shown<L.length)more();else less()});
+  W.addEventListener('resize',function(){if(cols()!==ncol&&!busy)build(shown)});
   rrender(false);
   watch();
 
