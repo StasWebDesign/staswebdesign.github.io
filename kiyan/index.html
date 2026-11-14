@@ -115,7 +115,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
 .mnav .mlogo{position:absolute;left:22px;top:24px;height:42px;opacity:0;transition:opacity .6s var(--ez) .2s}
 .mopen .mnav .mlogo{opacity:1}
 .mnav nav{display:flex;flex-direction:column;position:relative}
-.mnav nav a{font-family:var(--serif);font-weight:600;font-size:24px;padding:11px 0;border-bottom:1px solid rgba(247,242,235,.14);display:flex;align-items:baseline;gap:14px;opacity:0;transform:translateY(18px);transition:opacity .6s var(--ez),transform .7s var(--ez)}
+.mnav nav a{font-family:var(--serif);font-weight:600;font-size:22px;padding:9px 0;border-bottom:1px solid rgba(247,242,235,.14);display:flex;align-items:baseline;gap:14px;opacity:0;transform:translateY(18px);transition:opacity .6s var(--ez),transform .7s var(--ez)}
 .mnav nav a small{font-family:'Montserrat';font-size:11px;color:var(--pm);letter-spacing:.1em;width:20px}
 .mnav .mb{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
 .mnav .mb .btn{width:100%;height:52px;padding:0 12px;font-size:14px}
@@ -441,6 +441,56 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
 .cur.inv.hov .cr{background:rgba(247,242,235,.16);border-color:rgba(247,242,235,.5)}
 .has-cur,.has-cur *{cursor:none!important}
 .has-cur input,.has-cur textarea{cursor:text!important}
+
+/* works */
+.wkg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:start}
+.wk{position:relative;border-radius:24px;overflow:hidden;background:var(--bg2);display:block;text-align:left;width:100%}
+.wk.w2{grid-column:span 2}
+.wk .im{aspect-ratio:1/1;overflow:hidden}
+.wk.w2 .im{aspect-ratio:2.25/1}
+.wk img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;transition:transform 1.4s var(--ez)}
+.wk:hover img{transform:scale(1.05)}
+.wk .ba{position:absolute;top:14px;left:14px;right:14px;display:flex;justify-content:space-between;pointer-events:none}
+.wk .ba span,.wk .tg{height:30px;padding:0 12px;border-radius:30px;background:rgba(247,242,235,.92);display:inline-flex;align-items:center;font-size:12px;font-weight:600}
+.wk .ba span:last-child{background:var(--ink);color:var(--bg)}
+.wk .cap{padding:16px 18px 18px;background:var(--bg2)}
+.wk .cap b{display:block;font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.15}
+.wk .cap small{display:block;font-size:13px;color:var(--mut);margin-top:4px;line-height:1.45}
+.wnote{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:22px;font-size:13.5px;color:var(--mut);flex-wrap:wrap}
+.wnote a{font-weight:600;color:var(--ink);border-bottom:1px solid currentColor}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:95;display:grid;place-items:center;padding:30px;visibility:hidden;pointer-events:none;transition:visibility 0s .5s}
+.lb.on{visibility:visible;pointer-events:auto;transition:none}
+.lb .bg{position:absolute;inset:0;background:rgba(30,24,21,.86);opacity:0;transition:opacity .5s var(--ez)}
+.lb.on .bg{opacity:1}
+.lb figure{position:relative;max-width:min(1100px,100%);opacity:0;transform:scale(.96);transition:opacity .5s var(--ez),transform .6s var(--ez)}
+.lb.on figure{opacity:1;transform:none}
+.lb img{max-height:calc(100svh - 140px);width:auto;max-width:100%;border-radius:18px;margin:0 auto}
+.lb figcaption{color:var(--bg);text-align:center;margin-top:14px;font-size:14px}
+.lb figcaption b{font-family:var(--serif);font-size:22px;font-weight:600;display:block}
+.lb .x{position:absolute;right:20px;top:20px;width:48px;height:48px;border-radius:50%;background:var(--bg);display:grid;place-items:center;z-index:2;transition:transform .5s var(--ez)}
+.lb .x:hover{transform:rotate(90deg)}
+.lb .x svg{width:18px;height:18px}
+.lb .nv{position:absolute;top:50%;width:52px;height:52px;margin-top:-26px;border-radius:50%;background:rgba(247,242,235,.14);color:var(--bg);display:grid;place-items:center;z-index:2;transition:background .4s}
+.lb .nv:hover{background:rgba(247,242,235,.3)}
+.lb .nv svg{width:20px;height:20px}
+.lb .pv{left:20px}.lb .pv svg{transform:rotate(180deg)}.lb .nx{right:20px}
+/* cosmetics */
+.cos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pc2{background:rgba(247,242,235,.05);border:1px solid rgba(247,242,235,.12);border-radius:26px;overflow:hidden;display:flex;flex-direction:column;transition:background .6s var(--ez),border-color .6s,transform .6s var(--ez)}
+.pc2:hover{background:rgba(247,242,235,.08);border-color:rgba(247,242,235,.24);transform:translateY(-4px)}
+.pc2 .ph{margin:10px 10px 0;border-radius:18px;overflow:hidden;aspect-ratio:560/414}
+.pc2 .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ez)}
+.pc2:hover .ph img{transform:scale(1.05)}
+.pc2 .bd{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+.pc2 .ln{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--pm);font-weight:600}
+.pc2 h3{font-size:24px;line-height:1.1;margin-top:8px}
+.pc2 p{font-size:13.5px;color:rgba(247,242,235,.66);margin-top:8px}
+.pc2 .ft{margin-top:auto;padding-top:18px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.pc2 .pr{font-family:var(--serif);font-size:28px;font-weight:600;line-height:1;font-variant-numeric:lining-nums}
+.pc2 .ft a{height:42px;padding:0 16px;border-radius:30px;border:1px solid rgba(247,242,235,.3);display:inline-flex;align-items:center;font-size:13px;font-weight:600;white-space:nowrap;transition:background .4s,color .4s,border-color .4s}
+.pc2 .ft a:hover{background:var(--bg);color:var(--ink);border-color:var(--bg)}
+.cnote{margin-top:22px;font-size:13px;color:rgba(247,242,235,.55)}
 /* responsive */
 @media(max-width:1180px){
   :root{--pad:36px}
@@ -468,6 +518,8 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
   .freq,.contra{grid-template-columns:1fr}
   .fq,.contra ul{justify-content:flex-start}
   .sh{flex-direction:column;align-items:flex-start;gap:18px}
+  .wkg{grid-template-columns:1fr 1fr}
+  .cos{grid-template-columns:1fr 1fr}
 }
 @media(max-width:760px){
   :root{--pad:20px}
@@ -515,6 +567,19 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
   .course{min-height:0;border-radius:28px}
   .course .big{padding-top:32px}
   .rate .v{font-size:44px}
+  .wkg{gap:10px}
+  .wk.w2{grid-column:1/-1}
+  .wk .cap{padding:12px 12px 14px}.wk .cap b{font-size:17px}.wk .cap small{font-size:12px}
+  .wk .ba{top:10px;left:10px;right:10px}.wk .ba span{height:26px;padding:0 10px;font-size:11px}
+  .cos{grid-template-columns:1fr;gap:10px}
+  .pc2{display:grid;grid-template-columns:118px 1fr;border-radius:22px}
+  .pc2{grid-template-columns:132px 1fr}
+  .pc2 .ph{margin:10px 4px 10px 10px;aspect-ratio:560/414;align-self:start;border-radius:14px}
+  .pc2 .bd{padding:16px 14px 16px 6px}
+  .pc2 h3{font-size:19px;margin-top:6px}
+  .pc2 p{font-size:12.5px;margin-top:6px}
+  .pc2 .ft{padding-top:12px}.pc2 .pr{font-size:22px}.pc2 .ft a{height:38px;padding:0 12px;font-size:12px}
+  .lb{padding:16px}.lb .nv{display:none}.lb .x{right:12px;top:12px}
   .faq summary{font-size:20px;padding:20px 0}
   .faq .ans p{padding-right:0;font-size:14.5px}
   .form{grid-template-columns:1fr}
@@ -598,7 +663,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
   <div class="hd-in">
     <a class="logo" href="#top" aria-label="Анастасия Киян, студия шугаринга"><img src="brand/logo-hd-dark.svg" alt="Анастасия Киян · студия шугаринга" width="200" height="45"></a>
     <nav class="nav" aria-label="Разделы">
-      <a href="#about">О мастере</a><a href="#services">Услуги</a><a href="#prices">Цены</a><a href="#body">Коррекция тела</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a>
+      <a href="#about">О мастере</a><a href="#services">Услуги</a><a href="#prices">Цены</a><a href="#works">Работы</a><a href="#cosmetics">Косметика</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a>
     </nav>
     <div class="hd-r">
       <a class="tel" href="tel:+79243052955"><svg class="i"><use href="#i-phone"/></svg>+7 924 305-29-55</a>
@@ -615,17 +680,18 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
     <a href="#about" style="--k:0"><small>01</small>О мастере</a>
     <a href="#services" style="--k:1"><small>02</small>Услуги</a>
     <a href="#prices" style="--k:2"><small>03</small>Цены и запись</a>
-    <a href="#body" style="--k:3"><small>04</small>Коррекция тела</a>
-    <a href="#prep" style="--k:4"><small>05</small>Подготовка</a>
-    <a href="#reviews" style="--k:5"><small>06</small>Отзывы</a>
-    <a href="#faq" style="--k:6"><small>07</small>Вопросы</a>
-    <a href="#contacts" style="--k:7"><small>08</small>Контакты</a>
+    <a href="#works" style="--k:3"><small>04</small>Работы</a>
+    <a href="#body" style="--k:4"><small>05</small>Коррекция тела</a>
+    <a href="#cosmetics" style="--k:5"><small>06</small>Косметика</a>
+    <a href="#reviews" style="--k:6"><small>07</small>Отзывы</a>
+    <a href="#faq" style="--k:7"><small>08</small>Вопросы</a>
+    <a href="#contacts" style="--k:8"><small>09</small>Контакты</a>
   </nav>
-  <div class="mb" style="--k:8">
+  <div class="mb" style="--k:9">
     <a class="btn lt" data-wa="Здравствуйте, Анастасия! Хочу записаться." href="#" target="_blank" rel="noopener"><svg class="i"><use href="#i-whatsapp"/></svg>WhatsApp</a>
     <a class="btn olw" href="tel:+79243052955"><svg class="i"><use href="#i-phone"/></svg>Позвонить</a>
   </div>
-  <div class="mc" style="--k:9">
+  <div class="mc" style="--k:10">
     <div><b>ул. Гагарина, 37, 2 этаж</b>мкр им. Горького, Железнодорожный район</div>
     <div><b>Ежедневно 10:00–20:00</b>по предварительной записи</div>
     <div><b>+7 924 305-29-55</b><a href="https://www.instagram.com/shuga.mommii/" target="_blank" rel="noopener">Instagram @shuga.mommii</a></div>
@@ -743,6 +809,25 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
   </div>
 </section>
 
+
+<!-- WORKS -->
+<section class="sec" id="works">
+  <div class="wrap">
+    <div class="sh">
+      <div><span class="lbl rv">Работы</span><h2 class="rv d1">Результат <em>до и после</em></h2></div>
+      <p class="lead rv d2">Фото из кабинета Анастасии без ретуши: депиляция и уход за лицом. Нажмите на фото, чтобы рассмотреть.</p>
+    </div>
+    <div class="wkg" id="wkg">
+      <button class="wk w2 rv" data-i="0"><div class="im"><img src="img/works/w-arm.jpg" alt="Шугаринг подмышек до и после" width="1237" height="500" loading="lazy"></div><div class="ba"><span>До</span><span>После</span></div><div class="cap"><b>Шугаринг подмышек</b><small>Сразу после процедуры. Лёгкое покраснение проходит за 15–20 минут</small></div></button>
+      <button class="wk w2 rv d1" data-i="1"><div class="im"><img src="img/works/w-cheek.jpg" alt="Мужская депиляция лица до и после" width="1237" height="575" loading="lazy"></div><div class="ba"><span>До</span><span>После</span></div><div class="cap"><b>Мужская депиляция лица</b><small>Щёки: идеально гладко, без пеньков и раздражения</small></div></button>
+      <button class="wk rv" data-i="2"><div class="im"><img src="img/works/f1.jpg" alt="Чистка лица до и после" width="549" height="730" loading="lazy"></div><div class="ba"><span>До</span><span>После</span></div><div class="cap"><b>Чистка лица</b><small>Кожа стала светлее и чище</small></div></button>
+      <button class="wk rv d1" data-i="3"><div class="im"><img src="img/works/f2.jpg" alt="Уход за лицом, вторая процедура" width="638" height="637" loading="lazy"></div><div class="cap"><b>Вторая процедура</b><small>Кожа эластичнее, подтянулась, разгладились морщинки</small></div></button>
+      <button class="wk rv d2" data-i="4"><div class="im"><img src="img/works/f3.jpg" alt="Уход за лицом до и после" width="638" height="640" loading="lazy"></div><div class="cap"><b>Ровный тон</b><small>Меньше покраснений, кожа выглядит свежее</small></div></button>
+      <button class="wk rv d3" data-i="5"><div class="im"><img src="img/works/f4.jpg" alt="Уход за лицом до и после" width="625" height="858" loading="lazy"></div><div class="cap"><b>Сияние кожи</b><small>Результат сразу после процедуры</small></div></button>
+    </div>
+    <div class="wnote rv"><span>Больше работ в историях «До/После» и «Косметология»</span><a href="https://www.instagram.com/shuga.mommii/" target="_blank" rel="noopener">Instagram @shuga.mommii ↗</a></div>
+  </div>
+</section>
 <!-- WHY -->
 <section class="sec dark" id="why">
   <div class="wrap">
@@ -809,6 +894,25 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
   </div>
 </section>
 
+
+<!-- COSMETICS -->
+<section class="sec dark" id="cosmetics">
+  <div class="wrap">
+    <div class="sh">
+      <div><span class="lbl rv">Косметика</span><h2 class="rv d1">Профессиональный уход <em>Gènevie от Estel</em></h2></div>
+      <p class="lead rv d2">На этой линии Анастасия работает в кабинете. Средства для дома подберёт под вашу кожу после процедуры, купить их можно прямо в студии.</p>
+    </div>
+    <div class="cos">
+      <article class="pc2 rv"><div class="ph"><img src="img/cos/p2.jpg" alt="Сыворотка с гиалуроновой кислотой Gènevie" width="560" height="414" loading="lazy"></div><div class="bd"><span class="ln">Клеточная молодость</span><h3>Сыворотка с гиалуроновой кислотой</h3><p>Четыре типа гиалуроновой кислоты: глубокое увлажнение и упругость.</p><div class="ft"><span class="pr">3 700 ₽</span><a href="#book" data-book data-msg="Здравствуйте, Анастасия! Интересует сыворотка Gènevie с гиалуроновой кислотой.">Подобрать</a></div></div></article>
+      <article class="pc2 rv d1"><div class="ph"><img src="img/cos/p1.jpg" alt="Крем с церамидами и пептидами Gènevie" width="560" height="414" loading="lazy"></div><div class="bd"><span class="ln">Клеточная молодость</span><h3>Крем с церамидами и пептидами</h3><p>Восстанавливает защитный барьер кожи и помогает против морщин.</p><div class="ft"><span class="pr">3 000 ₽</span><a href="#book" data-book data-msg="Здравствуйте, Анастасия! Интересует крем Gènevie с церамидами и пептидами.">Подобрать</a></div></div></article>
+      <article class="pc2 rv d2"><div class="ph"><img src="img/cos/p3.jpg" alt="Крем для кожи вокруг глаз Gènevie" width="560" height="414" loading="lazy"></div><div class="bd"><span class="ln">Клеточная молодость</span><h3>Крем для кожи вокруг глаз</h3><p>С аргирелином: разглаживает мимические морщины, меньше отёков.</p><div class="ft"><span class="pr">2 500 ₽</span><a href="#book" data-book data-msg="Здравствуйте, Анастасия! Интересует крем Gènevie для кожи вокруг глаз.">Подобрать</a></div></div></article>
+      <article class="pc2 rv"><div class="ph"><img src="img/cos/p4.jpg" alt="Крем для лица и шеи Gènevie Мембранный лифтинг" width="560" height="414" loading="lazy"></div><div class="bd"><span class="ln">Мембранный лифтинг</span><h3>Крем для лица и шеи</h3><p>Пептиды и меристемные клетки: подтягивает контур и укрепляет кожу.</p><div class="ft"><span class="pr">3 500 ₽</span><a href="#book" data-book data-msg="Здравствуйте, Анастасия! Интересует крем Gènevie для лица и шеи.">Подобрать</a></div></div></article>
+      <article class="pc2 rv d1"><div class="ph"><img src="img/cos/p5.jpg" alt="Ночной крем с пребиотиком Gènevie" width="560" height="414" loading="lazy"></div><div class="bd"><span class="ln">Циркадные ритмы ночи</span><h3>Ночной крем с пребиотиком</h3><p>Восстанавливает кожу во время сна и защищает от стресса.</p><div class="ft"><span class="pr">4 300 ₽</span><a href="#book" data-book data-msg="Здравствуйте, Анастасия! Интересует ночной крем Gènevie.">Подобрать</a></div></div></article>
+      <article class="pc2 rv d2"><div class="ph"><img src="img/cos/p6.jpg" alt="Ночная сыворотка Gènevie" width="560" height="414" loading="lazy"></div><div class="bd"><span class="ln">Циркадные ритмы ночи</span><h3>Ночная сыворотка для лица</h3><p>Глубокое увлажнение и обновление кожи за ночь.</p><div class="ft"><span class="pr">4 300 ₽</span><a href="#book" data-book data-msg="Здравствуйте, Анастасия! Интересует ночная сыворотка Gènevie.">Подобрать</a></div></div></article>
+    </div>
+    <p class="cnote rv">Цены и наличие уточняйте у Анастасии.</p>
+  </div>
+</section>
 <!-- REVIEWS -->
 <section class="sec" id="reviews">
   <div class="wrap">
@@ -917,6 +1021,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
   </div>
 </div>
 
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Просмотр работы"><div class="bg" data-lbx></div><button class="x" data-lbx aria-label="Закрыть"><svg class="i"><use href="#i-x"/></svg></button><button class="nv pv" aria-label="Предыдущее фото"><svg class="i"><use href="#i-arrow-right"/></svg></button><button class="nv nx" aria-label="Следующее фото"><svg class="i"><use href="#i-arrow-right"/></svg></button><figure><img id="lbi" src="" alt=""><figcaption id="lbc"></figcaption></figure></div>
 <a class="fwa" id="fwa" href="#book" data-book aria-label="Записаться"><svg class="i"><use href="#i-whatsapp"/></svg></a>
 <div class="cur" id="cur" aria-hidden="true"><div class="w" id="cr"><i class="cr"><span></span></i></div><div class="w" id="cd"><i class="cd"></i></div></div>
 <div class="toast" id="toast">Открываем WhatsApp с вашей заявкой…</div>
@@ -1064,24 +1169,24 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
     ['Татьяна Балаева','f','Анастасия настоящий мастер своего дела. Её руки творят чудеса, а знания впечатляют. Она всегда готова ответить на любые вопросы и дать полезные рекомендации.'],
     ['Вера Л','s a','Хожу в данную студию на процедуры. Анастасия прекрасный мастер, всё делает быстро, комфортно и за приятными беседами. Рекомендую посетить студию Анастасии.']
   ];
-  var STAR='<svg class="i"><use href="#i-star"/></svg>',flt='all',STEP=6,shown=0,L=[],rg=$('#rgrid'),rw=$('#rwrap'),rmb=$('#rmore'),busy=false,ncol=0;
+  var STAR='<svg class="i"><use href="#i-star"/></svg>',flt='all',STEP=6,shown=0,RL=[],rg=$('#rgrid'),rw=$('#rwrap'),rmb=$('#rmore'),busy=false,ncol=0;
   var EZR='cubic-bezier(.22,1,.36,1)';
   function card(r){var a=d.createElement('article');a.className='rc';a.innerHTML='<div class="st"><div class="stars">'+STAR+STAR+STAR+STAR+STAR+'</div><svg class="i q"><use href="#i-quote"/></svg></div><p>'+r[2]+'</p><div class="who"><span class="av">'+r[0].charAt(0)+'</span><div><b>'+r[0]+'</b><a href="'+RU+'" target="_blank" rel="noopener">Отзыв в 2ГИС ↗</a></div></div>';return a}
   function cols(){return W.innerWidth<761?1:W.innerWidth<981?2:3}
   function place(el){var cs=$$('.rcol',rg),m=cs[0];cs.forEach(function(c){if(c.offsetHeight<m.offsetHeight)m=c});m.appendChild(el)}
   function btn(){
-    var more=shown<L.length;
-    rmb.parentNode.style.display=L.length>STEP?'':'none';
+    var more=shown<RL.length;
+    rmb.parentNode.style.display=RL.length>STEP?'':'none';
     $('span',rmb).textContent=more?'Показать ещё отзывы':'Свернуть отзывы';
     rmb.classList.toggle('up',!more);
   }
   function build(n){
     ncol=cols();rg.style.setProperty('--rc',ncol);rg.innerHTML='';
     for(var i=0;i<ncol;i++){var c=d.createElement('div');c.className='rcol';rg.appendChild(c)}
-    L.slice(0,n).forEach(function(r){place(card(r))});shown=Math.min(n,L.length);btn();if(lenis)lenis.resize();
+    RL.slice(0,n).forEach(function(r){place(card(r))});shown=Math.min(n,RL.length);btn();if(lenis)lenis.resize();
   }
   function rrender(anim){
-    L=R.filter(function(r){return flt==='all'||r[1].indexOf(flt)>-1});
+    RL=R.filter(function(r){return flt==='all'||r[1].indexOf(flt)>-1});
     if(anim){rg.classList.add('sw');setTimeout(function(){build(STEP);requestAnimationFrame(function(){rg.classList.remove('sw')})},320)}else build(STEP);
   }
   function animH(h0,h1,done){
@@ -1090,7 +1195,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
     an.onfinish=function(){done&&done();if(lenis)lenis.resize()};
   }
   function more(){
-    var h0=rw.offsetHeight,add=L.slice(shown,shown+STEP);
+    var h0=rw.offsetHeight,add=RL.slice(shown,shown+STEP);
     add.forEach(function(r,i){var c=card(r);c.classList.add('nw');c.style.animationDelay=(i*.07)+'s';place(c)});
     shown+=add.length;btn();
     var h1=rw.offsetHeight;busy=true;animH(h0,h1,function(){busy=false;$$('.rc.nw',rg).forEach(function(c){c.classList.remove('nw');c.style.animationDelay=''})});
@@ -1098,7 +1203,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
   }
   function less(){
     var extra=$$('.rc',rg).filter(function(c,i){return false});
-    var all=$$('.rc',rg),keep=L.slice(0,STEP).map(function(r){return r[0]});
+    var all=$$('.rc',rg),keep=RL.slice(0,STEP).map(function(r){return r[0]});
     extra=all.filter(function(c){return keep.indexOf($('b',c).textContent)<0});
     var h0=rw.offsetHeight;
     extra.forEach(function(c){c.style.display='none'});var h1=rw.offsetHeight;extra.forEach(function(c){c.style.display=''});
@@ -1109,11 +1214,21 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
     animH(h0,h1,function(){extra.forEach(function(c){c.remove()});shown=STEP;btn();busy=false});
   }
   $$('#chips button').forEach(function(bt){bt.addEventListener('click',function(){if(bt.classList.contains('on')||busy)return;$$('#chips button').forEach(function(x){x.classList.toggle('on',x===bt)});flt=bt.dataset.f;rrender(true)})});
-  rmb.addEventListener('click',function(){if(busy)return;if(shown<L.length)more();else less()});
+  rmb.addEventListener('click',function(){if(busy)return;if(shown<RL.length)more();else less()});
   W.addEventListener('resize',function(){if(cols()!==ncol&&!busy)build(shown)});
   rrender(false);
   watch();
 
+
+  /* works lightbox */
+  var lbx=$('#lb'),wks=$$('.wk'),li=0;
+  function lbShow(i){li=(i+wks.length)%wks.length;var w=wks[li];$('#lbi').src=$('img',w).src;$('#lbi').alt=$('img',w).alt;$('#lbc').innerHTML='<b>'+$('.cap b',w).textContent+'</b>'+$('.cap small',w).textContent}
+  wks.forEach(function(w,i){w.addEventListener('click',function(){lbShow(i);lbx.classList.add('on');b.classList.add('mdopen');lock(true)})});
+  function lbClose(){if(!lbx.classList.contains('on'))return;lbx.classList.remove('on');b.classList.remove('mdopen');lock(false)}
+  $$('[data-lbx]',lbx).forEach(function(e){e.addEventListener('click',lbClose)});
+  $('.pv',lbx).addEventListener('click',function(){lbShow(li-1)});$('.nx',lbx).addEventListener('click',function(){lbShow(li+1)});
+  d.addEventListener('keydown',function(e){if(!lbx.classList.contains('on'))return;if(e.key==='Escape')lbClose();if(e.key==='ArrowRight')lbShow(li+1);if(e.key==='ArrowLeft')lbShow(li-1)});
+  var tsx=0;lbx.addEventListener('touchstart',function(e){tsx=e.touches[0].clientX},{passive:true});lbx.addEventListener('touchend',function(e){var dx=e.changedTouches[0].clientX-tsx;if(Math.abs(dx)>50)lbShow(li+(dx<0?1:-1))});
   /* custom selects */
   function closeSel(ex){$$('.sel.op').forEach(function(s){if(s!==ex){s.classList.remove('op');$('button',s).setAttribute('aria-expanded','false')}})}
   $$('.sel').forEach(function(s){
@@ -1201,12 +1316,13 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
       var bk=t.closest('[data-book],a,button,summary,label,.sel li');
       var l='',ph=false;
       if(!bk&&t.closest('.ph-st,.vis .hex'))ph=true,l=t.closest('.vis')?'Анастасия':'Кабинет';
+      if(t.closest('.wk'))bk=null,ph=true,l='Смотреть';
       if(!bk&&t.closest('#map'))ph=false;
       lab.textContent=l;
       cur.classList.toggle('ph',ph);
       cur.classList.toggle('lb',!!l&&ph);
       cur.classList.toggle('hov',!!bk);
-      cur.classList.toggle('inv',!ph&&!!t.closest('.dark,.sc.dk,.visit,.course,.qt,.mq,.mnav,.vnote'));
+      cur.classList.toggle('inv',!ph&&!!t.closest('.lb,.dark,.sc.dk,.visit,.course,.qt,.mq,.mnav,.vnote'));
     });
   }
 })();
