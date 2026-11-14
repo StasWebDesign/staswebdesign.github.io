@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Красота с любовью · студия красоты в Хабаровске">
 <meta property="og:description" content="Лазер, воск и шугаринг, брови и ресницы, массаж и аппаратная косметология. Онлайн-запись к Наталье, Марии и Марьяне.">
-<meta property="og:image" content="https://staswebdesign.github.io/krasota/og.jpg?v=3">
+<meta property="og:image" content="https://staswebdesign.github.io/krasota/og.jpg?v=4">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Красота с любовью, студия красоты в Хабаровске: лазерная эпиляция, депиляция, брови, массаж">
@@ -18,7 +18,7 @@
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://staswebdesign.github.io/krasota/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://staswebdesign.github.io/krasota/og.jpg?v=3">
+<meta name="twitter:image" content="https://staswebdesign.github.io/krasota/og.jpg?v=4">
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="brand/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
@@ -140,9 +140,11 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
 /* hero */
 .hero{position:relative;padding:150px 0 110px;overflow:hidden}
 .hero::before{content:'';position:absolute;left:-10%;top:-20%;width:70%;height:90%;background:radial-gradient(closest-side,rgba(240,211,206,.75),transparent);pointer-events:none}
+.hero .wrap>div:first-child{display:flex;flex-direction:column;align-items:flex-start}
+.hero .wrap>div:first-child>.cta,.hero .wrap>div:first-child>.chips{align-self:stretch}
 .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center;position:relative}
 .hero .eb{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.hero .eb img{height:34px;width:auto}
+.hero .eb img{height:34px;width:auto;transform:translateY(-10px)}
 .hero .eb span{font:600 11.5px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
 .hero h1{font-size:clamp(42px,4.6vw,66px);line-height:1.04;margin:20px 0 26px}
 .hero h1 span{display:block;white-space:nowrap}
@@ -158,7 +160,7 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
 .fpill .ar{width:15px;height:15px;color:var(--rose);transition:transform .6s var(--ez)}
 .fpill:hover .ar{transform:translateX(4px)}
 .hero .cta .btn{min-width:236px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
 .chip{display:inline-flex;align-items:center;gap:8px;padding:9px 15px;border-radius:40px;background:rgba(255,253,251,.75);border:1px solid var(--ln);font-size:12.5px;font-weight:500;color:var(--ink)}
 .chip .i{width:15px;height:15px;color:var(--rose)}
 .vis{position:relative;justify-self:center;width:min(100%,500px)}
@@ -203,7 +205,7 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
 /* natalia */
 .nat{display:grid;grid-template-columns:.95fr 1.05fr;gap:80px;align-items:start}
 .nat-v{position:sticky;top:var(--stk);transition:top .6s var(--ez);max-width:410px;width:100%;justify-self:center}
-.nat-v .ring{position:absolute;left:50%;top:44%;width:116%;aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none}
+.nat-v .ring{position:absolute;left:50%;top:44%;width:min(116%,calc(100vw - 12px));aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none}
 .nat-v .ring i{position:absolute;inset:0;border-radius:50%;border:1px solid var(--gold)}
 .nat-v .ring i+i{inset:12px;border-color:rgba(194,154,91,.45)}
 .nat-v .main{position:relative;z-index:1;border-radius:999px 999px 30px 30px;overflow:hidden;aspect-ratio:3/4.2;box-shadow:0 40px 80px -40px rgba(83,19,34,.45)}
@@ -665,7 +667,10 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
   .first .fb{flex-direction:column;min-width:0}
   .first .fb .btn{flex:none}
   .first::before{left:-120px;top:20px;transform:none}
-  .fpill{margin-top:18px}
+  .fpill{margin-top:18px;order:1}
+  .hero .wrap>div:first-child>.eb{order:0}
+  .hero .wrap>div:first-child>h1,.hero .wrap>div:first-child>.lead,.hero .wrap>div:first-child>.cta,.hero .wrap>div:first-child>.chips{order:2}
+  .hero .eb img{transform:none}
   .gift .ph{min-height:260px}
   .gift .bd,.promo{padding:30px 22px}
   .gift h3,.promo h3{font-size:29px}
@@ -728,7 +733,7 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
   <div class="wrap">
     <a class="logo" href="#top" aria-label="Красота с любовью, на главную">
       <img class="ht" src="brand/heart-rose.svg" alt="" width="34" height="32">
-      <img class="wm" src="brand/word.svg" alt="Красота с любовью" width="117" height="31">
+      <img class="wm" src="brand/wordmark.svg" alt="Красота с любовью" width="117" height="31">
     </a>
     <nav class="nav" aria-label="Разделы">
       <a href="#services">Услуги</a>
@@ -747,7 +752,7 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
 </header>
 
 <div class="mm" id="mm">
-  <img class="mk" src="brand/mark.svg" alt="">
+  <img class="mk" src="brand/emblem.svg" alt="">
   <nav aria-label="Меню">
     <a href="#services">Услуги<small>6 направлений</small></a>
     <a href="#natalia">О Наталье<small>основательница</small></a>
@@ -779,13 +784,13 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
   <div class="wrap">
     <div>
       <div class="eb rv"><img src="brand/script-rose.svg" alt="с любовью" width="141" height="30"><span>Студия красоты · Хабаровск</span></div>
-      <a class="fpill rv d1" href="#first"><span class="fp-n">−20%</span><span class="fp-t">на первое посещение</span><svg class="i ar"><use href="#i-arrow"/></svg></a>
       <h1 class="rv d2"><span>Ваше место</span><span>для заботы <em>о себе</em></span></h1>
       <p class="lead rv d3">Лазерная эпиляция, воск и шугаринг, брови и ресницы, ручной и аппаратный массаж, RF-лифтинг и фотоомоложение. Уютный кабинет на Руднева, 81, где всё стерильно, честно и с вниманием к каждой мелочи.</p>
       <div class="cta rv d3">
         <a class="btn pr" href="#" data-yc><svg class="i"><use href="#i-cal"/></svg>Записаться онлайн</a>
         <a class="btn ol" href="#" data-wa="Здравствуйте! Хочу записаться в студию «Красота с любовью»."><svg class="i"><use href="#i-wa"/></svg>Написать в WhatsApp</a>
       </div>
+      <a class="fpill rv d4" href="#first"><span class="fp-n">−20%</span><span class="fp-t">на первое посещение</span><svg class="i ar"><use href="#i-arrow"/></svg></a>
       <div class="chips rv d4">
         <span class="chip"><svg class="i"><use href="#i-shield"/></svg>Сухожаровой шкаф и одноразовое</span>
         <span class="chip"><svg class="i"><use href="#i-users"/></svg>Женская и мужская эпиляция</span>
@@ -820,7 +825,7 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
           <div class="ft"><a class="btn ol sm" href="#prices" data-tab="0">Цены</a><a class="btn pr sm" href="#" data-yc>Записаться</a></div></div>
       </article>
       <article class="sv rv d1">
-        <div class="ph" data-cur="Воск"><img src="img/svc-wax.jpg" alt="Мастер наносит воск на ногу шпателем" loading="lazy" width="900" height="697"><span class="pb">от 300 ₽</span></div>
+        <div class="ph" data-cur="Воск"><img src="img/svc-wax-process.jpg" alt="Мастер наносит воск на ногу шпателем" loading="lazy" width="900" height="697"><span class="pb">от 300 ₽</span></div>
         <div class="bd"><h3>Воск и шугаринг</h3><p>Гладкость сразу после процедуры на 3–4 недели. Работаем быстро: глубокое бикини 25–30 минут, подмышки 5–7.</p>
           <ul><li>все зоны</li><li>лицо</li><li>комплексы</li><li>для мужчин</li></ul>
           <div class="ft"><a class="btn ol sm" href="#prices" data-tab="2">Цены</a><a class="btn pr sm" href="#" data-yc>Записаться</a></div></div>
@@ -858,7 +863,7 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
   <div class="wrap nat">
     <div class="nat-v rv">
       <div class="ring"><i></i><i></i></div>
-      <div class="main" data-cur="Наталья"><img src="img/natalia-arch.jpg" alt="Наталья Чапковская, основательница студии «Красота с любовью», на фоне сертификатов" loading="lazy" width="562" height="1004"></div>
+      <div class="main" data-cur="Наталья"><img src="img/natalia-founder.jpg" alt="Наталья Чапковская, основательница студии «Красота с любовью», на фоне сертификатов" loading="lazy" width="562" height="1004"></div>
       <div class="badge"><b>Любит своё дело</b>и каждую клиентку встречает как близкого человека</div>
     </div>
     <div class="nat-t">
@@ -903,7 +908,7 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
     </div>
     <div class="team">
       <article class="tm rv">
-        <div class="ph" data-cur="Наталья"><img src="img/natalia-team.jpg" alt="Наталья с сахарной пастой и бритвами" loading="lazy" width="900" height="900" style="object-position:center top"></div>
+        <div class="ph" data-cur="Наталья"><img src="img/natalia-razors.jpg" alt="Наталья с сахарной пастой и бритвами" loading="lazy" width="900" height="900" style="object-position:center top"></div>
         <div class="bd"><span class="rl">Ведущий мастер</span><h3>Наталья</h3><p>Основательница студии. Быстро, бережно и почти без боли.</p>
           <ul><li>Лазерная и восковая эпиляция</li><li>Мужская депиляция</li><li>Аппаратный и ручной массаж тела</li><li>Коррекция фигуры: консультация и программа</li></ul>
           <a class="btn pr" href="#" data-yc="3833281">Записаться к Наталье<svg class="i ar"><use href="#i-arrow"/></svg></a></div>
@@ -1063,7 +1068,7 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
 <section class="sec alt" id="gift">
   <div class="wrap">
     <div class="first rv" id="first">
-      <img class="mk" src="brand/mark-light.svg" alt="">
+      <img class="mk" src="brand/emblem-light.svg" alt="">
       <div class="fn"><span>−20%</span></div>
       <div class="ft">
         <span class="kick">Новым клиентам</span>
@@ -1091,7 +1096,7 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
         </div>
       </div>
       <div class="promo rv d1" id="promo">
-        <img class="mk" src="brand/mark-light.svg" alt="">
+        <img class="mk" src="brand/emblem-light.svg" alt="">
         <span class="kick">Акция месяца</span>
         <h3 id="pr-t">Каждый месяц новое предложение</h3>
         <div class="pr" id="pr-p" hidden></div>
@@ -1130,7 +1135,7 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
   <div class="wrap">
     <div class="cons rv">
       <div class="l">
-        <img class="mk" src="brand/mark.svg" alt="">
+        <img class="mk" src="brand/emblem.svg" alt="">
         <span class="kick">Консультация</span>
         <h2>Не знаете, с какой <em>процедуры начать?</em></h2>
         <p>Расскажите, что хочется изменить, и мы подскажем, с чего лучше начать и сколько это будет стоить.</p>
@@ -1198,7 +1203,7 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
       <a class="btn pr" href="#" data-yc><svg class="i"><use href="#i-cal"/></svg>Записаться онлайн</a>
       <a class="btn ol" href="#" data-wa="Здравствуйте! Хочу записаться в студию «Красота с любовью»."><svg class="i"><use href="#i-wa"/></svg>Написать в WhatsApp</a>
     </div>
-    <div class="biglogo rv"><div class="rings"><i></i><i></i></div><img src="brand/logo.svg" alt="Красота с любовью" width="944" height="812" loading="lazy"></div>
+    <div class="biglogo rv"><div class="rings"><i></i><i></i></div><img src="brand/logo-full.svg" alt="Красота с любовью" width="944" height="812" loading="lazy"></div>
   </div>
 </section>
 </main>
