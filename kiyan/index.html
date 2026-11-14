@@ -443,20 +443,22 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
 .has-cur input,.has-cur textarea{cursor:text!important}
 
 /* works */
-.wkg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch}
-.wk{position:relative;border-radius:24px;overflow:hidden;background:var(--bg2);display:flex;flex-direction:column;text-align:left;width:100%}
-.wk .cap{flex:1}
-.wk.w2{grid-column:span 2}
-.wk .im{aspect-ratio:1/1;overflow:hidden}
-.wk.w2 .im{aspect-ratio:2.25/1}
-.wk img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;transition:transform 1.4s var(--ez)}
+.wkg{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.wk{position:relative;border-radius:26px;overflow:hidden;background:var(--bg2);display:grid;grid-template-columns:1.45fr 1fr;text-align:left;width:100%;transition:box-shadow .6s var(--ez),transform .6s var(--ez)}
+.wk:hover{transform:translateY(-4px);box-shadow:0 30px 50px -36px rgba(46,37,33,.55)}
+.wk .im{position:relative;aspect-ratio:4/3;overflow:hidden;margin:10px 0 10px 10px;border-radius:18px}
+.wk img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ez)}
 .wk:hover img{transform:scale(1.05)}
-.wk .ba{position:absolute;top:14px;left:14px;right:14px;display:flex;justify-content:space-between;pointer-events:none}
-.wk .ba span,.wk .tg{height:30px;padding:0 12px;border-radius:30px;background:rgba(247,242,235,.92);display:inline-flex;align-items:center;font-size:12px;font-weight:600}
+.wk .ba{position:absolute;top:12px;left:12px;right:12px;display:flex;justify-content:space-between;pointer-events:none}
+.wk .ba span{height:28px;padding:0 12px;border-radius:30px;background:rgba(247,242,235,.92);display:inline-flex;align-items:center;font-size:12px;font-weight:600}
 .wk .ba span:last-child{background:var(--ink);color:var(--bg)}
-.wk .cap{padding:16px 18px 18px;background:var(--bg2)}
-.wk .cap b{display:block;font-family:var(--serif);font-size:21px;font-weight:600;line-height:1.15}
-.wk .cap small{display:block;font-size:13px;color:var(--mut);margin-top:4px;line-height:1.45}
+.wk .cap{padding:24px 24px 22px;display:flex;flex-direction:column;justify-content:center;min-width:0}
+.wk .tg2{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--tp);font-weight:600}
+.wk .cap b{display:block;font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.1;margin-top:10px}
+.wk .cap small{display:block;font-size:13.5px;color:var(--mut);margin-top:10px;line-height:1.5}
+.wk .more{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:13px;font-weight:600}
+.wk .more svg{width:15px;height:15px;transition:transform .45s var(--ez)}
+.wk:hover .more svg{transform:translate(2px,-2px)}
 .wnote{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:22px;font-size:13.5px;color:var(--mut);flex-wrap:wrap}
 .wnote a{font-weight:600;color:var(--ink);border-bottom:1px solid currentColor}
 /* lightbox */
@@ -497,6 +499,8 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
   :root{--pad:36px}
   .nav{gap:20px}.hd-r .tel{display:none}
   .svc{grid-template-columns:1fr 1fr}
+  .wkg{grid-template-columns:1fr}
+  .wk{grid-template-columns:1.3fr 1fr}
   .why{grid-template-columns:1fr 1fr}
   .pg{grid-template-columns:1fr 340px}
 }
@@ -519,7 +523,6 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
   .freq,.contra{grid-template-columns:1fr}
   .fq,.contra ul{justify-content:flex-start}
   .sh{flex-direction:column;align-items:flex-start;gap:18px}
-  .wkg{grid-template-columns:1fr 1fr}
   .cos{grid-template-columns:1fr 1fr}
 }
 @media(max-width:760px){
@@ -568,9 +571,10 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
   .course{min-height:0;border-radius:28px}
   .course .big{padding-top:32px}
   .rate .v{font-size:44px}
-  .wkg{gap:10px}
-  .wk .cap{padding:12px 12px 14px}.wk .cap b{font-size:17px}.wk .cap small{font-size:12px}
-  .wk .ba{top:10px;left:10px;right:10px}.wk .ba span{height:26px;padding:0 10px;font-size:11px}
+  .wkg{gap:12px}
+  .wk{grid-template-columns:1fr;border-radius:24px}
+  .wk .im{margin:8px 8px 0}
+  .wk .cap{padding:16px 16px 18px}.wk .cap b{font-size:22px;margin-top:6px}.wk .cap small{font-size:13px;margin-top:6px}.wk .more{margin-top:12px}
   .cos{grid-template-columns:1fr;gap:10px}
   .pc2{display:grid;grid-template-columns:118px 1fr;border-radius:22px}
   .pc2{grid-template-columns:132px 1fr}
@@ -818,10 +822,10 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
       <p class="lead rv d2">Фото из кабинета Анастасии без ретуши: депиляция и уход за лицом. Нажмите на фото, чтобы рассмотреть.</p>
     </div>
     <div class="wkg" id="wkg">
-      <button class="wk rv" data-i="0"><div class="im"><img src="img/works/c1.jpg" alt="Мужская депиляция лица до и после" width="1000" height="1000" loading="lazy"></div><div class="ba"><span>До</span><span>После</span></div><div class="cap"><b>Мужская депиляция лица</b><small>Щёки: гладко, без пеньков и раздражения</small></div></button>
-      <button class="wk rv d1" data-i="1"><div class="im"><img src="img/works/c2.jpg" alt="Чистка лица до и после" width="1000" height="1000" loading="lazy"></div><div class="ba"><span>До</span><span>После</span></div><div class="cap"><b>Чистка лица</b><small>Кожа стала светлее и чище</small></div></button>
-      <button class="wk rv d2" data-i="2"><div class="im"><img src="img/works/c3.jpg" alt="Уход за лицом, вторая процедура: до и после" width="1000" height="1000" loading="lazy"></div><div class="ba"><span>До</span><span>После</span></div><div class="cap"><b>Вторая процедура</b><small>Кожа эластичнее, подтянулась, разгладились морщинки</small></div></button>
-      <button class="wk rv d3" data-i="3"><div class="im"><img src="img/works/c4.jpg" alt="Уход за лицом: ровный тон, до и после" width="1000" height="1000" loading="lazy"></div><div class="ba"><span>До</span><span>После</span></div><div class="cap"><b>Ровный тон</b><small>Меньше покраснений, кожа выглядит свежее</small></div></button>
+      <button class="wk rv" data-i="0"><div class="im"><img src="img/works/c1.jpg?v=2" alt="Мужская депиляция лица до и после" width="1200" height="900" loading="lazy"><div class="ba"><span>До</span><span>После</span></div></div><div class="cap"><span class="tg2">Депиляция</span><b>Мужская депиляция лица</b><small>Щёки после воска: гладко, без пеньков и раздражения.</small><span class="more">Смотреть фото<svg class="i"><use href="#i-arrow-up-right"/></svg></span></div></button>
+      <button class="wk rv d1" data-i="1"><div class="im"><img src="img/works/c2.jpg?v=2" alt="Чистка лица до и после" width="1200" height="900" loading="lazy"><div class="ba"><span>До</span><span>После</span></div></div><div class="cap"><span class="tg2">Уход за лицом</span><b>Чистка лица</b><small>Кожа стала светлее и чище, меньше воспалений и чёрных точек.</small><span class="more">Смотреть фото<svg class="i"><use href="#i-arrow-up-right"/></svg></span></div></button>
+      <button class="wk rv" data-i="2"><div class="im"><img src="img/works/c3.jpg?v=2" alt="Уход за лицом, вторая процедура: до и после" width="1200" height="900" loading="lazy"><div class="ba"><span>До</span><span>После</span></div></div><div class="cap"><span class="tg2">Уход за лицом</span><b>Вторая процедура</b><small>Кожа эластичнее, подтянулась, разгладились морщинки.</small><span class="more">Смотреть фото<svg class="i"><use href="#i-arrow-up-right"/></svg></span></div></button>
+      <button class="wk rv d1" data-i="3"><div class="im"><img src="img/works/c4.jpg?v=2" alt="Уход за лицом: ровный тон, до и после" width="1200" height="900" loading="lazy"><div class="ba"><span>До</span><span>После</span></div></div><div class="cap"><span class="tg2">Уход за лицом</span><b>Ровный тон</b><small>Меньше покраснений, тон выровнялся, кожа выглядит свежее.</small><span class="more">Смотреть фото<svg class="i"><use href="#i-arrow-up-right"/></svg></span></div></button>
     </div>
     <div class="wnote rv"><span>Больше работ в историях «До/После» и «Косметология»</span><a href="https://www.instagram.com/shuga.mommii/" target="_blank" rel="noopener">Instagram @shuga.mommii ↗</a></div>
   </div>
@@ -901,12 +905,12 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
       <p class="lead rv d2">На этой линии Анастасия работает в кабинете. Средства для дома подберёт под вашу кожу после процедуры, купить их можно прямо в студии.</p>
     </div>
     <div class="cos">
-      <article class="pc2 rv"><div class="ph"><img src="img/cos/p1.jpg?v=2" alt="Сыворотка с гиалуроновой кислотой Gènevie" width="840" height="621" loading="lazy"></div><div class="bd"><span class="ln">Клеточная молодость</span><h3>Сыворотка с гиалуроновой кислотой</h3><p>Четыре типа гиалуроновой кислоты: глубокое увлажнение и упругость.</p><div class="ft"><span class="pr">3 700 ₽</span><a href="#book" data-book data-msg="Здравствуйте, Анастасия! Интересует сыворотка Gènevie с гиалуроновой кислотой.">Подобрать</a></div></div></article>
-      <article class="pc2 rv d1"><div class="ph"><img src="img/cos/p2.jpg?v=2" alt="Крем с церамидами и пептидами Gènevie" width="840" height="621" loading="lazy"></div><div class="bd"><span class="ln">Клеточная молодость</span><h3>Крем с церамидами и пептидами</h3><p>Восстанавливает защитный барьер кожи и помогает против морщин.</p><div class="ft"><span class="pr">3 000 ₽</span><a href="#book" data-book data-msg="Здравствуйте, Анастасия! Интересует крем Gènevie с церамидами и пептидами.">Подобрать</a></div></div></article>
-      <article class="pc2 rv d2"><div class="ph"><img src="img/cos/p3.jpg?v=2" alt="Крем для кожи вокруг глаз Gènevie" width="840" height="621" loading="lazy"></div><div class="bd"><span class="ln">Клеточная молодость</span><h3>Крем для кожи вокруг глаз</h3><p>С аргирелином: разглаживает мимические морщины, меньше отёков.</p><div class="ft"><span class="pr">2 500 ₽</span><a href="#book" data-book data-msg="Здравствуйте, Анастасия! Интересует крем Gènevie для кожи вокруг глаз.">Подобрать</a></div></div></article>
-      <article class="pc2 rv"><div class="ph"><img src="img/cos/p4.jpg?v=2" alt="Крем для лица и шеи Gènevie Мембранный лифтинг" width="840" height="621" loading="lazy"></div><div class="bd"><span class="ln">Мембранный лифтинг</span><h3>Крем для лица и шеи</h3><p>Пептиды и меристемные клетки: подтягивает контур и укрепляет кожу.</p><div class="ft"><span class="pr">3 500 ₽</span><a href="#book" data-book data-msg="Здравствуйте, Анастасия! Интересует крем Gènevie для лица и шеи.">Подобрать</a></div></div></article>
-      <article class="pc2 rv d1"><div class="ph"><img src="img/cos/p5.jpg?v=2" alt="Ночной крем с пребиотиком Gènevie" width="840" height="621" loading="lazy"></div><div class="bd"><span class="ln">Циркадные ритмы ночи</span><h3>Ночной крем с пребиотиком</h3><p>Восстанавливает кожу во время сна и защищает от стресса.</p><div class="ft"><span class="pr">4 300 ₽</span><a href="#book" data-book data-msg="Здравствуйте, Анастасия! Интересует ночной крем Gènevie.">Подобрать</a></div></div></article>
-      <article class="pc2 rv d2"><div class="ph"><img src="img/cos/p6.jpg?v=2" alt="Ночная сыворотка Gènevie" width="840" height="621" loading="lazy"></div><div class="bd"><span class="ln">Циркадные ритмы ночи</span><h3>Ночная сыворотка для лица</h3><p>Глубокое увлажнение и обновление кожи за ночь.</p><div class="ft"><span class="pr">4 300 ₽</span><a href="#book" data-book data-msg="Здравствуйте, Анастасия! Интересует ночная сыворотка Gènevie.">Подобрать</a></div></div></article>
+      <article class="pc2 rv"><div class="ph"><img src="img/cos/p1.jpg?v=3" alt="Сыворотка с гиалуроновой кислотой Gènevie" width="840" height="621" loading="lazy"></div><div class="bd"><span class="ln">Клеточная молодость</span><h3>Сыворотка с гиалуроновой кислотой</h3><p>Четыре типа гиалуроновой кислоты: глубокое увлажнение и упругость.</p><div class="ft"><span class="pr">3 700 ₽</span><a href="#book" data-book data-msg="Здравствуйте, Анастасия! Интересует сыворотка Gènevie с гиалуроновой кислотой.">Подобрать</a></div></div></article>
+      <article class="pc2 rv d1"><div class="ph"><img src="img/cos/p2.jpg?v=3" alt="Крем с церамидами и пептидами Gènevie" width="840" height="621" loading="lazy"></div><div class="bd"><span class="ln">Клеточная молодость</span><h3>Крем с церамидами и пептидами</h3><p>Восстанавливает защитный барьер кожи и помогает против морщин.</p><div class="ft"><span class="pr">3 000 ₽</span><a href="#book" data-book data-msg="Здравствуйте, Анастасия! Интересует крем Gènevie с церамидами и пептидами.">Подобрать</a></div></div></article>
+      <article class="pc2 rv d2"><div class="ph"><img src="img/cos/p3.jpg?v=3" alt="Крем для кожи вокруг глаз Gènevie" width="840" height="621" loading="lazy"></div><div class="bd"><span class="ln">Клеточная молодость</span><h3>Крем для кожи вокруг глаз</h3><p>С аргирелином: разглаживает мимические морщины, меньше отёков.</p><div class="ft"><span class="pr">2 500 ₽</span><a href="#book" data-book data-msg="Здравствуйте, Анастасия! Интересует крем Gènevie для кожи вокруг глаз.">Подобрать</a></div></div></article>
+      <article class="pc2 rv"><div class="ph"><img src="img/cos/p4.jpg?v=3" alt="Крем для лица и шеи Gènevie Мембранный лифтинг" width="840" height="621" loading="lazy"></div><div class="bd"><span class="ln">Мембранный лифтинг</span><h3>Крем для лица и шеи</h3><p>Пептиды и меристемные клетки: подтягивает контур и укрепляет кожу.</p><div class="ft"><span class="pr">3 500 ₽</span><a href="#book" data-book data-msg="Здравствуйте, Анастасия! Интересует крем Gènevie для лица и шеи.">Подобрать</a></div></div></article>
+      <article class="pc2 rv d1"><div class="ph"><img src="img/cos/p5.jpg?v=3" alt="Ночной крем с пребиотиком Gènevie" width="840" height="621" loading="lazy"></div><div class="bd"><span class="ln">Циркадные ритмы ночи</span><h3>Ночной крем с пребиотиком</h3><p>Восстанавливает кожу во время сна и защищает от стресса.</p><div class="ft"><span class="pr">4 300 ₽</span><a href="#book" data-book data-msg="Здравствуйте, Анастасия! Интересует ночной крем Gènevie.">Подобрать</a></div></div></article>
+      <article class="pc2 rv d2"><div class="ph"><img src="img/cos/p6.jpg?v=3" alt="Ночная сыворотка Gènevie" width="840" height="621" loading="lazy"></div><div class="bd"><span class="ln">Циркадные ритмы ночи</span><h3>Ночная сыворотка для лица</h3><p>Глубокое увлажнение и обновление кожи за ночь.</p><div class="ft"><span class="pr">4 300 ₽</span><a href="#book" data-book data-msg="Здравствуйте, Анастасия! Интересует ночная сыворотка Gènevie.">Подобрать</a></div></div></article>
     </div>
     <p class="cnote rv">Цены и наличие уточняйте у Анастасии.</p>
   </div>
