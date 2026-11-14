@@ -98,10 +98,9 @@ a,button,summary,label{-webkit-tap-highlight-color:transparent}
 .mopen .burger i:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
 
 /* mobile menu */
-.mm{position:fixed;inset:0;z-index:45;background:var(--bg);display:flex;flex-direction:column;padding:96px 22px 26px;overflow-y:auto;clip-path:circle(0 at calc(100% - 46px) 44px);transition:clip-path .9s var(--ez);visibility:hidden}
+.mm{position:fixed;inset:0;z-index:45;background:radial-gradient(260px 260px at calc(100% - 30px) 300px,rgba(229,189,184,.5),transparent 70%),var(--bg);display:flex;flex-direction:column;padding:96px 22px 26px;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;touch-action:pan-y;clip-path:circle(0 at calc(100% - 46px) 44px);transition:clip-path .9s var(--ez);visibility:hidden}
 .mopen .mm{clip-path:circle(150% at calc(100% - 46px) 44px);visibility:visible}
-.mm::before{content:'';position:absolute;right:-120px;top:120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(229,189,184,.55),transparent 70%);pointer-events:none}
-.mm .mk{position:absolute;right:-30px;bottom:150px;width:240px;opacity:.08;pointer-events:none}
+.mm .mk{position:absolute;right:0;bottom:150px;width:min(220px,55%);opacity:.08;pointer-events:none}
 .mm nav{display:flex;flex-direction:column;position:relative}
 .mm nav a{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--ln);font:400 24px/1.2 var(--serif);color:var(--wine);opacity:0;transform:translateY(16px);transition:opacity .6s,transform .8s var(--ez)}
 .mm nav a small{font:500 11px/1 var(--sans);color:var(--mut);letter-spacing:.08em}
