@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Красота с любовью · студия красоты в Хабаровске">
 <meta property="og:description" content="Лазер, воск и шугаринг, брови и ресницы, массаж и аппаратная косметология. Онлайн-запись к Наталье, Марии и Марьяне.">
-<meta property="og:image" content="https://staswebdesign.github.io/krasota/og.jpg?v=2">
+<meta property="og:image" content="https://staswebdesign.github.io/krasota/og.jpg?v=3">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Красота с любовью, студия красоты в Хабаровске: лазерная эпиляция, депиляция, брови, массаж">
@@ -18,7 +18,7 @@
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://staswebdesign.github.io/krasota/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://staswebdesign.github.io/krasota/og.jpg?v=2">
+<meta name="twitter:image" content="https://staswebdesign.github.io/krasota/og.jpg?v=3">
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="brand/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
@@ -144,16 +144,18 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
 .hero .eb{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .hero .eb img{height:34px;width:auto}
 .hero .eb span{font:600 11.5px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
-.hero h1{font-size:clamp(42px,4.6vw,66px);line-height:1.04;margin:26px 0 26px}
+.hero h1{font-size:clamp(42px,4.6vw,66px);line-height:1.04;margin:20px 0 26px}
 .hero h1 span{display:block;white-space:nowrap}
 .hero .lead{font-size:17px;max-width:540px;color:var(--mut)}
-.hero .cta{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
-.fpill{display:inline-flex;align-items:center;gap:14px;margin-top:30px;padding:8px 18px 8px 8px;border-radius:60px;background:var(--card);border:1px solid var(--rose2);box-shadow:0 14px 30px -20px rgba(83,19,34,.45);transition:border-color .5s,box-shadow .6s var(--ez)}
-.fpill:hover{border-color:var(--rose);box-shadow:0 20px 40px -22px rgba(83,19,34,.55)}
-.fp-n{display:grid;place-items:center;height:46px;padding:0 16px;border-radius:40px;background:var(--wine);color:#FBF4F0;font:400 22px/1 var(--serif);letter-spacing:.02em;white-space:nowrap}
-.fp-t{font-weight:600;font-size:14px;color:var(--wine);line-height:1.25}
-.fp-t small{display:block;font-weight:400;font-size:12.5px;color:var(--mut);margin-top:2px}
-.fpill .ar{color:var(--rose);transition:transform .6s var(--ez)}
+.hero .cta{display:flex;gap:12px;margin-top:38px;flex-wrap:wrap}
+.fpill{position:relative;display:inline-flex;align-items:center;gap:10px;margin-top:22px;height:38px;padding:0 14px 0 5px;border-radius:40px;background:rgba(240,211,206,.38);border:1px solid var(--rose2);overflow:hidden;isolation:isolate;transition:border-color .5s,background .5s}
+.fpill::after{content:'';position:absolute;top:0;bottom:0;left:-60%;width:45%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.95),transparent);transform:skewX(-20deg);animation:fpsh 5.5s var(--ez) 1.6s infinite;z-index:-1}
+@keyframes fpsh{0%{left:-60%}35%,100%{left:130%}}
+.fpill:hover{border-color:var(--rose);background:#fff}
+.fp-n{display:inline-grid;place-items:center;height:28px;padding:0 10px;border-radius:30px;background:#fff;color:var(--wine);font:600 13px/1 var(--sans);letter-spacing:.02em;animation:fppl 2.8s ease-in-out 1.6s infinite}
+@keyframes fppl{0%,100%{box-shadow:0 0 0 0 rgba(196,144,140,.45)}50%{box-shadow:0 0 0 6px rgba(196,144,140,0)}}
+.fp-t{font-weight:500;font-size:13px;color:var(--ink);white-space:nowrap}
+.fpill .ar{width:15px;height:15px;color:var(--rose);transition:transform .6s var(--ez)}
 .fpill:hover .ar{transform:translateX(4px)}
 .hero .cta .btn{min-width:236px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:34px}
@@ -200,12 +202,12 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
 
 /* natalia */
 .nat{display:grid;grid-template-columns:.95fr 1.05fr;gap:80px;align-items:start}
-.nat-v{position:sticky;top:var(--stk);transition:top .6s var(--ez);max-width:500px;width:100%;justify-self:center}
+.nat-v{position:sticky;top:var(--stk);transition:top .6s var(--ez);max-width:410px;width:100%;justify-self:center}
 .nat-v .ring{position:absolute;left:50%;top:44%;width:116%;aspect-ratio:1;transform:translate(-50%,-50%);pointer-events:none}
 .nat-v .ring i{position:absolute;inset:0;border-radius:50%;border:1px solid var(--gold)}
 .nat-v .ring i+i{inset:12px;border-color:rgba(194,154,91,.45)}
-.nat-v .main{position:relative;z-index:1;border-radius:999px 999px 30px 30px;overflow:hidden;aspect-ratio:700/980;box-shadow:0 40px 80px -40px rgba(83,19,34,.45)}
-.nat-v img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform 1.4s var(--ez);transform-origin:center 30%}
+.nat-v .main{position:relative;z-index:1;border-radius:999px 999px 30px 30px;overflow:hidden;aspect-ratio:3/4.2;box-shadow:0 40px 80px -40px rgba(83,19,34,.45)}
+.nat-v img{width:100%;height:100%;object-fit:cover;object-position:center 30%;transition:transform 1.4s var(--ez);transform-origin:center 30%}
 .nat-v .main:hover img{transform:scale(1.04)}
 .nat-v .badge{position:absolute;left:-36px;bottom:48px;z-index:2;box-shadow:0 24px 50px -24px rgba(83,19,34,.6);background:var(--wine);color:#FBF4F0;border-radius:18px;padding:14px 18px;font-size:12.5px;line-height:1.4;max-width:230px}
 .nat-v .badge b{display:block;font:400 18px/1.15 var(--serif);color:var(--gold2);margin-bottom:3px}
@@ -217,7 +219,7 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
 .quote p{font:400 23px/1.35 var(--serif);color:var(--wine);margin:0}
 .quote small{display:block;margin-top:14px;font-size:12.5px;color:var(--mut)}
 .quote .qm{position:absolute;right:26px;top:-16px;width:46px;height:46px;border-radius:50%;background:var(--rose);display:grid;place-items:center;color:#fff}
-.quote .qm .i{fill:currentColor;stroke:none;width:20px;height:20px}
+.quote .qm .i{width:20px;height:20px}
 .facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:26px}
 .fact{padding:20px 20px 20px;border-radius:20px;background:rgba(255,253,251,.6);border:1px solid var(--ln)}
 .fact .i{color:var(--rose);width:22px;height:22px}
@@ -590,7 +592,7 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
   .shd{grid-template-columns:1fr;gap:18px;margin-bottom:44px}
   .svc,.team{grid-template-columns:1fr 1fr}
   .nat{grid-template-columns:1fr;gap:50px}
-  .nat-v{position:relative;top:0;max-width:440px}
+  .nat-v{position:relative;top:0;max-width:360px}
   .pw{grid-template-columns:1fr}
   .visit{position:relative;top:0}
   .res,.gp,.faqw,.ct,.cons{grid-template-columns:1fr}
@@ -663,10 +665,7 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
   .first .fb{flex-direction:column;min-width:0}
   .first .fb .btn{flex:none}
   .first::before{left:-120px;top:20px;transform:none}
-  .fpill{margin-top:24px;gap:12px;padding-right:14px}
-  .fp-n{height:42px;padding:0 13px;font-size:20px}
-  .fp-t{font-size:13.5px}
-  .fp-t small{font-size:12px}
+  .fpill{margin-top:18px}
   .gift .ph{min-height:260px}
   .gift .bd,.promo{padding:30px 22px}
   .gift h3,.promo h3{font-size:29px}
@@ -696,39 +695,40 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8.5A1.5 1.5 0 0 1 5.5 7h2.2l1.5-2.2h5.6L16.3 7h2.2A1.5 1.5 0 0 1 20 8.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 17.5z"/><circle cx="12" cy="12.8" r="3.4"/></symbol>
-  <symbol id="i-pct" viewBox="0 0 24 24"><path d="M18 6 6 18"/><circle cx="7.5" cy="7.5" r="2.3"/><circle cx="16.5" cy="16.5" r="2.3"/></symbol>
-  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
-  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
-  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.5L3.5 20.5l1.4-4.2a8.5 8.5 0 1 1 15.6-4.7z"/><path d="M9 8.6c.2-.5.6-.6 1-.6l.6 1.5-.6.9c.5 1 1.3 1.8 2.3 2.3l.9-.6 1.5.6c0 .4-.1.8-.6 1-1.8.8-5.9-2.9-5.1-5.1z"/></symbol>
-  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3.5l1.5 4-2 1.3a10 10 0 0 0 6.7 6.7L16 14l4 1.5V19a1.5 1.5 0 0 1-1.6 1.5A16 16 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4z"/></symbol>
-  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
-  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
-  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/></symbol>
-  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.5 5 6v5.5c0 4.4 3 7.8 7 9 4-1.2 7-4.6 7-9V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></symbol>
-  <symbol id="i-cup" viewBox="0 0 24 24"><path d="M5 9h11v4.5a5.5 5.5 0 0 1-11 0z"/><path d="M16 10.5h1.5a2.5 2.5 0 0 1 0 5H16M8 3.5c0 1 1 1.5 1 2.5M12 3.5c0 1 1 1.5 1 2.5M4 21h13"/></symbol>
-  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.5 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></symbol>
-  <symbol id="i-quote" viewBox="0 0 24 24"><path d="M4 18v-5.2C4 8.9 5.8 6.6 9.3 6l.7 1.7C8 8.3 7.2 9.6 7.1 11.3H10V18zm10 0v-5.2c0-3.9 1.8-6.2 5.3-6.8l.7 1.7c-2 .6-2.8 1.9-2.9 3.6H20V18z"/></symbol>
-  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
-  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
-  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></symbol>
-  <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
-  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.2 4.2L19 7"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M5 7h1a2 2 0 0 0 2 -2a1 1 0 0 1 1 -1h6a1 1 0 0 1 1 1a2 2 0 0 0 2 2h1a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2" /> <path d="M9 13a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /></symbol>
+  <symbol id="i-pct" viewBox="0 0 24 24"><path d="M16 17a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /> <path d="M6 7a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /> <path d="M6 18l12 -12" /></symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6" /></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12l14 0" /> <path d="M13 18l6 -6" /> <path d="M13 6l6 6" /></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12" /> <path d="M16 3v4" /> <path d="M8 3v4" /> <path d="M4 11h16" /></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" /> <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" /></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" /></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /> <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0" /></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /> <path d="M12 7v5l3 3" /></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" /></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06" /> <path d="M15 19l2 2l4 -4" /></symbol>
+  <symbol id="i-cup" viewBox="0 0 24 24"><path d="M3 14c.83 .642 2.077 1.017 3.5 1c1.423 .017 2.67 -.358 3.5 -1c.83 -.642 2.077 -1.017 3.5 -1c1.423 -.017 2.67 .358 3.5 1" /> <path d="M8 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2" /> <path d="M12 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2" /> <path d="M3 10h14v5a6 6 0 0 1 -6 6h-2a6 6 0 0 1 -6 -6v-5" /> <path d="M16.746 16.726a3 3 0 1 0 .252 -5.555" /></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z" /></symbol>
+  <symbol id="i-quote" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M9 5a2 2 0 0 1 2 2v6c0 3.13 -1.65 5.193 -4.757 5.97a1 1 0 1 1 -.486 -1.94c2.227 -.557 3.243 -1.827 3.243 -4.03v-1h-3a2 2 0 0 1 -1.995 -1.85l-.005 -.15v-3a2 2 0 0 1 2 -2z" /> <path fill="currentColor" stroke="none" d="M18 5a2 2 0 0 1 2 2v6c0 3.13 -1.65 5.193 -4.757 5.97a1 1 0 1 1 -.486 -1.94c2.227 -.557 3.243 -1.827 3.243 -4.03v-1h-3a2 2 0 0 1 -1.995 -1.85l-.005 -.15v-3a2 2 0 0 1 2 -2z" /></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5l0 14" /> <path d="M5 12l14 0" /></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6l-12 12" /> <path d="M6 6l12 12" /></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><path d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /> <path d="M21 21l-6 -6" /></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M6 9l6 6l6 -6" /></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l5 5l10 -10" /></symbol>
   <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2c.6 5 2.9 8.6 8 10-5.1 1.4-7.4 5-8 10-.6-5-2.9-8.6-8-10 5.1-1.4 7.4-5 8-10z"/></symbol>
-  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></symbol>
-  <symbol id="i-cert" viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="12" rx="2"/><circle cx="12" cy="15.5" r="3"/><path d="m10.3 18-.8 3 2.5-1 2.5 1-.8-3M7.5 8h9"/></symbol>
-  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.3"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0M16 5.4a3.3 3.3 0 0 1 0 6.3M17.5 14.2a5.5 5.5 0 0 1 3 5.3"/></symbol>
-  <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.8 4 8.3 4.3c-2 .3-1.6 3.6 3.7 4.2zM12 8.5s1.2-4.5 3.7-4.2c2 .3 1.6 3.6-3.7 4.2z"/></symbol>
-  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.6"/><circle cx="16.8" cy="7.2" r=".6" fill="currentColor"/></symbol>
-  <symbol id="i-vk" viewBox="0 0 24 24"><path d="M3.5 7.5h3c.5 3.3 2 5.2 3.5 5.7V7.5h2.8v3.3c1.6-.2 3-1.9 3.6-3.3h2.8c-.5 2-2.1 3.8-3.4 4.6 1.3.6 3.2 2.2 3.8 4.4h-3.1c-.6-1.5-2.1-2.8-3.7-3v3H12c-5 0-8.2-3.5-8.5-9z"/></symbol>
-  <symbol id="i-2gis" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 10.2c0-1.6 1.4-2.7 3.4-2.7s3.4 1.2 3.4 2.7c0 2.5-4 3.1-6.8 6.3h7"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3l0 7l6 0l-8 11l0 -7l-6 0l8 -11" /></symbol>
+  <symbol id="i-cert" viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /> <path d="M13 17.5v4.5l2 -1.5l2 1.5v-4.5" /> <path d="M10 19h-5a2 2 0 0 1 -2 -2v-10c0 -1.1 .9 -2 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -1 1.73" /> <path d="M6 9l12 0" /> <path d="M6 12l3 0" /> <path d="M6 15l2 0" /></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M5 7a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /> <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /> <path d="M16 3.13a4 4 0 0 1 0 7.75" /> <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" /></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><path d="M3 9a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1l0 -2" /> <path d="M12 8l0 13" /> <path d="M19 12v7a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-7" /> <path d="M7.5 8a2.5 2.5 0 0 1 0 -5a4.8 8 0 0 1 4.5 5a4.8 8 0 0 1 4.5 -5a2.5 2.5 0 0 1 0 5" /></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4l0 -10" /> <path d="M8.5 12a3.5 3.5 0 1 0 7 0a3.5 3.5 0 0 0 -7 0" /> <path d="M17 7v.01" /></symbol>
+  <symbol id="i-vk" viewBox="0 0 24 24"><path d="M14 19h-4a8 8 0 0 1 -8 -8v-5h4v5a4 4 0 0 0 4 4v-9h4v4.5l.03 0a4.531 4.531 0 0 0 3.97 -4.496h4l-.342 1.711a6.858 6.858 0 0 1 -3.658 4.789a5.34 5.34 0 0 1 3.566 4.111l.434 2.389h-4a4.531 4.531 0 0 0 -3.97 -4.496v4.5l-.03 -.008" /></symbol>
+  <symbol id="i-2gis" viewBox="0 0 24 24"><path d="M12 18.5l-3 -1.5l-6 3v-13l6 -3l6 3l6 -3v7.5" /> <path d="M9 4v13" /> <path d="M15 7v5.5" /> <path d="M21.121 20.121a3 3 0 1 0 -4.242 0c.418 .419 1.125 1.045 2.121 1.879c1.051 -.89 1.759 -1.516 2.121 -1.879" /> <path d="M19 18v.01" /></symbol>
 </svg>
 
 <header class="hd" id="hd">
   <div class="wrap">
     <a class="logo" href="#top" aria-label="Красота с любовью, на главную">
       <img class="ht" src="brand/heart-rose.svg" alt="" width="34" height="32">
-      <img class="wm" src="brand/word.svg" alt="Красота с любовью" width="117" height="30">
+      <img class="wm" src="brand/word.svg" alt="Красота с любовью" width="117" height="31">
     </a>
     <nav class="nav" aria-label="Разделы">
       <a href="#services">Услуги</a>
@@ -779,9 +779,9 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
   <div class="wrap">
     <div>
       <div class="eb rv"><img src="brand/script-rose.svg" alt="с любовью" width="141" height="30"><span>Студия красоты · Хабаровск</span></div>
-      <h1 class="rv d1"><span>Ваше место</span><span>для заботы <em>о себе</em></span></h1>
-      <p class="lead rv d2">Лазерная эпиляция, воск и шугаринг, брови и ресницы, ручной и аппаратный массаж, RF-лифтинг и фотоомоложение. Уютный кабинет на Руднева, 81, где всё стерильно, честно и с вниманием к каждой мелочи.</p>
-      <a class="fpill rv d3" href="#first"><span class="fp-n">−20%</span><span class="fp-t">на первое посещение<small>для новых клиентов, на все услуги</small></span><svg class="i ar"><use href="#i-arrow"/></svg></a>
+      <a class="fpill rv d1" href="#first"><span class="fp-n">−20%</span><span class="fp-t">на первое посещение</span><svg class="i ar"><use href="#i-arrow"/></svg></a>
+      <h1 class="rv d2"><span>Ваше место</span><span>для заботы <em>о себе</em></span></h1>
+      <p class="lead rv d3">Лазерная эпиляция, воск и шугаринг, брови и ресницы, ручной и аппаратный массаж, RF-лифтинг и фотоомоложение. Уютный кабинет на Руднева, 81, где всё стерильно, честно и с вниманием к каждой мелочи.</p>
       <div class="cta rv d3">
         <a class="btn pr" href="#" data-yc><svg class="i"><use href="#i-cal"/></svg>Записаться онлайн</a>
         <a class="btn ol" href="#" data-wa="Здравствуйте! Хочу записаться в студию «Красота с любовью»."><svg class="i"><use href="#i-wa"/></svg>Написать в WhatsApp</a>
@@ -820,7 +820,7 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
           <div class="ft"><a class="btn ol sm" href="#prices" data-tab="0">Цены</a><a class="btn pr sm" href="#" data-yc>Записаться</a></div></div>
       </article>
       <article class="sv rv d1">
-        <div class="ph" data-cur="Воск"><img src="img/svc-wax.jpg" alt="Сахарная паста для шугаринга стекает с ложки" loading="lazy" width="900" height="697" style="object-position:60% center"><span class="pb">от 300 ₽</span></div>
+        <div class="ph" data-cur="Воск"><img src="img/svc-wax.jpg" alt="Мастер наносит воск на ногу шпателем" loading="lazy" width="900" height="697"><span class="pb">от 300 ₽</span></div>
         <div class="bd"><h3>Воск и шугаринг</h3><p>Гладкость сразу после процедуры на 3–4 недели. Работаем быстро: глубокое бикини 25–30 минут, подмышки 5–7.</p>
           <ul><li>все зоны</li><li>лицо</li><li>комплексы</li><li>для мужчин</li></ul>
           <div class="ft"><a class="btn ol sm" href="#prices" data-tab="2">Цены</a><a class="btn pr sm" href="#" data-yc>Записаться</a></div></div>
@@ -858,7 +858,7 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
   <div class="wrap nat">
     <div class="nat-v rv">
       <div class="ring"><i></i><i></i></div>
-      <div class="main" data-cur="Наталья"><img src="img/natalia-arch.jpg" alt="Наталья Чапковская, основательница студии «Красота с любовью», в кабинете" loading="lazy" width="700" height="980"></div>
+      <div class="main" data-cur="Наталья"><img src="img/natalia-arch.jpg" alt="Наталья Чапковская, основательница студии «Красота с любовью», на фоне сертификатов" loading="lazy" width="562" height="1004"></div>
       <div class="badge"><b>Любит своё дело</b>и каждую клиентку встречает как близкого человека</div>
     </div>
     <div class="nat-t">
@@ -872,7 +872,7 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
         <div class="fact rv"><svg class="i"><use href="#i-heart"/></svg><b>Ведущий мастер</b><span>Лазер и восковая депиляция, мужская депиляция, аппаратный массаж и коррекция фигуры</span></div>
         <div class="fact rv d1"><svg class="i"><use href="#i-cert"/></svg><b>Учится и учит</b><span>Курсы, семинары и дипломы на стене кабинета. Проводит обучение мастеров депиляции</span></div>
         <div class="fact rv"><svg class="i"><use href="#i-shield"/></svg><b>Стерильность как правило</b><span>Сухожаровой шкаф, дезинфекция инструментов и одноразовые расходники</span></div>
-        <div class="fact rv d1"><svg class="i"><use href="#i-spark"/></svg><b>Честно, на совесть</b><span>Без обещаний «минус 5 см за сеанс»: только реальный результат и бережный подход</span></div>
+        <div class="fact rv d1"><svg class="i"><use href="#i-sparkles"/></svg><b>Честно, на совесть</b><span>Без обещаний «минус 5 см за сеанс»: только реальный результат и бережный подход</span></div>
       </div>
       <div class="speed rv">
         <h3>Скорость, моё преимущество</h3>
@@ -903,7 +903,7 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
     </div>
     <div class="team">
       <article class="tm rv">
-        <div class="ph" data-cur="Наталья"><img src="img/natalia-team.jpg" alt="Наталья Чапковская на фоне сертификатов" loading="lazy" width="720" height="960" style="object-position:center 22%"></div>
+        <div class="ph" data-cur="Наталья"><img src="img/natalia-team.jpg" alt="Наталья с сахарной пастой и бритвами" loading="lazy" width="900" height="900" style="object-position:center top"></div>
         <div class="bd"><span class="rl">Ведущий мастер</span><h3>Наталья</h3><p>Основательница студии. Быстро, бережно и почти без боли.</p>
           <ul><li>Лазерная и восковая эпиляция</li><li>Мужская депиляция</li><li>Аппаратный и ручной массаж тела</li><li>Коррекция фигуры: консультация и программа</li></ul>
           <a class="btn pr" href="#" data-yc="3833281">Записаться к Наталье<svg class="i ar"><use href="#i-arrow"/></svg></a></div>
@@ -1198,7 +1198,7 @@ h2 em,h1 em{font-style:normal;color:var(--rose)}
       <a class="btn pr" href="#" data-yc><svg class="i"><use href="#i-cal"/></svg>Записаться онлайн</a>
       <a class="btn ol" href="#" data-wa="Здравствуйте! Хочу записаться в студию «Красота с любовью»."><svg class="i"><use href="#i-wa"/></svg>Написать в WhatsApp</a>
     </div>
-    <div class="biglogo rv"><div class="rings"><i></i><i></i></div><img src="brand/logo.svg" alt="Красота с любовью" width="944" height="960" loading="lazy"></div>
+    <div class="biglogo rv"><div class="rings"><i></i><i></i></div><img src="brand/logo.svg" alt="Красота с любовью" width="944" height="812" loading="lazy"></div>
   </div>
 </section>
 </main>
