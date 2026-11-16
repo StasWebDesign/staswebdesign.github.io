@@ -454,7 +454,7 @@ h2 em,h1 em{font-style:italic}
 .mapw{position:relative;border-radius:28px;overflow:hidden;min-height:480px;background:var(--bg3)}
 #map{position:absolute;inset:0;z-index:1}
 .leaflet-container{font:inherit;background:var(--bg3)!important}
-.leaflet-tile-pane{filter:invert(1) grayscale(1) brightness(.78) contrast(1.08)}
+.leaflet-tile-pane{filter:invert(1) grayscale(1) brightness(.62) sepia(1) hue-rotate(218deg) saturate(2.6) contrast(1.15)}
 .leaflet-control-zoom{border:0!important;box-shadow:0 14px 30px -14px rgba(0,0,0,.5)!important;border-radius:14px!important;overflow:hidden}
 .leaflet-control-zoom a{width:40px!important;height:40px!important;line-height:40px!important;color:var(--ink)!important;background:var(--card)!important;border-color:var(--ln)!important}
 .leaflet-control-attribution{background:rgba(9,11,27,.8)!important;font-size:10px!important;border-radius:10px 0 0 0}
@@ -597,8 +597,6 @@ h2 em,h1 em{font-style:italic}
 .e-r li b{font-weight:600;color:var(--lt);font-size:14.5px}
 .e-r li span{font-size:13px;color:rgba(242,238,248,.62);line-height:1.5}
 /* map tint */
-#map::after{content:'';position:absolute;inset:0;z-index:250;pointer-events:none;background:linear-gradient(160deg,rgba(122,99,232,.55),rgba(198,87,222,.35) 60%,rgba(221,79,158,.4));mix-blend-mode:color}
-#map::before{content:'';position:absolute;inset:0;z-index:251;pointer-events:none;background:radial-gradient(120% 90% at 50% 40%,transparent 55%,rgba(9,11,27,.55))}
 /* responsive */
 @media(max-width:1180px){
   .nav{gap:22px}.hd-ph{display:none}
