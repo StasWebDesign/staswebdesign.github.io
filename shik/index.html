@@ -573,7 +573,7 @@ h2 em,h1 em{font-style:italic}
 .ab-im img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ez)}
 .ab-im:hover img{transform:scale(1.04)}
 .ab-ph::before{content:'';position:absolute;left:-14%;top:-10%;width:80%;aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(122,99,232,.35),transparent);pointer-events:none;z-index:-1}
-.ab-q{position:absolute;right:-30px;bottom:40px;max-width:270px;background:var(--blk);border:1px solid var(--lnw);border-radius:22px;padding:20px 22px;box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+.ab-q{position:absolute;right:-30px;bottom:-104px;max-width:270px;background:var(--blk);border:1px solid var(--lnw);border-radius:22px;padding:20px 22px;box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
 .ab-q .i{width:26px;height:26px;color:var(--pink2)}
 .ab-q p{font:400 21px/1.3 var(--serif);margin-top:8px;color:var(--lt)}
 .ab-q small{display:block;margin-top:8px;font-size:12px;color:var(--mut)}
@@ -613,7 +613,8 @@ h2 em,h1 em{font-style:italic}
   .shd{grid-template-columns:1fr;gap:18px;margin-bottom:44px}
   .lv{grid-template-columns:1fr}
   .ab{grid-template-columns:1fr;gap:56px}
-  .ab-q{right:12px;bottom:-26px;max-width:230px;padding:16px 18px}
+  .ab-q{right:12px;bottom:-104px;max-width:230px;padding:16px 18px}
+  .ab-ph{margin-bottom:84px}
   .ab-q p{font-size:18px}
   .ec.edu1{grid-template-columns:1fr;gap:32px;padding:32px 22px}
   .edu1 .bot{gap:16px}
@@ -902,12 +903,7 @@ h2 em,h1 em{font-style:italic}
   <div class="wrap">
     <div class="shd">
       <div><span class="kick rv"><svg><use href="#i-crown"/></svg>Прайс</span><h2 class="rv d1">Цены <span class="mk">без&nbsp;сюрпризов</span></h2></div>
-      <p class="rv d2">Ищите услугу по названию или сортируйте по цене. Стрелка рядом с услугой открывает WhatsApp Елены с готовым сообщением.</p>
-    </div>
-    <div class="pbar rv">
-      <div class="tabs" id="tabs" role="tablist" aria-label="Направления"></div>
-      <div class="srch" id="srch"><svg class="i"><use href="#i-search"/></svg><input type="search" id="q" placeholder="Найти услугу" aria-label="Поиск по услугам" autocomplete="off"><button class="clr" type="button" aria-label="Очистить поиск"><svg class="i"><use href="#i-x"/></svg></button></div>
-      <div class="sel" id="psort"><button type="button" aria-haspopup="listbox" aria-expanded="false"><span>По порядку</span><svg class="i"><use href="#i-down"/></svg></button><ul role="listbox"><li data-v="0" class="on">По порядку</li><li data-v="1">Сначала дешевле</li><li data-v="2">Сначала дороже</li></ul></div>
+      <p class="rv d2">Все услуги Елены на одной странице: наращивание, коррекция и обучение. Нажмите на стрелку рядом с услугой, и откроется WhatsApp с готовым сообщением.</p>
     </div>
     <div class="pwrap">
       <div class="pbox rv" id="pbox"></div>
@@ -1300,8 +1296,7 @@ h2 em,h1 em{font-style:italic}
       ['Обучение','',[['Базовый курс по наращиванию ресниц с нуля','',15000,1]]]
     ]}
   ];
-  var ct=0,srt=0,qv='',pbox=$('#pbox'),tabs=$('#tabs');if(T.length<2)tabs.style.display='none';
-  T.forEach(function(t,i){var x=d.createElement('button');x.type='button';x.setAttribute('role','tab');x.className='chip'+(i===0?' on':'');x.textContent=t.n;x.setAttribute('aria-selected',i===0);x.addEventListener('click',function(){setTab(i)});tabs.appendChild(x)});
+  var ct=0,srt=0,qv='',pbox=$('#pbox');
   function row(r,m,tab){
     var mm=r[4]||m,txt='Здравствуйте, '+M[mm].n+'! Хочу записаться на услугу «'+r[0]+'».'+SIG;
     if(/курс|Обучение/.test(r[0]))txt='Здравствуйте, '+M[mm].n+'! Хочу узнать про курс «'+r[0]+'».'+SIG;
@@ -1329,16 +1324,6 @@ h2 em,h1 em{font-style:italic}
     function put(){pbox.innerHTML=phtml();requestAnimationFrame(function(){pbox.classList.remove('sw')});if(lenis)lenis.resize()}
     if(anim&&!rm){pbox.classList.add('sw');clearTimeout(W._pt);W._pt=setTimeout(put,280)}else put();
   }
-  function setTab(i){
-    if(qv){qv='';$('#q').value='';$('#srch').classList.remove('has')}
-    else if(i===ct)return;
-    ct=i;$$('button',tabs).forEach(function(x,j){x.classList.toggle('on',j===i);x.setAttribute('aria-selected',j===i)});
-    var a=$$('button',tabs)[i];if(a&&tabs.scrollWidth>tabs.clientWidth)tabs.scrollTo({left:a.offsetLeft-20,behavior:'smooth'});
-    prender(true);
-  }
-  var qi=$('#q'),qt;
-  qi.addEventListener('input',function(){$('#srch').classList.toggle('has',!!qi.value);clearTimeout(qt);qt=setTimeout(function(){qv=qi.value.trim();$$('button',tabs).forEach(function(x,j){x.classList.toggle('on',!qv&&j===ct)});prender(true)},220)});
-  $('#srch .clr').addEventListener('click',function(){qi.value='';qv='';$('#srch').classList.remove('has');$$('button',tabs).forEach(function(x,j){x.classList.toggle('on',j===ct)});prender(true)});
   prender(false);
 
   /* custom selects */
