@@ -501,10 +501,10 @@ a.pnote:hover{border-color:var(--pink)}
 
 /* footer */
 .ftr{background:var(--bg2);border-top:1px solid var(--ln);font-size:12.5px;color:var(--mut);padding:22px 0 26px}
-.ftr .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-.ftr .l{display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+.ftr .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px}
+.ftr .l{display:flex;gap:8px 26px;flex-wrap:wrap;align-items:center;flex:1 1 auto;min-width:0}
 .ftr a{transition:color .3s}.ftr a:hover{color:var(--pink)}
-.ftr .dev{margin-left:auto}
+.ftr .dev{flex:none;white-space:nowrap}
 
 /* floating + toast */
 .fbk{position:fixed;right:22px;bottom:22px;z-index:40;height:58px;padding:0 24px 0 20px;border-radius:40px;background:var(--grad);color:#fff;display:flex;align-items:center;gap:10px;font-weight:600;font-size:14px;box-shadow:0 18px 34px -14px rgba(198,87,222,.8);transform:translateY(calc(100% + 40px));visibility:hidden;transition:transform .7s var(--ez),visibility 0s .7s,background .5s}
@@ -1365,8 +1365,6 @@ a.pnote:hover{border-color:var(--pink)}
     <div class="l">
       <span>© Flash Lash, студия красоты, Хабаровск</span>
       <a href="policy/">Политика обработки персональных данных</a>
-      <a href="https://2gis.ru/khabarovsk/firm/70000001066909478" target="_blank" rel="noopener">2ГИС</a>
-      <a href="https://www.instagram.com/elena_hab_lash" target="_blank" rel="noopener">Instagram</a>
       <span>Есть противопоказания, проконсультируйтесь с мастером</span>
     </div>
     <a class="dev" href="https://staswebdesign.github.io/" target="_blank" rel="noopener">Разработка сайта</a>
