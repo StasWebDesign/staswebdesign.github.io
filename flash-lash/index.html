@@ -272,7 +272,10 @@ h2 em,h1 em{font-style:italic}
 .wi .cp{position:absolute;left:12px;bottom:12px;right:12px;display:flex;justify-content:space-between;align-items:center;gap:8px;opacity:0;transform:translateY(8px);transition:opacity .5s,transform .7s var(--ez)}
 .wi .cp span{background:rgba(9,11,27,.72);border-radius:30px;padding:6px 12px;font-size:11.5px;font-weight:600}
 .wi:hover .cp{opacity:1;transform:none}
-.wi.nw{animation:fd .9s var(--ez) both}
+.wi.nw{animation:wiIn 1s var(--ez) both}
+@keyframes wiIn{from{opacity:0;transform:translateY(46px) scale(.95)}to{opacity:1;transform:none}}
+.wi.out{transition:opacity .45s,transform .6s var(--ez);opacity:0;transform:translateY(20px) scale(.97)}
+.wg.anim{overflow:hidden;transition:height .9s var(--ez)}
 .wmore{display:flex;justify-content:center;margin-top:34px}
 .wmore .btn .i{transition:transform .6s var(--ez)}
 .wmore .btn.up .i{transform:rotate(180deg)}
@@ -1506,7 +1509,7 @@ a.pnote:hover{border-color:var(--pink)}
   var CAT={l:'Наращивание ресниц',p:'Перманент бровей',t:'Художественная татуировка',s:'Студия'};
   var wf='all',WL=[],wsh=0,WSS=W.innerWidth<761?[3,6,99]:[5,99],WST=WSS[0],wsi=0,wg=$('#wg'),wmb=$('#wmb');
   function cap(x){return x[2]||CAT[x[1]]}
-  function wcard(x,i,anim){var a=d.createElement('div');a.className='wi'+(anim?' nw':'');a.dataset.cur='Смотреть';a.dataset.i=i;a.setAttribute('role','button');a.tabIndex=0;a.setAttribute('aria-label','Открыть фото: '+cap(x));if(anim)a.style.animationDelay=((i-wsh)*.05)+'s';a.innerHTML='<img src="img/w/'+x[0]+'.webp" alt="'+cap(x)+'" loading="lazy">';return a}
+  function wcard(x,i,anim){var a=d.createElement('div');a.className='wi'+(anim?' nw':'');a.dataset.cur='Смотреть';a.dataset.i=i;a.setAttribute('role','button');a.tabIndex=0;a.setAttribute('aria-label','Открыть фото: '+cap(x));if(anim)a.style.animationDelay=((i-wsh)*.07)+'s';a.innerHTML='<img src="img/w/'+x[0]+'.webp" alt="'+cap(x)+'" loading="lazy">';return a}
   function wbtn(){var more=wsh<WL.length;wmb.parentNode.style.display=WL.length>WST?'':'none';$('span',wmb).textContent=more?'Показать ещё':'Свернуть';wmb.classList.toggle('up',!more)}
   function wrender(anim){
     WL=WK.filter(function(x){return wf==='all'||x[1]===wf});
@@ -1515,9 +1518,24 @@ a.pnote:hover{border-color:var(--pink)}
   }
   function setWf(f){if(f===wf)return;wf=f;$$('#wf .chip').forEach(function(x){x.classList.toggle('on',x.dataset.f===f)});wrender(true)}
   $$('#wf .chip').forEach(function(x){x.addEventListener('click',function(){setWf(x.dataset.f)})});
+  function wgH(h0,h1,done){
+    if(rm){if(done)done();if(lenis)lenis.resize();return}
+    wg.classList.remove('anim');wg.style.height=h0+'px';wg.offsetHeight;wg.classList.add('anim');wg.style.height=h1+'px';
+    clearTimeout(wg._t);wg._t=setTimeout(function(){wg.classList.remove('anim');wg.style.height='';if(done)done();if(lenis)lenis.resize()},950);
+  }
   wmb.addEventListener('click',function(){
-    if(wsh<WL.length){wsi=Math.min(wsi+1,WSS.length-1);var add=WL.slice(wsh,wsh+WSS[wsi]);add.forEach(function(x,j){wg.appendChild(wcard(x,wsh+j,true))});wsh+=add.length;wbtn();if(lenis)lenis.resize()}
-    else{$$('.wi',wg).slice(WST).forEach(function(x){x.remove()});wsh=Math.min(WST,WL.length);wsi=0;wbtn();goTo('#works');if(lenis)lenis.resize()}
+    if(wg.classList.contains('anim'))return;
+    if(wsh<WL.length){
+      var h0=wg.offsetHeight;wsi=Math.min(wsi+1,WSS.length-1);var add=WL.slice(wsh,wsh+WSS[wsi]);
+      add.forEach(function(x,j){wg.appendChild(wcard(x,wsh+j,true))});wsh+=add.length;wbtn();
+      var h1=wg.offsetHeight;wgH(h0,h1);
+    }else{
+      var ex=$$('.wi',wg).slice(WST),h0=wg.offsetHeight;
+      ex.forEach(function(x){x.style.display='none'});var h1=wg.offsetHeight;ex.forEach(function(x){x.style.display=''});
+      ex.forEach(function(x){x.classList.remove('nw');x.style.animationDelay='';x.classList.add('out')});
+      wsh=Math.min(WST,WL.length);wsi=0;wbtn();goTo('#works');
+      wgH(h0,h1,function(){ex.forEach(function(x){x.remove()})});
+    }
   });
   wrender(false);
 
