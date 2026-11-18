@@ -604,7 +604,7 @@ a.pnote:hover{border-color:var(--pink)}
 /* ===== EDUCATION ===== */
 .edu-s{overflow:hidden}
 .eh3{font-size:clamp(28px,3vw,40px);line-height:1.16;margin-top:16px}
-.eh{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:24px;margin-top:70px;border-radius:38px;background:var(--blk);color:var(--lt);isolation:isolate}
+.eh{position:relative;overflow:hidden;display:grid;grid-template-columns:1.08fr .92fr;gap:24px;margin-top:40px;border-radius:38px;background:var(--blk);color:var(--lt);isolation:isolate}
 .eh::after{content:'';position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(182,166,238,.2);pointer-events:none;z-index:3}
 .eh-glow{position:absolute;inset:0;border-radius:inherit;overflow:hidden;z-index:-1}
 .eh-glow::before{content:'';position:absolute;right:4%;bottom:-30%;width:62%;aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(198,87,222,.5),rgba(122,99,232,.22) 60%,transparent);filter:blur(30px)}
@@ -621,10 +621,10 @@ a.pnote:hover{border-color:var(--pink)}
 .eh-st span{font-size:13px;line-height:1.35;color:rgba(242,238,248,.78)}
 .eh-bt{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
 .eh-ph{position:relative;min-height:100%}
-.eh-ph img{position:absolute;right:-1%;bottom:0;height:calc(100% + 60px);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 30%);mask-image:linear-gradient(90deg,transparent 0,#000 30%);width:auto;max-width:none;filter:drop-shadow(0 30px 50px rgba(0,0,0,.45));z-index:1}
-.eh-pill{position:absolute;right:4%;top:24%;z-index:2;padding:12px 22px;border-radius:40px;border:1.5px solid rgba(214,120,236,.85);background:rgba(20,16,48,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font:400 21px/1 var(--hand);color:var(--lt);box-shadow:0 0 26px rgba(198,87,222,.45);transform:rotate(-7deg)}
-.eh-note{position:absolute;left:0;bottom:44px;z-index:2;max-width:230px;padding:16px 18px 14px;border-radius:20px;background:rgba(14,16,38,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--lnw);box-shadow:0 24px 50px -24px rgba(0,0,0,.8)}
-.eh-note .hand{display:block;font-size:21px;line-height:1.15;color:var(--pink2)}
+.eh-ph img{position:absolute;right:0;bottom:0;width:100%;height:calc(100% - 28px);object-fit:contain;object-position:right bottom;filter:drop-shadow(0 30px 50px rgba(0,0,0,.45));z-index:1}
+.eh-pill{position:absolute;right:16px;top:22%;z-index:2;padding:12px 20px;border-radius:40px;border:1.5px solid rgba(214,120,236,.85);background:rgba(20,16,48,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font:600 14px/1 var(--sans);letter-spacing:.01em;color:var(--lt);box-shadow:0 0 26px rgba(198,87,222,.45)}
+.eh-note{position:absolute;left:0;bottom:40px;z-index:2;max-width:230px;padding:16px 18px 14px;border-radius:20px;background:rgba(14,16,38,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--lnw);box-shadow:0 24px 50px -24px rgba(0,0,0,.8)}
+.eh-note b{display:block;font:600 15px/1.35 var(--sans);color:var(--lt)}
 .eh-note small{display:block;margin-top:8px;font-size:11.5px;color:var(--mut)}
 
 .eg{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center;margin-top:120px}
@@ -633,7 +633,7 @@ a.pnote:hover{border-color:var(--pink)}
 .eg-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(60% 50% at 50% 30%,rgba(198,87,222,.32),transparent 70%)}
 .eg-bg::after{content:'';position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(182,166,238,.22)}
 .eg-ph img{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:100%;width:auto;max-width:none;filter:drop-shadow(0 24px 40px rgba(0,0,0,.4))}
-.eg-badge{position:absolute;right:-8px;top:22%;display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:20px;background:var(--grad);color:#fff;font-size:13px;font-weight:600;line-height:1.3;box-shadow:0 24px 44px -20px rgba(198,87,222,.8);transform:rotate(4deg)}
+.eg-badge{position:absolute;right:-8px;bottom:9%;display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:20px;background:var(--grad);color:#fff;font-size:13px;font-weight:600;line-height:1.3;box-shadow:0 24px 44px -20px rgba(198,87,222,.8);transform:rotate(4deg)}
 .eg-badge .i{width:28px;height:28px}
 .eg-l{list-style:none;margin-top:30px;border-top:1px solid var(--ln)}
 .eg-l li{display:grid;grid-template-columns:64px 1fr;align-items:center;gap:18px;padding:20px 0;border-bottom:1px solid var(--ln)}
@@ -704,7 +704,7 @@ a.pnote:hover{border-color:var(--pink)}
   .eh{grid-template-columns:1fr;gap:0;margin-top:40px}
   .eh-tx{padding:48px 40px 0}
   .eh-ph{height:460px}
-  .eh-ph img{right:auto;left:50%;transform:translateX(-50%);height:calc(100% + 10px);-webkit-mask-image:none;mask-image:none}
+  .eh-ph img{object-position:center bottom;height:calc(100% - 10px)}
   .eh-pill{right:6%;top:16%}
   .eh-note{left:24px;bottom:28px}
   .eg{grid-template-columns:1fr;gap:44px;margin-top:100px}
@@ -726,11 +726,12 @@ a.pnote:hover{border-color:var(--pink)}
   .eh-bt{margin-top:26px}
   .eh-bt .btn{flex:1 1 100%}
   .eh-ph{height:390px}
-  .eh-pill{font-size:17px;top:14%;right:10px;padding:10px 16px}
-  .eh-note{left:12px;bottom:18px;max-width:178px;padding:13px 14px 12px}
-  .eh-note .hand{font-size:17px}
+  .eh-pill{font-size:13px;top:12%;right:10px;padding:10px 14px}
+  .eh-note{left:12px;bottom:14px;max-width:158px;padding:11px 13px 10px;border-radius:16px}
+  .eh-note small{font-size:10.5px;margin-top:6px}
+  .eh-note b{font-size:13px}
   .eg{margin-top:90px;gap:34px}
-  .eg-badge{right:0;top:16%;font-size:12px;padding:11px 14px;gap:10px}
+  .eg-badge{right:0;bottom:7%;font-size:12px;padding:11px 14px;gap:10px}
   .eg-badge .i{width:22px;height:22px}
   .eg-l{margin-top:24px}
   .eg-l li{grid-template-columns:44px 1fr;gap:12px;padding:16px 0}
@@ -1107,9 +1108,9 @@ a.pnote:hover{border-color:var(--pink)}
         </div>
       </div>
       <div class="eh-ph" aria-hidden="true">
-        <img src="img/elena.webp" alt="" width="962" height="1000" loading="lazy">
-        <span class="eh-pill">курс 1–3 дня</span>
-        <div class="eh-note"><span class="hand">как новичку наращивать быстро</span><small>Елена Болдырева, топ-тренер</small></div>
+        <img src="img/elena.webp" alt="" width="913" height="1000" loading="lazy">
+        <span class="eh-pill">Курс 1–3 дня</span>
+        <div class="eh-note"><b>Как новичку наращивать быстро</b><small>Елена Болдырева, топ-тренер</small></div>
       </div>
     </div>
 
