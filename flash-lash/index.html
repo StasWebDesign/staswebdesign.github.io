@@ -1539,7 +1539,7 @@ a.pnote:hover{border-color:var(--pink)}
       var inn=lbf.animate([{transform:'translateX('+(dir*sh)+'px)',opacity:0},{transform:'translateX(0)',opacity:1}],{duration:460,easing:'cubic-bezier(.22,1,.36,1)'});
       out.cancel();
       inn.finished.then(function(){lbusy=false},function(){lbusy=false});
-    });
+    }).catch(function(){});
   }
   function lopen(i,list){ltok++;lbusy=false;lbf.getAnimations&&lbf.getAnimations().forEach(function(a){a.cancel()});LL=list||WL.map(function(x){return {s:'img/f/'+x[0]+'.webp',c:cap(x)}});ldx=0;lshow(i,0);lb.classList.add('on');b.classList.add('mdo');lock(true);setTimeout(function(){$('.x',lb).focus({preventScroll:true})},60)}
   function lclose(){if(!lb.classList.contains('on'))return;lb.classList.remove('on');if(!md.classList.contains('on'))b.classList.remove('mdo');lock(false)}
