@@ -1504,20 +1504,20 @@ a.pnote:hover{border-color:var(--pink)}
   /* works gallery */
   var WK=[];for(var k=1;k<=14;k++)WK.push([(k<10?'0':'')+k,'l','Работа Елены']);
   var CAT={l:'Наращивание ресниц',p:'Перманент бровей',t:'Художественная татуировка',s:'Студия'};
-  var wf='all',WL=[],wsh=0,WST=W.innerWidth<761?9:14,wg=$('#wg'),wmb=$('#wmb');
+  var wf='all',WL=[],wsh=0,WSS=W.innerWidth<761?[3,6,99]:[5,99],WST=WSS[0],wsi=0,wg=$('#wg'),wmb=$('#wmb');
   function cap(x){return x[2]||CAT[x[1]]}
   function wcard(x,i,anim){var a=d.createElement('div');a.className='wi'+(anim?' nw':'');a.dataset.cur='Смотреть';a.dataset.i=i;a.setAttribute('role','button');a.tabIndex=0;a.setAttribute('aria-label','Открыть фото: '+cap(x));if(anim)a.style.animationDelay=((i-wsh)*.05)+'s';a.innerHTML='<img src="img/w/'+x[0]+'.webp" alt="'+cap(x)+'" loading="lazy">';return a}
   function wbtn(){var more=wsh<WL.length;wmb.parentNode.style.display=WL.length>WST?'':'none';$('span',wmb).textContent=more?'Показать ещё':'Свернуть';wmb.classList.toggle('up',!more)}
   function wrender(anim){
     WL=WK.filter(function(x){return wf==='all'||x[1]===wf});
-    function put(){wg.innerHTML='';wsh=0;WL.slice(0,WST).forEach(function(x,i){wg.appendChild(wcard(x,i))});wsh=Math.min(WST,WL.length);wbtn();wg.classList.remove('sw');if(lenis)lenis.resize()}
+    function put(){wg.innerHTML='';wsh=0;WL.slice(0,WST).forEach(function(x,i){wg.appendChild(wcard(x,i))});wsh=Math.min(WST,WL.length);wsi=0;wbtn();wg.classList.remove('sw');if(lenis)lenis.resize()}
     if(anim&&!rm){wg.classList.add('sw');setTimeout(put,320)}else put();
   }
   function setWf(f){if(f===wf)return;wf=f;$$('#wf .chip').forEach(function(x){x.classList.toggle('on',x.dataset.f===f)});wrender(true)}
   $$('#wf .chip').forEach(function(x){x.addEventListener('click',function(){setWf(x.dataset.f)})});
   wmb.addEventListener('click',function(){
-    if(wsh<WL.length){var add=WL.slice(wsh,wsh+WST);add.forEach(function(x,j){wg.appendChild(wcard(x,wsh+j,true))});wsh+=add.length;wbtn();if(lenis)lenis.resize()}
-    else{$$('.wi',wg).slice(WST).forEach(function(x){x.remove()});wsh=Math.min(WST,WL.length);wbtn();goTo('#works');if(lenis)lenis.resize()}
+    if(wsh<WL.length){wsi=Math.min(wsi+1,WSS.length-1);var add=WL.slice(wsh,wsh+WSS[wsi]);add.forEach(function(x,j){wg.appendChild(wcard(x,wsh+j,true))});wsh+=add.length;wbtn();if(lenis)lenis.resize()}
+    else{$$('.wi',wg).slice(WST).forEach(function(x){x.remove()});wsh=Math.min(WST,WL.length);wsi=0;wbtn();goTo('#works');if(lenis)lenis.resize()}
   });
   wrender(false);
 
