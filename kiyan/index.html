@@ -463,6 +463,8 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
 .fc p{font-size:14px;color:var(--mut);margin-top:10px}
 .fc.dk{background:var(--ink);color:var(--bg)}
 .fc.dk p{color:rgba(247,242,235,.7)}
+.fc.w2{grid-column:span 2}
+.fc .fp{margin-top:auto;padding-top:18px;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;line-height:1;color:var(--ink)}
 .fc .btn{margin-top:auto;align-self:flex-start;margin-top:18px}
 /* works */
 .wkg{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -809,7 +811,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
     <div class="svc">
       <a class="sc rv" href="#prices" data-tab="0"><img class="pl" src="img/wreath-sm.webp" alt="" loading="lazy"><div class="ic"><svg class="i"><use href="#i-sparkles"/></svg></div><span class="n">01</span><h3>Шугаринг</h3><p>Сахарная паста удаляет волоски по росту, поэтому меньше раздражения и врастания. Все зоны тела и лица.</p><div class="ft"><span class="pr"><small>от</small>200 ₽</span><span class="go"><svg class="i"><use href="#i-arrow-right"/></svg></span></div></a>
       <a class="sc rv d1" href="#prices" data-tab="1"><img class="pl" src="img/wreath-sm.webp" alt="" loading="lazy"><div class="ic"><svg class="i"><use href="#i-droplet"/></svg></div><span class="n">02</span><h3>Полимерная эпиляция</h3><p>Полимерный воск для жёстких и коротких волосков: руки, ноги и все зоны бикини.</p><div class="ft"><span class="pr"><small>от</small>1 000 ₽</span><span class="go"><svg class="i"><use href="#i-arrow-right"/></svg></span></div></a>
-      <a class="sc rv d2" href="#face"><img class="pl" src="img/wreath-sm.webp" alt="" loading="lazy"><div class="ic"><svg class="i"><use href="#i-smile"/></svg></div><span class="n">03</span><h3>Уход за лицом</h3><p>Ультразвуковая чистка, пилинги, RF-лифтинг, мезотерапия и увлажнение. Консультация бесплатно.</p><div class="ft"><span class="pr"><small>от</small>1 500 ₽</span><span class="go"><svg class="i"><use href="#i-arrow-right"/></svg></span></div></a>
+      <a class="sc rv d2" href="#face"><img class="pl" src="img/wreath-sm.webp" alt="" loading="lazy"><div class="ic"><svg class="i"><use href="#i-smile"/></svg></div><span class="n">03</span><h3>Уход за лицом</h3><p>Ультразвуковая и механическая чистка, пилинг, RF-лифтинг, мезотерапия и дермапен. Консультация бесплатно.</p><div class="ft"><span class="pr"><small>от</small>1 500 ₽</span><span class="go"><svg class="i"><use href="#i-arrow-right"/></svg></span></div></a>
       <a class="sc dk rv d3" href="#body"><img class="pl" src="img/wreath-sm.webp" alt="" loading="lazy"><div class="ic"><svg class="i"><use href="#i-waves"/></svg></div><span class="n">04</span><h3>Аппаратный массаж</h3><p>Вибромассаж, горячий вакуум и «Импульс» с прогревом для коррекции фигуры. Курсами от 10 процедур.</p><div class="ft"><span class="pr"><small>от</small>850 ₽</span><span class="go"><svg class="i"><use href="#i-arrow-right"/></svg></span></div></a>
     </div>
   </div>
@@ -828,7 +830,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
     <div class="pg">
       <div>
         <div class="plist rv" id="plist"></div>
-        <p class="pnote rv">Цены на шугаринг, полимерную эпиляцию и курсы массажа актуальные. Стоимость ухода за лицом ориентировочная, точную Анастасия подтвердит при записи. Время процедур примерное.</p>
+        <p class="pnote rv">Цены актуальные. Время процедур примерное.</p>
       </div>
       <aside class="visit rv d1" id="visit">
         <img class="wr2" src="img/wreath-sm.webp" alt="" loading="lazy">
@@ -939,14 +941,13 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
       <p class="lead rv d2">Современные методики и профессиональная косметика. Первая консультация бесплатно: подберу уход именно для вашей кожи.</p>
     </div>
     <div class="fcg">
-      <div class="fc rv"><h3>Ультразвуковая чистка</h3><p>Глубокое очищение, меньше загрязнений, ровный тон и свежесть.</p></div>
-      <div class="fc rv d1"><h3>Пилинги</h3><p>Обновление кожи, ровный рельеф, сияние и здоровый цвет.</p></div>
-      <div class="fc rv d2"><h3>Аппаратный уход</h3><p>Микроциркуляция, тонус кожи и комплексное омоложение.</p></div>
-      <div class="fc rv d3"><h3>RF-лифтинг</h3><p>Подтяжка овала лица, упругость и профилактика возрастных изменений.</p></div>
-      <div class="fc rv"><h3>Интенсивное увлажнение</h3><p>Восстановление гидробаланса, без сухости, здоровое сияние.</p></div>
-      <div class="fc rv d1"><h3>Фракционная мезотерапия</h3><p>Обновление кожи, меньше несовершенств, улучшение текстуры.</p></div>
-      <div class="fc rv d2"><h3>Безыгольчатая мезотерапия</h3><p>Насыщение активными компонентами без инъекций, увлажнение и питание.</p></div>
-      <div class="fc dk rv d3"><h3>Подбор домашнего ухода</h3><p>Рекомендации под ваш тип кожи и понятный ежедневный уход.</p><a class="btn lt sm" href="#book" data-book data-msg="Здравствуйте, Анастасия! Хочу на бесплатную консультацию по уходу за кожей.">Консультация бесплатно</a></div>
+      <div class="fc rv"><h3>Ультразвуковая чистка</h3><p>Бережное глубокое очищение, меньше загрязнений, ровный тон и свежесть.</p><span class="fp">2 500 ₽</span></div>
+      <div class="fc rv d1"><h3>Механическая чистка</h3><p>Ручная чистка пор и чёрных точек для кожи с выраженными загрязнениями.</p><span class="fp">1 500 ₽</span></div>
+      <div class="fc rv d2"><h3>Пилинг</h3><p>Обновление кожи, ровный рельеф, сияние и здоровый цвет.</p><span class="fp">3 500 ₽</span></div>
+      <div class="fc rv d3"><h3>RF + мезотерапия</h3><p>Лифтинг овала лица и насыщение кожи активными компонентами.</p><span class="fp">3 500 ₽</span></div>
+      <div class="fc rv"><h3>Ультразвук + мезо</h3><p>Чистка, а затем питание и увлажнение кожи активными сыворотками.</p><span class="fp">3 500 ₽</span></div>
+      <div class="fc rv d1"><h3>Ультразвук + дермапен</h3><p>Чистка и фракционная мезотерапия: обновление и улучшение текстуры кожи.</p><span class="fp">4 500 ₽</span></div>
+      <div class="fc dk w2 rv d2"><h3>Подбор домашнего ухода</h3><p>Рекомендации под ваш тип кожи и понятный ежедневный уход.</p><a class="btn lt sm" href="#book" data-book data-msg="Здравствуйте, Анастасия! Хочу на бесплатную консультацию по уходу за кожей.">Консультация бесплатно</a></div>
     </div>
   </div>
 </section>
@@ -1166,7 +1167,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
   var P=[
     [['Подмышки','10 мин',400,10],['Руки до локтя','15 мин',700,15],['Руки полностью','25 мин',1000,25],['Классическое бикини','по линии белья · 20 мин',1000,20],['Среднее бикини','25 мин',1200,25],['Глубокое бикини','30 мин',1500,30],['Ноги до колена','25 мин',1200,25],['Ноги полностью','40 мин',1800,40],['Лицо полностью','15 мин',1200,15],['Одна зона лица','например, верхняя губа · 5 мин',200,5]],
     [['Руки до локтя','15 мин',1000,15],['Руки полностью','25 мин',1200,25],['Классическое бикини','по линии белья · 20 мин',1200,20],['Среднее бикини','25 мин',1500,25],['Глубокое бикини','30 мин',1800,30],['Ноги до колена','25 мин',1500,25],['Ноги полностью','40 мин',2500,40]],
-    [['Ультразвуковая чистка','глубокое очищение, ровный тон · 60 мин',1500,60,1],['Пилинг','обновление кожи, сияние · 40 мин',1500,40,1],['Аппаратный уход','тонус и микроциркуляция · 60 мин',2000,60,1],['RF-лифтинг','подтяжка овала лица · 45 мин',2000,45,1],['Интенсивное увлажнение','восстановление гидробаланса · 60 мин',2000,60,1],['Фракционная мезотерапия','обновление и текстура кожи · 60 мин',3000,60,1],['Безыгольчатая мезотерапия','без инъекций · 45 мин',2500,45,1],['Консультация и подбор домашнего ухода','под ваш тип кожи',0,0]],
+    [['Ультразвуковая чистка','глубокое очищение, ровный тон · 60 мин',2500,60],['Механическая чистка','чистка пор и чёрных точек · 60 мин',1500,60],['Пилинг','обновление кожи, сияние · 40 мин',3500,40],['RF + мезотерапия','лифтинг и питание кожи · 60 мин',3500,60],['Ультразвуковая чистка + мезотерапия','очищение и увлажнение · 90 мин',3500,90],['Ультразвук + дермапен','очищение и обновление текстуры · 90 мин',4500,90],['Консультация и подбор домашнего ухода','под ваш тип кожи',0,0]],
     [['Курс 10 массажей','1 000 ₽ за процедуру',10000,0],['Курс 15 массажей','≈ 867 ₽ за процедуру',13000,0],['Курс 20 массажей','850 ₽ за процедуру · самый выгодный',17000,0]]
   ];
   var TAB=['','полимер','',''],sel={},ct=0,plist=$('#plist'),seg=$('#seg');
@@ -1195,10 +1196,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
     $('#vhint').style.display=ks.length?'none':'';
     $('#vsum').textContent=fmt(sum)+' ₽';
     $('#vtime').textContent=!tm?'—':tm>=60?(Math.floor(tm/60)+' ч '+(tm%60?tm%60+' мин':'')).trim():tm+' мин';
-    var hasF=ks.some(function(k){return k.charAt(0)==='2'});
-    $('#vsave').textContent=hasF?'Уход за лицом указан по ориентировочной цене.':'';
-    $('#vsum').textContent=(hasF?'≈ ':'')+fmt(sum)+' ₽';
-    $('#vbtn').dataset.msg=ks.length?'Здравствуйте, Анастасия! Хочу записаться: '+names.join(', ')+'. Ориентировочно '+fmt(sum)+' ₽.':'Здравствуйте, Анастасия! Хочу записаться.';
+    $('#vbtn').dataset.msg=ks.length?'Здравствуйте, Анастасия! Хочу записаться: '+names.join(', ')+'. Итого '+fmt(sum)+' ₽.':'Здравствуйте, Анастасия! Хочу записаться.';
     if(lenis)lenis.resize();
   }
   $('#vclr').addEventListener('click',function(){sel={};$$('.add.on',plist).forEach(function(a){a.classList.remove('on')});upd()});
