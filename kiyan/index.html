@@ -163,7 +163,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
 @keyframes mq{to{transform:translateX(-50%)}}
 /* about */
 .about{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(40px,6vw,96px);align-items:start}
-.ph-st{position:sticky;top:var(--stk);height:min(720px,calc(100svh - var(--stk) - 24px));min-height:520px}
+.ph-st{position:sticky;top:var(--stk);height:min(680px,calc(100svh - 130px));min-height:520px;transition:top .6s var(--ez)}
 .ph-st .p1{position:absolute;left:0;top:0;width:78%;height:88%;border-radius:200px 200px 26px 26px;overflow:hidden}
 .ph-st .p1 img{width:100%;height:100%;object-fit:cover;object-position:40% 30%}
 .ph-st .p2{position:absolute;right:0;bottom:0;width:46%;aspect-ratio:1;border-radius:24px;overflow:hidden;border:8px solid var(--bg2);box-shadow:0 30px 50px -30px rgba(46,37,33,.5)}
@@ -231,7 +231,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
 .prow .bk{font-size:13px;font-weight:600;border-bottom:1px solid currentColor;white-space:nowrap}
 @media(min-width:1181px){.plist{display:grid;grid-template-columns:1fr 1fr;column-gap:44px}.prow:nth-last-child(2):nth-child(odd){border-bottom:0}}
 .pnote{font-size:13px;color:var(--mut);margin-top:18px;max-width:760px}
-.visit{position:sticky;top:var(--stk);background:var(--ink);color:var(--bg);border-radius:28px;padding:30px 28px 28px;overflow:hidden}
+.visit{position:sticky;top:var(--stk);transition:top .6s var(--ez);background:var(--ink);color:var(--bg);border-radius:28px;padding:30px 28px 28px;overflow:hidden}
 .visit .wr2{position:absolute;right:-90px;top:-80px;width:280px;opacity:.14;pointer-events:none}
 .visit h3{font-size:30px;line-height:1.05;position:relative}
 .visit .hint0{font-size:13.5px;color:rgba(247,242,235,.62);margin-top:10px;position:relative}
@@ -327,7 +327,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
 .rmore{text-align:center;margin-top:20px}
 /* faq */
 .faqg{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(30px,6vw,90px);align-items:start}
-.faqg .side{position:sticky;top:var(--stk)}
+.faqg .side{position:sticky;top:var(--stk);transition:top .6s var(--ez)}
 .faqg .side .btn{margin-top:30px}
 .faq details{border-bottom:1px solid var(--ln)}
 .faq summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;cursor:pointer;font-family:var(--serif);font-size:24px;font-weight:600;line-height:1.2}
