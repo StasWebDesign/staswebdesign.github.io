@@ -660,6 +660,14 @@ a.pnote:hover{border-color:var(--pink)}
 .tc li{display:flex;gap:10px;align-items:flex-start;line-height:1.45}
 .tc li .i{flex:none;width:17px;height:17px;margin-top:2px;color:var(--pink)}
 .tc .btn{margin-top:auto;width:100%}
+.tc.tc-w{grid-column:1/-1;display:grid;grid-template-columns:1fr 1.2fr auto;gap:34px;align-items:center;padding:30px 34px;margin-top:6px}
+.tc-w h4{margin-top:14px}
+.tc-w .tc-s{min-height:0;margin-top:8px}
+.tcw-d{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tcw-d div{padding:16px 12px;border-radius:18px;border:1px solid var(--ln);background:var(--bg2);text-align:center}
+.tcw-d span{display:block;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+.tcw-d b{display:block;margin-top:9px;font:400 26px/1 var(--serif);white-space:nowrap}
+.tc.tc-w .btn{margin-top:0;width:auto;white-space:nowrap}
 .tc.hot{background:var(--blk);border-color:transparent;color:var(--lt);transform:translateY(-14px);box-shadow:0 40px 80px -40px rgba(122,99,232,.7)}
 .tc.hot.rv:not(.in){transform:translateY(20px)}
 .tc.hot::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1.5px;background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
@@ -714,6 +722,8 @@ a.pnote:hover{border-color:var(--pink)}
   .tf-hd{grid-template-columns:1fr;gap:16px}
   .tf-g{grid-template-columns:1fr;max-width:560px;margin:0 auto;gap:26px}
   .tc.hot{transform:none}
+  .tc.tc-w{grid-template-columns:1fr;gap:22px;padding:30px 26px}
+  .tc.tc-w .btn{width:100%}
   .gf{grid-template-columns:1fr;gap:36px}
 }
 @media(max-width:760px){
@@ -744,6 +754,11 @@ a.pnote:hover{border-color:var(--pink)}
   .tc{padding:30px 22px 22px;border-radius:26px}
   .tc-s{min-height:0}
   .tc-p b{font-size:34px}
+  .tc.tc-w{padding:28px 22px 22px}
+  .tcw-d{gap:8px}
+  .tcw-d div{padding:14px 6px;border-radius:16px}
+  .tcw-d span{font-size:10px;letter-spacing:.08em}
+  .tcw-d b{font-size:19px}
   .gf{margin-top:90px;gap:28px}
   .gf-r{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -20px;padding:4px 20px 8px;gap:10px;scrollbar-width:none;scroll-padding:0 20px}
   .gf-r::-webkit-scrollbar{display:none}
@@ -1181,6 +1196,19 @@ a.pnote:hover{border-color:var(--pink)}
           </ul>
           <a class="btn ol" href="#" data-m="el" data-pre="Здравствуйте, Елена! Хочу записаться на курс «LED-наращивание» для действующих мастеров."><span>Записаться на курс</span><svg class="i ar"><use href="#i-arrow"/></svg></a>
         </article>
+        <article class="tc tc-w rv">
+          <div class="tcw-l">
+            <div class="tc-h"><span class="tc-tag">Практика на моделях</span></div>
+            <h4>Практический курс</h4>
+            <p class="tc-s">Все ошибки отрабатываем на моделях. Можно выбрать 1, 2 или 3 дня.</p>
+          </div>
+          <div class="tcw-d">
+            <div><span>1 день</span><b>5 000 ₽</b></div>
+            <div><span>2 дня</span><b>10 000 ₽</b></div>
+            <div><span>3 дня</span><b>15 000 ₽</b></div>
+          </div>
+          <a class="btn ol" href="#" data-m="el" data-pre="Здравствуйте, Елена! Хочу записаться на практический курс."><span>Записаться на курс</span><svg class="i ar"><use href="#i-arrow"/></svg></a>
+        </article>
       </div>
     </div>
 
@@ -1348,7 +1376,7 @@ a.pnote:hover{border-color:var(--pink)}
             <li data-v="el|Коррекция ресниц">Коррекция</li>
             <li data-v="el|Снятие и новое наращивание">Снятие и новое наращивание</li>
             <li data-v="el|Цветные ресницы">Неоновые или цветные ресницы</li>
-            <li data-v="el|Курс LASH-MASTER">Курс LASH-MASTER</li><li data-v="el|Курс LASH-KOMBO 2 в 1">Курс LASH-KOMBO 2 в 1</li><li data-v="el|Курс LED-наращивание">Курс LED-наращивание</li>
+            <li data-v="el|Курс LASH-MASTER">Курс LASH-MASTER</li><li data-v="el|Курс LASH-KOMBO 2 в 1">Курс LASH-KOMBO 2 в 1</li><li data-v="el|Курс LED-наращивание">Курс LED-наращивание</li><li data-v="el|Практический курс">Практический курс</li>
           </ul></div>
         </div>
         <button class="btn pk" type="submit"><svg class="i"><use href="#i-wa"/></svg>Отправить в WhatsApp</button>
@@ -1602,15 +1630,15 @@ a.pnote:hover{border-color:var(--pink)}
   /* prices */
   var T=[
     {n:'Ресницы',m:'el',g:[
-      ['Наращивание ресниц','',[['Экспресс-наращивание','',1500],['Классика','',2000],['Объём 1,5D','',2300],['Объём 2D','',2500],['Объём 2,5D','',2800],['Объём 3D','',3000],['Объём 3,5D','',3200],['Объём 4D','',3500],['Мокрый эффект','',2800],['Неоновые или цветные ресницы','доплата к любому эффекту',200,'+']]],
+      ['Наращивание ресниц','',[['Экспресс-наращивание','',1500],['Классика','',2000],['Объём 1,5D','',2300],['Объём 2D','',2500],['Объём 2,5D','',2800],['Объём 3D','',3000],['Объём 3,5D','',3200],['Объём 4D','',3500],['Мокрый эффект','',2800],['Неоновые или цветные ресницы','доплата к любому эффекту',200,'+'],['Стразы','доплата к любому эффекту',200,'+']]],
       ['Коррекция и снятие','',[['Коррекция','до 3 недель после наращивания',1500],['Снятие чужих ресниц','',300]]],
-      ['Обучение','',[['Курс «LASH-MASTER»','2 дня · классика и объёмы 1,5–4D',20000],['Курс «LASH-KOMBO 2 в 1»','3 дня · классика, объёмы и LED-наращивание',25000],['Курс «LED-наращивание»','1 день · для действующих мастеров',10000]]]
+      ['Обучение','',[['Курс «LASH-MASTER»','2 дня · классика и объёмы 1,5–4D',20000],['Курс «LASH-KOMBO 2 в 1»','3 дня · классика, объёмы и LED-наращивание',25000],['Курс «LED-наращивание»','1 день · для действующих мастеров',10000],['Практический курс, 1 день','отработка ошибок на моделях',5000],['Практический курс, 2 дня','отработка ошибок на моделях',10000],['Практический курс, 3 дня','отработка ошибок на моделях',15000]]]
     ]}
   ];
   var ct=0,srt=0,qv='',pbox=$('#pbox');
   function row(r,m,tab){
     var mm=r[4]||m,txt='Здравствуйте, '+M[mm].n+'! Хочу записаться на услугу «'+r[0]+'».'+SIG;
-    if(/^Курс/.test(r[0]))txt='Здравствуйте, '+M[mm].n+'! Хочу узнать про '+r[0].replace(/^Курс/,'курс')+'.'+SIG;
+    if(/курс/i.test(r[0]))txt='Здравствуйте, '+M[mm].n+'! Хочу узнать про '+r[0].charAt(0).toLowerCase()+r[0].slice(1)+'.'+SIG;
     return '<div class="prow"><div><b>'+r[0]+'</b>'+(r[1]||tab?'<small>'+(tab?tab+(r[1]?' · ':''):'')+(r[1]||'')+'</small>':'')+'</div><span class="p'+(r[3]===1?' ap':'')+'">'+(r[3]===1?'≈ ':r[3]==='+'?'+':'')+fmt(r[2])+' ₽</span><a class="go" href="'+wa(mm,txt)+'" target="_blank" rel="noopener" aria-label="Записаться: '+r[0]+'"><svg class="i"><use href="#i-aur"/></svg></a></div>';
   }
   function sortRows(rows){if(!srt)return rows;return rows.slice().sort(function(a,c){return srt===1?a.r[2]-c.r[2]:c.r[2]-a.r[2]})}
