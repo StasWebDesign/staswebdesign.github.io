@@ -5,20 +5,20 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#F7F2EB">
 <title>Анастасия Киян · студия шугаринга в Хабаровске, мкр им. Горького</title>
-<meta name="description" content="Шугаринг и восковая депиляция, чистка и массаж лица, вибромассаж и горячий вакуум в кабинете на Гагарина, 37 (мкр им. Горького). Работаю с беременными и подростками. Ежедневно с 10:00 до 20:00 по записи.">
+<meta name="description" content="Шугаринг и полимерная эпиляция, уход за лицом, аппаратный массаж (вибромассаж, горячий вакуум, «Импульс») в кабинете на Гагарина, 37 (мкр им. Горького). Работаю с беременными и подростками. Ежедневно с 10:00 до 20:00 по записи.">
 <meta name="robots" content="noindex,nofollow">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Анастасия Киян · студия шугаринга в Хабаровске">
-<meta property="og:description" content="Бережный шугаринг и воск, уход за лицом и коррекция фигуры на Гагарина, 37. Ежедневно с 10:00 до 20:00 по записи.">
-<meta property="og:image" content="https://staswebdesign.github.io/kiyan/og.jpg?v=3">
+<meta property="og:description" content="Бережный шугаринг и полимерная эпиляция, уход за лицом и аппаратный массаж на Гагарина, 37. Ежедневно с 10:00 до 20:00 по записи.">
+<meta property="og:image" content="https://staswebdesign.github.io/kiyan/og.jpg?v=4">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Анастасия Киян, студия шугаринга в Хабаровске: шугаринг, воск, уход за лицом">
+<meta property="og:image:alt" content="Анастасия Киян, студия шугаринга в Хабаровске: шугаринг, полимерная эпиляция, уход за лицом">
 <meta property="og:site_name" content="Анастасия Киян · студия шугаринга">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://staswebdesign.github.io/kiyan/">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://staswebdesign.github.io/kiyan/og.jpg?v=3">
+<meta name="twitter:image" content="https://staswebdesign.github.io/kiyan/og.jpg?v=4">
 <link rel="icon" href="brand/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="brand/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
@@ -165,7 +165,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
 .about{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(40px,6vw,96px);align-items:start}
 .ph-st{position:sticky;top:var(--stk);height:min(720px,calc(100svh - var(--stk) - 24px));min-height:520px}
 .ph-st .p1{position:absolute;left:0;top:0;width:78%;height:88%;border-radius:200px 200px 26px 26px;overflow:hidden}
-.ph-st .p1 img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.ph-st .p1 img{width:100%;height:100%;object-fit:cover;object-position:40% 30%}
 .ph-st .p2{position:absolute;right:0;bottom:0;width:46%;aspect-ratio:1;border-radius:24px;overflow:hidden;border:8px solid var(--bg2);box-shadow:0 30px 50px -30px rgba(46,37,33,.5)}
 .ph-st .p2 img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
 .ph-st .cap{position:absolute;left:18px;bottom:18px;background:rgba(247,242,235,.88);border-radius:30px;padding:8px 14px;font-size:12px;font-weight:600}
@@ -210,6 +210,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
 /* prices */
 .seg{display:inline-flex;gap:4px;background:var(--bg);border-radius:40px;padding:5px;position:relative;flex-wrap:wrap}
 .seg button{height:44px;padding:0 20px;border-radius:30px;font-size:14px;font-weight:600;color:var(--mut);transition:background .45s var(--ez),color .45s var(--ez)}
+.seg .sm{display:none}
 .seg button.on{background:var(--ink);color:var(--bg)}
 .seg button:not(.on):hover{color:var(--ink)}
 .pg{display:grid;grid-template-columns:1fr 380px;gap:32px;align-items:start;margin-top:34px}
@@ -221,6 +222,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
 .prow small{display:block;color:var(--mut);font-size:13px;margin-top:2px}
 .prow .p{font-family:var(--serif);font-weight:600;font-size:24px;white-space:nowrap;text-align:right}
 .prow .p s{font-size:16px;color:var(--mut);margin-right:6px;font-weight:500}
+.prow .p .ot{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:500;color:var(--mut);margin-right:4px}
 .add{width:42px;height:42px;border-radius:50%;border:1px solid rgba(46,37,33,.25);display:grid;place-items:center;transition:background .4s var(--ez),color .4s,border-color .4s,transform .4s var(--ez)}
 .add svg{width:18px;height:18px;transition:transform .45s var(--ez)}
 .add:hover{border-color:var(--ink)}
@@ -445,6 +447,23 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
 .has-cur,.has-cur *{cursor:none!important}
 .has-cur input,.has-cur textarea{cursor:text!important}
 
+
+.res{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.res span{height:36px;padding:0 14px;border-radius:30px;border:1px solid var(--ln);display:inline-flex;align-items:center;font-size:13px;color:var(--tpd)}
+.ctab{display:grid;gap:8px;margin-top:26px;position:relative}
+.ctab div{display:grid;grid-template-columns:1fr auto;gap:2px 16px;align-items:center;padding:14px 18px;border-radius:18px;background:rgba(247,242,235,.07);border:1px solid rgba(247,242,235,.12)}
+.ctab b{font-family:var(--serif);font-size:22px;font-weight:600}
+.ctab span{grid-row:2;font-size:12.5px;color:rgba(247,242,235,.62)}
+.ctab em{grid-row:1/3;grid-column:2;font-style:normal;font-family:var(--serif);font-size:30px;font-weight:600;color:var(--pm);white-space:nowrap;font-variant-numeric:lining-nums}
+.ctab .best{background:rgba(205,184,156,.16);border-color:rgba(205,184,156,.45)}
+.fcg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.fc{background:var(--bg2);border-radius:24px;padding:26px 24px 26px;display:flex;flex-direction:column;transition:transform .6s var(--ez),box-shadow .6s var(--ez)}
+.fc:hover{transform:translateY(-4px);box-shadow:0 30px 50px -36px rgba(46,37,33,.5)}
+.fc h3{font-size:24px;line-height:1.1}
+.fc p{font-size:14px;color:var(--mut);margin-top:10px}
+.fc.dk{background:var(--ink);color:var(--bg)}
+.fc.dk p{color:rgba(247,242,235,.7)}
+.fc .btn{margin-top:auto;align-self:flex-start;margin-top:18px}
 /* works */
 .wkg{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .wk{position:relative;border-radius:26px;overflow:hidden;background:var(--bg2);display:grid;grid-template-columns:1.45fr 1fr;text-align:left;width:100%;transition:box-shadow .6s var(--ez),transform .6s var(--ez)}
@@ -502,6 +521,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
   :root{--pad:36px}
   .nav{gap:20px}.hd-r .tel{display:none}
   .svc{grid-template-columns:1fr 1fr}
+  .fcg{grid-template-columns:repeat(2,minmax(0,1fr))}
   .wkg{grid-template-columns:1fr}
   .wk{grid-template-columns:1.3fr 1fr}
   .why{grid-template-columns:1fr 1fr}
@@ -554,12 +574,15 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
   .sc{min-height:0}
   .seg{display:grid;grid-template-columns:1fr 1fr;width:100%;border-radius:24px}
   .seg button{padding:0 10px}
+  .seg .lg{display:none}.seg .sm{display:inline}
   .plist{padding:4px 18px}
   .prow{gap:12px;padding:16px 0}
   .prow b{font-size:14.5px}
   .prow .p{font-size:21px}
   .prow .add{width:38px;height:38px}
   .why{grid-template-columns:1fr;gap:10px}
+  .fcg{gap:10px}.fc{padding:18px 14px}.fc h3{font-size:18px;hyphens:auto;overflow-wrap:anywhere}.fc p{font-size:12.5px}.fc .btn{white-space:normal;height:auto;min-height:42px;padding:8px 14px;text-align:center;line-height:1.25}
+  .ctab b{font-size:19px}.ctab em{font-size:24px}.ctab div{padding:12px 14px}
   .wc{display:grid;grid-template-columns:44px 1fr;gap:4px 12px;padding:22px 20px}
   .wc .num{font-size:30px;grid-row:1/3}
   .wc h3{margin-top:0;font-size:22px}
@@ -692,7 +715,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
     <a href="#services" style="--k:1"><small>02</small>Услуги</a>
     <a href="#prices" style="--k:2"><small>03</small>Цены и запись</a>
     <a href="#works" style="--k:3"><small>04</small>Работы</a>
-    <a href="#body" style="--k:4"><small>05</small>Коррекция тела</a>
+    <a href="#body" style="--k:4"><small>05</small>Аппаратный массаж</a>
     <a href="#cosmetics" style="--k:5"><small>06</small>Косметика</a>
     <a href="#reviews" style="--k:6"><small>07</small>Отзывы</a>
     <a href="#faq" style="--k:7"><small>08</small>Вопросы</a>
@@ -700,7 +723,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
   </nav>
   <div class="mb" style="--k:9">
     <a class="btn lt" data-wa="Здравствуйте, Анастасия! Хочу записаться." href="#" target="_blank" rel="noopener"><svg class="i"><use href="#i-whatsapp"/></svg>WhatsApp</a>
-    <a class="btn olw" href="https://max.ru/" target="_blank" rel="noopener"><svg class="i"><use href="#i-max"/></svg>MAX</a>
+    <a class="btn olw" href="https://max.ru/u/f9LHodD0cOLtnHfdqE8ynrbAr5DFBmlqKa-O5YrvIzJZOXo8Git-g-JfOK8" target="_blank" rel="noopener"><svg class="i"><use href="#i-max"/></svg>MAX</a>
     <a class="btn olw w2" href="tel:+79243052955"><svg class="i"><use href="#i-phone"/></svg>Позвонить</a>
   </div>
   <div class="mc" style="--k:10">
@@ -717,7 +740,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
     <div>
       <span class="eyebrow rv"><i></i>Студия шугаринга · мкр им. Горького</span>
       <h1 class="rv d1">Гладкая кожа <em>без лишней боли</em></h1>
-      <p class="lead rv d2">Шугаринг и восковая депиляция, уход за лицом и коррекция фигуры в уютном кабинете на Гагарина, 37. Бережно, чисто и с заботой о каждой гостье.</p>
+      <p class="lead rv d2">Шугаринг и полимерная эпиляция, уход за лицом и аппаратный массаж в уютном кабинете на Гагарина, 37. Бережно, чисто и с заботой о каждой гостье.</p>
       <div class="pair rv d3">
         <a class="btn dk" href="#book" data-book>Записаться<svg class="i arr"><use href="#i-arrow-up-right"/></svg></a>
         <a class="btn ol" href="#prices">Цены</a>
@@ -725,7 +748,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
       <div class="facts rv d4">
         <div><svg class="i"><use href="#i-star"/></svg><span><b>Оценка 5,0 в 2ГИС</b>гостьи возвращаются годами</span></div>
         <div><svg class="i"><use href="#i-clock"/></svg><span><b>10:00–20:00</b>ежедневно по записи</span></div>
-        <div><svg class="i"><use href="#i-heart"/></svg><span><b>Можно беременным</b>и подросткам</span></div>
+        <div><svg class="i"><use href="#i-heart"/></svg><span><b>Можно беременным</b>и подросткам 12+</span></div>
       </div>
     </div>
     <div class="vis rv d2" id="vis">
@@ -741,26 +764,26 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
 </section>
 
 <div class="mq" aria-hidden="true"><div class="mq-t">
-  <span>Шугаринг</span><span>Восковая депиляция</span><span>Ультразвуковая чистка</span><span>Массаж лица</span><span>Вибромассаж Turbo</span><span>Горячий вакуум</span><span>Миостимуляция</span>
-  <span>Шугаринг</span><span>Восковая депиляция</span><span>Ультразвуковая чистка</span><span>Массаж лица</span><span>Вибромассаж Turbo</span><span>Горячий вакуум</span><span>Миостимуляция</span>
+  <span>Шугаринг</span><span>Полимерная эпиляция</span><span>Ультразвуковая чистка</span><span>RF-лифтинг</span><span>Мезотерапия</span><span>Вибромассаж</span><span>Горячий вакуум</span><span>Миостимуляция</span>
+  <span>Шугаринг</span><span>Полимерная эпиляция</span><span>Ультразвуковая чистка</span><span>RF-лифтинг</span><span>Мезотерапия</span><span>Вибромассаж</span><span>Горячий вакуум</span><span>Миостимуляция</span>
 </div></div>
 
 <!-- ABOUT -->
 <section class="sec alt" id="about">
   <div class="wrap about">
     <div class="ph-st rv">
-      <div class="p1"><img src="img/cabinet.jpg" alt="Анастасия в своём кабинете" width="900" height="1067" loading="lazy"><span class="cap">Кабинет на Гагарина, 37</span></div>
+      <div class="p1"><img src="img/master.jpg" alt="Анастасия делает шугаринг ног" width="1000" height="1094" loading="lazy"><span class="cap">Шугаринг ног в кабинете</span></div>
       <div class="p2"><img src="img/certs.jpg" alt="Сертификаты Анастасии Киян" width="810" height="810" loading="lazy"></div>
     </div>
     <div class="txt">
       <span class="lbl rv">О мастере</span>
       <h2 class="rv d1">Меня зовут Анастасия, <em>и я делаю гладко и бережно</em></h2>
-      <p class="rv d2">Я мастер шугаринга и восковой депиляции, принимаю в своём кабинете в микрорайоне имени Горького. Многие гостьи ходят ко мне не первый год, а кто-то впервые решился на депиляцию именно здесь.</p>
+      <p class="rv d2">Я мастер шугаринга и полимерной эпиляции, принимаю в своём кабинете в микрорайоне имени Горького. Многие гостьи ходят ко мне не первый год, а кто-то впервые решился на депиляцию именно здесь.</p>
       <p class="rv d2">Стараюсь создавать в кабинете уютную атмосферу: считаю, что чистота и настроение важны не меньше самой процедуры. Подбираю удобное время и всегда рассказываю про домашний уход.</p>
       <div class="vals">
         <div class="val rv"><div class="ic"><svg class="i"><use href="#i-home"/></svg></div><h3>Комфортные условия</h3><p>Чистый уютный кабинет, одноразовые расходники и спокойная обстановка.</p></div>
         <div class="val rv d1"><div class="ic"><svg class="i"><use href="#i-feather"/></svg></div><h3>С заботой о вас</h3><p>Работаю аккуратно, подскажу, как подготовиться и как ухаживать за кожей после.</p></div>
-        <div class="val rv"><div class="ic"><svg class="i"><use href="#i-users"/></svg></div><h3>Работаю с подростками</h3><p>Деликатно объясню, как всё проходит. Первый визит вместе с мамой.</p></div>
+        <div class="val rv"><div class="ic"><svg class="i"><use href="#i-users"/></svg></div><h3>Работаю с подростками 12+</h3><p>Деликатно объясню, как всё проходит. Первый визит вместе с мамой.</p></div>
         <div class="val rv d1"><div class="ic"><svg class="i"><use href="#i-baby"/></svg></div><h3>И с беременными</h3><p>Есть опыт работы с будущими мамами: подберу удобную позу и щадящий темп.</p></div>
       </div>
       <div class="certs rv">
@@ -781,13 +804,13 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
   <div class="wrap">
     <div class="sh">
       <div><span class="lbl rv">Услуги</span><h2 class="rv d1">Всё для гладкой кожи <em>в одном кабинете</em></h2></div>
-      <p class="lead rv d2">Основное направление студии: шугаринг. Ещё делаю восковую депиляцию, уход за лицом и аппаратную коррекцию фигуры.</p>
+      <p class="lead rv d2">Основное направление студии: шугаринг. Ещё делаю полимерную эпиляцию, уход за лицом и аппаратный массаж для коррекции фигуры.</p>
     </div>
     <div class="svc">
-      <a class="sc rv" href="#prices" data-tab="0"><img class="pl" src="img/wreath-sm.webp" alt="" loading="lazy"><div class="ic"><svg class="i"><use href="#i-sparkles"/></svg></div><span class="n">01</span><h3>Шугаринг</h3><p>Сахарная паста удаляет волоски по росту, поэтому меньше раздражения и врастания. Все зоны, женский и мужской.</p><div class="ft"><span class="pr"><small>от</small>300 ₽</span><span class="go"><svg class="i"><use href="#i-arrow-right"/></svg></span></div></a>
-      <a class="sc rv d1" href="#prices" data-tab="0"><img class="pl" src="img/wreath-sm.webp" alt="" loading="lazy"><div class="ic"><svg class="i"><use href="#i-droplet"/></svg></div><span class="n">02</span><h3>Восковая депиляция</h3><p>Для жёстких и коротких волосков, лица и мужских зон. Сахар или воск подбираю под ваш тип волос.</p><div class="ft"><span class="pr"><small>от</small>300 ₽</span><span class="go"><svg class="i"><use href="#i-arrow-right"/></svg></span></div></a>
-      <a class="sc rv d2" href="#prices" data-tab="2"><img class="pl" src="img/wreath-sm.webp" alt="" loading="lazy"><div class="ic"><svg class="i"><use href="#i-smile"/></svg></div><span class="n">03</span><h3>Уход за лицом</h3><p>Ультразвуковая и комбинированная чистка, пилинги и массаж лица. Цвет кожи ровнее, чёрных точек меньше.</p><div class="ft"><span class="pr"><small>от</small>1 500 ₽</span><span class="go"><svg class="i"><use href="#i-arrow-right"/></svg></span></div></a>
-      <a class="sc dk rv d3" href="#body"><img class="pl" src="img/wreath-sm.webp" alt="" loading="lazy"><div class="ic"><svg class="i"><use href="#i-waves"/></svg></div><span class="n">04</span><h3>Коррекция тела</h3><p>Вибромассаж Turbo 8G, горячий вакуум и «Импульс»: миостимуляция с прогревом и SPA-уходом. Курс из 10 процедур выгоднее.</p><div class="ft"><span class="pr"><small>от</small>700 ₽</span><span class="go"><svg class="i"><use href="#i-arrow-right"/></svg></span></div></a>
+      <a class="sc rv" href="#prices" data-tab="0"><img class="pl" src="img/wreath-sm.webp" alt="" loading="lazy"><div class="ic"><svg class="i"><use href="#i-sparkles"/></svg></div><span class="n">01</span><h3>Шугаринг</h3><p>Сахарная паста удаляет волоски по росту, поэтому меньше раздражения и врастания. Все зоны тела и лица.</p><div class="ft"><span class="pr"><small>от</small>200 ₽</span><span class="go"><svg class="i"><use href="#i-arrow-right"/></svg></span></div></a>
+      <a class="sc rv d1" href="#prices" data-tab="1"><img class="pl" src="img/wreath-sm.webp" alt="" loading="lazy"><div class="ic"><svg class="i"><use href="#i-droplet"/></svg></div><span class="n">02</span><h3>Полимерная эпиляция</h3><p>Полимерный воск для жёстких и коротких волосков: руки, ноги и все зоны бикини.</p><div class="ft"><span class="pr"><small>от</small>1 000 ₽</span><span class="go"><svg class="i"><use href="#i-arrow-right"/></svg></span></div></a>
+      <a class="sc rv d2" href="#face"><img class="pl" src="img/wreath-sm.webp" alt="" loading="lazy"><div class="ic"><svg class="i"><use href="#i-smile"/></svg></div><span class="n">03</span><h3>Уход за лицом</h3><p>Ультразвуковая чистка, пилинги, RF-лифтинг, мезотерапия и увлажнение. Консультация бесплатно.</p><div class="ft"><span class="pr"><small>от</small>1 500 ₽</span><span class="go"><svg class="i"><use href="#i-arrow-right"/></svg></span></div></a>
+      <a class="sc dk rv d3" href="#body"><img class="pl" src="img/wreath-sm.webp" alt="" loading="lazy"><div class="ic"><svg class="i"><use href="#i-waves"/></svg></div><span class="n">04</span><h3>Аппаратный массаж</h3><p>Вибромассаж, горячий вакуум и «Импульс» с прогревом для коррекции фигуры. Курсами от 10 процедур.</p><div class="ft"><span class="pr"><small>от</small>850 ₽</span><span class="go"><svg class="i"><use href="#i-arrow-right"/></svg></span></div></a>
     </div>
   </div>
 </section>
@@ -800,12 +823,12 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
       <p class="lead rv d2">Отметьте зоны плюсом: справа посчитается сумма и примерное время. Запись уйдёт Анастасии в WhatsApp уже со списком.</p>
     </div>
     <div class="seg rv" id="seg" role="tablist">
-      <button class="on" role="tab" aria-selected="true">Шугаринг и воск</button><button role="tab" aria-selected="false">Комплексы</button><button role="tab" aria-selected="false">Уход за лицом</button><button role="tab" aria-selected="false">Для мужчин</button>
+      <button class="on" role="tab" aria-selected="true">Шугаринг</button><button role="tab" aria-selected="false"><span class="lg">Полимерная эпиляция</span><span class="sm">Полимер</span></button><button role="tab" aria-selected="false">Уход за лицом</button><button role="tab" aria-selected="false">Курсы массажа</button>
     </div>
     <div class="pg">
       <div>
         <div class="plist rv" id="plist"></div>
-        <p class="pnote rv">Цены ориентировочные: точную стоимость Анастасия подтвердит при записи. Сахар или воск подбирается под тип волос, стоимость одинаковая.</p>
+        <p class="pnote rv">Цены на шугаринг, полимерную эпиляцию и курсы массажа актуальные. Стоимость ухода за лицом ориентировочная, точную Анастасия подтвердит при записи. Время процедур примерное.</p>
       </div>
       <aside class="visit rv d1" id="visit">
         <img class="wr2" src="img/wreath-sm.webp" alt="" loading="lazy">
@@ -830,7 +853,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
       <p class="lead rv d2">Фото из кабинета Анастасии без ретуши: депиляция и уход за лицом. Нажмите на фото, чтобы рассмотреть.</p>
     </div>
     <div class="wkg" id="wkg">
-      <button class="wk rv" data-i="0"><div class="im"><img src="img/works/c1.jpg?v=2" alt="Мужская депиляция лица до и после" width="1200" height="900" loading="lazy"><div class="ba"><span>До</span><span>После</span></div></div><div class="cap"><span class="tg2">Депиляция</span><b>Мужская депиляция лица</b><small>Щёки после воска: гладко, без пеньков и раздражения.</small><span class="more">Смотреть фото<svg class="i"><use href="#i-arrow-up-right"/></svg></span></div></button>
+      <button class="wk rv" data-i="0"><div class="im"><img src="img/works/c1.jpg?v=2" alt="Мужская депиляция лица до и после" width="1200" height="900" loading="lazy"><div class="ba"><span>До</span><span>После</span></div></div><div class="cap"><span class="tg2">Депиляция</span><b>Мужская депиляция лица</b><small>Щёки после депиляции: гладко, без пеньков и раздражения.</small><span class="more">Смотреть фото<svg class="i"><use href="#i-arrow-up-right"/></svg></span></div></button>
       <button class="wk rv d1" data-i="1"><div class="im"><img src="img/works/c2.jpg?v=2" alt="Чистка лица до и после" width="1200" height="900" loading="lazy"><div class="ba"><span>До</span><span>После</span></div></div><div class="cap"><span class="tg2">Уход за лицом</span><b>Чистка лица</b><small>Кожа стала светлее и чище, меньше воспалений и чёрных точек.</small><span class="more">Смотреть фото<svg class="i"><use href="#i-arrow-up-right"/></svg></span></div></button>
       <button class="wk rv" data-i="2"><div class="im"><img src="img/works/c3.jpg?v=2" alt="Уход за лицом, вторая процедура: до и после" width="1200" height="900" loading="lazy"><div class="ba"><span>До</span><span>После</span></div></div><div class="cap"><span class="tg2">Уход за лицом</span><b>Вторая процедура</b><small>Кожа эластичнее, подтянулась, разгладились морщинки.</small><span class="more">Смотреть фото<svg class="i"><use href="#i-arrow-up-right"/></svg></span></div></button>
       <button class="wk rv d1" data-i="3"><div class="im"><img src="img/works/c4.jpg?v=2" alt="Уход за лицом: ровный тон, до и после" width="1200" height="900" loading="lazy"><div class="ba"><span>До</span><span>После</span></div></div><div class="cap"><span class="tg2">Уход за лицом</span><b>Ровный тон</b><small>Меньше покраснений, тон выровнялся, кожа выглядит свежее.</small><span class="more">Смотреть фото<svg class="i"><use href="#i-arrow-up-right"/></svg></span></div></button>
@@ -884,22 +907,46 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
 <section class="sec alt" id="body">
   <div class="wrap bodyg">
     <div>
-      <span class="lbl rv">Коррекция тела</span>
-      <h2 class="rv d1">Упругое тело <em>и минус объёмы</em></h2>
-      <p class="lead rv d2">Аппаратные процедуры разгоняют кровообращение, помогают коже стать ровнее и уменьшить объёмы в проблемных зонах.</p>
+      <span class="lbl rv">Аппаратный массаж</span>
+      <h2 class="rv d1">Стройность, упругость <em>и лёгкость в теле</em></h2>
+      <p class="lead rv d2">Современная методика для коррекции фигуры, улучшения состояния кожи и снятия напряжения. Проводится курсами.</p>
       <div class="bl">
-        <div class="bi rv"><div class="ic"><svg class="i"><use href="#i-waves"/></svg></div><div><h3>Вибромассаж Turbo 8G</h3><p>Глубокая вибрация прорабатывает мышцы и ткани, выводит лишнюю жидкость.</p></div><span class="p">1 200 ₽</span></div>
-        <div class="bi rv d1"><div class="ic"><svg class="i"><use href="#i-flame"/></svg></div><div><h3>Горячий вакуум</h3><p>Прогрев и вакуум для лимфодренажа и подтянутой кожи.</p></div><span class="p">1 200 ₽</span></div>
-        <div class="bi rv d2"><div class="ic"><svg class="i"><use href="#i-zap"/></svg></div><div><h3>«Импульс» + SPA-уход</h3><p>Миостимуляция тренирует мышцы мягкими импульсами, прогрев разгоняет кровообращение. В комплексе SPA-уход за кожей.</p></div><span class="p nw">Новинка</span></div>
+        <div class="bi rv"><div class="ic"><svg class="i"><use href="#i-waves"/></svg></div><div><h3>Вибромассаж</h3><p>Активирует кровообращение, разгоняет лимфу, помогает бороться с целлюлитом.</p></div></div>
+        <div class="bi rv d1"><div class="ic"><svg class="i"><use href="#i-flame"/></svg></div><div><h3>Горячий вакуум</h3><p>Улучшает обмен веществ, стимулирует выведение лишней жидкости.</p></div></div>
+        <div class="bi rv d2"><div class="ic"><svg class="i"><use href="#i-zap"/></svg></div><div><h3>«Импульс» с прогревом</h3><p>Миостимуляция тонизирует мышцы, подтягивает кожу и уменьшает объёмы. В комплексе SPA-уход.</p></div><span class="p nw">Новинка</span></div>
       </div>
+      <div class="res rv"><span>Уменьшение объёмов</span><span>Коррекция фигуры</span><span>Меньше целлюлита</span><span>Упругая гладкая кожа</span><span>Меньше отёков</span><span>Расслабление</span></div>
     </div>
     <div class="course rv d1">
       <img class="wr3" src="img/wreath-sm.webp" alt="" loading="lazy">
-      <span class="tag">Выгоднее курсом</span>
-      <h3>10 процедур вибромассажа или горячего вакуума</h3>
-      <div class="big">7 000 ₽<small>за курс</small></div>
-      <p>700 ₽ за процедуру вместо 1 200 ₽. Самое время подготовиться к Новому году и лету.</p>
-      <a class="btn lt" href="#book" data-book data-msg="Здравствуйте, Анастасия! Хочу записаться на курс коррекции тела (10 процедур).">Записаться на курс<svg class="i arr"><use href="#i-arrow-up-right"/></svg></a>
+      <span class="tag">Курсы массажа</span>
+      <h3>Чем длиннее курс, тем выгоднее процедура</h3>
+      <div class="ctab">
+        <div><b>10 массажей</b><span>1 000 ₽ за процедуру</span><em>10 000 ₽</em></div>
+        <div><b>15 массажей</b><span>≈ 867 ₽ за процедуру</span><em>13 000 ₽</em></div>
+        <div class="best"><b>20 массажей</b><span>850 ₽ за процедуру</span><em>17 000 ₽</em></div>
+      </div>
+      <a class="btn lt" href="#book" data-book data-msg="Здравствуйте, Анастасия! Хочу записаться на курс аппаратного массажа.">Записаться на курс<svg class="i arr"><use href="#i-arrow-up-right"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- FACE -->
+<section class="sec" id="face">
+  <div class="wrap">
+    <div class="sh">
+      <div><span class="lbl rv">Уход за лицом</span><h2 class="rv d1">Красивая кожа <em>в надёжных руках</em></h2></div>
+      <p class="lead rv d2">Современные методики и профессиональная косметика. Первая консультация бесплатно: подберу уход именно для вашей кожи.</p>
+    </div>
+    <div class="fcg">
+      <div class="fc rv"><h3>Ультразвуковая чистка</h3><p>Глубокое очищение, меньше загрязнений, ровный тон и свежесть.</p></div>
+      <div class="fc rv d1"><h3>Пилинги</h3><p>Обновление кожи, ровный рельеф, сияние и здоровый цвет.</p></div>
+      <div class="fc rv d2"><h3>Аппаратный уход</h3><p>Микроциркуляция, тонус кожи и комплексное омоложение.</p></div>
+      <div class="fc rv d3"><h3>RF-лифтинг</h3><p>Подтяжка овала лица, упругость и профилактика возрастных изменений.</p></div>
+      <div class="fc rv"><h3>Интенсивное увлажнение</h3><p>Восстановление гидробаланса, без сухости, здоровое сияние.</p></div>
+      <div class="fc rv d1"><h3>Фракционная мезотерапия</h3><p>Обновление кожи, меньше несовершенств, улучшение текстуры.</p></div>
+      <div class="fc rv d2"><h3>Безыгольчатая мезотерапия</h3><p>Насыщение активными компонентами без инъекций, увлажнение и питание.</p></div>
+      <div class="fc dk rv d3"><h3>Подбор домашнего ухода</h3><p>Рекомендации под ваш тип кожи и понятный ежедневный уход.</p><a class="btn lt sm" href="#book" data-book data-msg="Здравствуйте, Анастасия! Хочу на бесплатную консультацию по уходу за кожей.">Консультация бесплатно</a></div>
     </div>
   </div>
 </section>
@@ -943,14 +990,14 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
       <span class="lbl rv">Вопросы</span>
       <h2 class="rv d1">Часто <em>спрашивают</em></h2>
       <p class="lead rv d2">Не нашли ответ? Напишите в WhatsApp или MAX, Анастасия ответит и подберёт время.</p>
-      <div class="pair rv d3" style="margin-top:30px"><a class="btn dk" data-wa="Здравствуйте, Анастасия! У меня вопрос по процедуре." href="#" target="_blank" rel="noopener"><svg class="i"><use href="#i-whatsapp"/></svg>WhatsApp</a><a class="btn ol" href="https://max.ru/" target="_blank" rel="noopener"><svg class="i"><use href="#i-max"/></svg>MAX</a></div>
+      <div class="pair rv d3" style="margin-top:30px"><a class="btn dk" data-wa="Здравствуйте, Анастасия! У меня вопрос по процедуре." href="#" target="_blank" rel="noopener"><svg class="i"><use href="#i-whatsapp"/></svg>WhatsApp</a><a class="btn ol" href="https://max.ru/u/f9LHodD0cOLtnHfdqE8ynrbAr5DFBmlqKa-O5YrvIzJZOXo8Git-g-JfOK8" target="_blank" rel="noopener"><svg class="i"><use href="#i-max"/></svg>MAX</a></div>
     </div>
     <div class="faq">
-      <details class="rv"><summary>Это больно?<i><svg class="i"><use href="#i-plus"/></svg></i></summary><div class="ans"><p>Шугаринг считается менее болезненным, чем воск: паста не прилипает к коже и удаляет волоски по росту. Первая процедура обычно самая ощутимая, дальше благодаря накопительному эффекту с каждым разом легче. Многие гостьи, которые очень боялись, пишут, что это было почти безболезненно.</p></div></details>
+      <details class="rv"><summary>Это больно?<i><svg class="i"><use href="#i-plus"/></svg></i></summary><div class="ans"><p>Шугаринг считается одним из самых мягких способов: паста не прилипает к коже и удаляет волоски по росту. Первая процедура обычно самая ощутимая, дальше благодаря накопительному эффекту с каждым разом легче. Многие гостьи, которые очень боялись, пишут, что это было почти безболезненно.</p></div></details>
       <details class="rv"><summary>Какой длины должны быть волоски?<i><svg class="i"><use href="#i-plus"/></svg></i></summary><div class="ans"><p>Оптимально 5–7 мм, это примерно 2–3 недели после бритья. Если волоски короче, паста может захватить не все. Не уверены? Пришлите фото или вопрос в WhatsApp.</p></div></details>
       <details class="rv"><summary>Можно ли во время беременности?<i><svg class="i"><use href="#i-plus"/></svg></i></summary><div class="ans"><p>Да, я работаю с будущими мамами и подбираю удобное положение и щадящий темп. Перед первым визитом лучше уточнить у своего врача, нет ли индивидуальных противопоказаний.</p></div></details>
-      <details class="rv"><summary>С какого возраста можно прийти?<i><svg class="i"><use href="#i-plus"/></svg></i></summary><div class="ans"><p>Работаю с подростками. До 18 лет нужно согласие родителей, на первый визит удобно прийти вместе с мамой. Деликатно объясню, как всё проходит, и начнём с простых зон.</p></div></details>
-      <details class="rv"><summary>Сахар или воск: что выбрать?<i><svg class="i"><use href="#i-plus"/></svg></i></summary><div class="ans"><p>Для большинства зон подходит сахарная паста. Воск удобнее для очень коротких или жёстких волосков, лица и некоторых мужских зон. Материал подберу на месте, стоимость одинаковая.</p></div></details>
+      <details class="rv"><summary>С какого возраста можно прийти?<i><svg class="i"><use href="#i-plus"/></svg></i></summary><div class="ans"><p>Работаю с подростками с 12 лет. До 18 лет нужно согласие родителей, на первый визит удобно прийти вместе с мамой. Деликатно объясню, как всё проходит, и начнём с простых зон.</p></div></details>
+      <details class="rv"><summary>Шугаринг или полимер: что выбрать?<i><svg class="i"><use href="#i-plus"/></svg></i></summary><div class="ans"><p>Для большинства зон подходит сахарная паста. Полимерная эпиляция удобна для жёстких и коротких волосков на руках, ногах и в зоне бикини, она стоит немного дороже. Метод подберу на месте под ваш тип волос и кожи.</p></div></details>
       <details class="rv"><summary>Как часто нужно повторять?<i><svg class="i"><use href="#i-plus"/></svg></i></summary><div class="ans"><p>Подмышки обычно раз в 2–3 недели, бикини и ноги раз в 3–4 недели, в зависимости от скорости роста волос. Регулярность важна: так волоски становятся тоньше, а гладкость держится дольше.</p></div></details>
       <details class="rv"><summary>Где находится кабинет?<i><svg class="i"><use href="#i-plus"/></svg></i></summary><div class="ans"><p>Хабаровск, улица Гагарина, 37, 2 этаж, микрорайон имени Горького (Железнодорожный район). Принимаю ежедневно с 10:00 до 20:00 по предварительной записи.</p></div></details>
     </div>
@@ -971,14 +1018,14 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
           <div><span class="ic"><svg class="i"><use href="#i-map-pin"/></svg></span><span><small>Адрес</small><b>ул. Гагарина, 37, 2 этаж</b><small>мкр им. Горького, Железнодорожный район</small></span></div>
           <div><span class="ic"><svg class="i"><use href="#i-clock"/></svg></span><span><small>Режим работы</small><b>Ежедневно 10:00–20:00</b><small>по предварительной записи</small></span></div>
           <div><span class="ic"><svg class="i"><use href="#i-phone"/></svg></span><span><small>Телефон</small><a href="tel:+79243052955">+7 924 305-29-55</a></span></div>
-          <div><span class="ic"><svg class="i"><use href="#i-whatsapp"/></svg></span><span><small>Мессенджеры</small><span class="msg"><a data-wa="Здравствуйте, Анастасия! Хочу записаться." href="#" target="_blank" rel="noopener">WhatsApp</a><a href="https://max.ru/" target="_blank" rel="noopener">MAX</a></span></span></div>
+          <div><span class="ic"><svg class="i"><use href="#i-whatsapp"/></svg></span><span><small>Мессенджеры</small><span class="msg"><a data-wa="Здравствуйте, Анастасия! Хочу записаться." href="#" target="_blank" rel="noopener">WhatsApp</a><a href="https://max.ru/u/f9LHodD0cOLtnHfdqE8ynrbAr5DFBmlqKa-O5YrvIzJZOXo8Git-g-JfOK8" target="_blank" rel="noopener">MAX</a></span></span></div>
           <div><span class="ic"><svg class="i"><use href="#i-instagram"/></svg></span><span><small>Instagram</small><a href="https://www.instagram.com/shuga.mommii/" target="_blank" rel="noopener">@shuga.mommii</a></span></div>
         </div>
         <form class="form" id="form" novalidate>
           <div class="fld"><label for="f-name">Имя</label><input id="f-name" type="text" autocomplete="given-name" placeholder=" "></div>
           <div class="fld"><label for="f-phone">Телефон</label><input id="f-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7"></div>
           <div class="fld sel" data-name="svc"><label>Услуга</label><button type="button" aria-haspopup="listbox" aria-expanded="false"><span>Шугаринг</span><svg class="i"><use href="#i-chevron-down"/></svg></button>
-            <ul role="listbox"><li class="on">Шугаринг</li><li>Восковая депиляция</li><li>Уход за лицом</li><li>Коррекция тела</li><li>Мужская депиляция</li><li>Нужна консультация</li></ul></div>
+            <ul role="listbox"><li class="on">Шугаринг</li><li>Полимерная эпиляция</li><li>Уход за лицом</li><li>Аппаратный массаж</li><li>Нужна консультация</li></ul></div>
           <div class="fld sel" data-name="time"><label>Удобное время</label><button type="button" aria-haspopup="listbox" aria-expanded="false"><span>Любое</span><svg class="i"><use href="#i-chevron-down"/></svg></button>
             <ul role="listbox"><li class="on">Любое</li><li>Утро, 10:00–13:00</li><li>День, 13:00–17:00</li><li>Вечер, 17:00–20:00</li><li>Выходные</li></ul></div>
           <div class="fld w2"><label for="f-com">Комментарий</label><textarea id="f-com" placeholder=" "></textarea></div>
@@ -1024,7 +1071,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
       <p>Выберите, как удобнее связаться: WhatsApp, MAX, звонок или Instagram. В WhatsApp сообщение уже подготовлено.</p>
       <div class="opts">
         <a class="opt" id="o-wa" href="#" target="_blank" rel="noopener"><span class="oi"><svg class="i"><use href="#i-whatsapp"/></svg></span><span><b>WhatsApp</b><small>+7 924 305-29-55</small></span><svg class="i arr"><use href="#i-arrow-up-right"/></svg></a>
-        <a class="opt" href="https://max.ru/" target="_blank" rel="noopener"><span class="oi"><svg class="i"><use href="#i-max"/></svg></span><span><b>MAX</b><small>+7 924 305-29-55</small></span><svg class="i arr"><use href="#i-arrow-up-right"/></svg></a>
+        <a class="opt" href="https://max.ru/u/f9LHodD0cOLtnHfdqE8ynrbAr5DFBmlqKa-O5YrvIzJZOXo8Git-g-JfOK8" target="_blank" rel="noopener"><span class="oi"><svg class="i"><use href="#i-max"/></svg></span><span><b>MAX</b><small>+7 924 305-29-55</small></span><svg class="i arr"><use href="#i-arrow-up-right"/></svg></a>
         <a class="opt" href="tel:+79243052955"><span class="oi"><svg class="i"><use href="#i-phone"/></svg></span><span><b>Позвонить</b><small>ежедневно с 10:00 до 20:00</small></span><svg class="i arr"><use href="#i-arrow-up-right"/></svg></a>
         <a class="opt" href="https://ig.me/m/shuga.mommii" target="_blank" rel="noopener"><span class="oi"><svg class="i"><use href="#i-instagram"/></svg></span><span><b>Instagram Direct</b><small>@shuga.mommii</small></span><svg class="i arr"><use href="#i-arrow-up-right"/></svg></a>
       </div>
@@ -1117,18 +1164,18 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
 
   /* prices + visit builder */
   var P=[
-    [['Подмышки','10 мин',500,10],['Бикини классическое','по линии белья · 20 мин',900,20],['Бикини глубокое','30 мин',1300,30],['Голени с коленями','25 мин',900,25],['Бёдра','25 мин',900,25],['Ноги полностью','40 мин',1600,40],['Руки до локтя','15 мин',600,15],['Руки полностью','25 мин',900,25],['Живот, дорожка','5 мин',300,5],['Живот полностью','15 мин',600,15],['Ягодицы','15 мин',600,15],['Поясница','10 мин',500,10],['Верхняя губа','5 мин',300,5],['Лицо полностью','15 мин',800,15]],
-    [['Глубокое бикини + подмышки','40 мин',1600,40,1800],['Глубокое бикини + подмышки + голени','60 мин',2400,60,2700],['Глубокое бикини + подмышки + ноги полностью','80 мин',3000,80,3400],['Ноги полностью + подмышки','50 мин',1900,50,2100]],
-    [['Ультразвуковая чистка','60 мин',1500,60],['Комбинированная чистка','90 мин',2500,90],['Пилинг','40 мин',1500,40],['Массаж лица','40 мин',1500,40],['Подбор домашнего ухода','консультация на процедуре',0,0]],
-    [['Подмышки','15 мин',600,15],['Грудь или живот','25 мин',1000,25],['Спина полностью','30 мин',1200,30],['Плечи','15 мин',700,15],['Брови, уши, нос (воск)','10 мин',400,10]]
+    [['Подмышки','10 мин',400,10],['Руки до локтя','15 мин',700,15],['Руки полностью','25 мин',1000,25],['Классическое бикини','по линии белья · 20 мин',1000,20],['Среднее бикини','25 мин',1200,25],['Глубокое бикини','30 мин',1500,30],['Ноги до колена','25 мин',1200,25],['Ноги полностью','40 мин',1800,40],['Лицо полностью','15 мин',1200,15],['Одна зона лица','например, верхняя губа · 5 мин',200,5]],
+    [['Руки до локтя','15 мин',1000,15],['Руки полностью','25 мин',1200,25],['Классическое бикини','по линии белья · 20 мин',1200,20],['Среднее бикини','25 мин',1500,25],['Глубокое бикини','30 мин',1800,30],['Ноги до колена','25 мин',1500,25],['Ноги полностью','40 мин',2500,40]],
+    [['Ультразвуковая чистка','глубокое очищение, ровный тон · 60 мин',1500,60,1],['Пилинг','обновление кожи, сияние · 40 мин',1500,40,1],['Аппаратный уход','тонус и микроциркуляция · 60 мин',2000,60,1],['RF-лифтинг','подтяжка овала лица · 45 мин',2000,45,1],['Интенсивное увлажнение','восстановление гидробаланса · 60 мин',2000,60,1],['Фракционная мезотерапия','обновление и текстура кожи · 60 мин',3000,60,1],['Безыгольчатая мезотерапия','без инъекций · 45 мин',2500,45,1],['Консультация и подбор домашнего ухода','под ваш тип кожи',0,0]],
+    [['Курс 10 массажей','1 000 ₽ за процедуру',10000,0],['Курс 15 массажей','≈ 867 ₽ за процедуру',13000,0],['Курс 20 массажей','850 ₽ за процедуру · самый выгодный',17000,0]]
   ];
-  var TAB=['','комплекс','','мужская'],sel={},ct=0,plist=$('#plist'),seg=$('#seg');
+  var TAB=['','полимер','',''],sel={},ct=0,plist=$('#plist'),seg=$('#seg');
   function key(t,i){return t+':'+i}
   function render(anim){
     var h=P[ct].map(function(r,i){
       var k=key(ct,i),on=!!sel[k];
-      var price=r[2]?((r[4]?'<s>'+fmt(r[4])+'</s>':'')+fmt(r[2])+' ₽'):'бесплатно';
-      var ctl=r[2]?'<button class="add'+(on?' on':'')+'" data-k="'+k+'" aria-label="'+(on?'Убрать':'Добавить')+': '+r[0]+'"><svg class="i"><use href="#i-plus"/></svg></button>':'<a class="bk" href="#book" data-book data-msg="Здравствуйте, Анастасия! Хочу подобрать домашний уход за кожей.">Спросить</a>';
+      var price=r[2]?((r[4]?'<small class="ot">от</small>':'')+fmt(r[2])+' ₽'):'бесплатно';
+      var ctl=r[2]?'<button class="add'+(on?' on':'')+'" data-k="'+k+'" aria-label="'+(on?'Убрать':'Добавить')+': '+r[0]+'"><svg class="i"><use href="#i-plus"/></svg></button>':'<a class="bk" href="#book" data-book data-msg="Здравствуйте, Анастасия! Хочу на бесплатную консультацию по уходу за кожей.">Записаться</a>';
       return '<div class="prow"><div><b>'+r[0]+'</b><small>'+r[1]+'</small></div><span class="p">'+price+'</span>'+ctl+'</div>';
     }).join('');
     function put(){plist.innerHTML=h;requestAnimationFrame(function(){plist.classList.remove('sw')});if(lenis)lenis.resize()}
@@ -1143,22 +1190,17 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
   });
   function upd(){
     var ks=Object.keys(sel),sum=0,tm=0,items=[],names=[];
-    ks.forEach(function(k){var p=k.split(':'),r=P[+p[0]][+p[1]];sum+=r[2];tm+=r[3];var n=r[0]+(TAB[+p[0]]==='мужская'?' (муж.)':'');items.push('<li>'+n+'<span>'+fmt(r[2])+' ₽</span></li>');names.push(n)});
+    ks.forEach(function(k){var p=k.split(':'),r=P[+p[0]][+p[1]];sum+=r[2];tm+=r[3];var n=r[0]+(TAB[+p[0]]?' ('+TAB[+p[0]]+')':'');items.push('<li>'+n+'<span>'+fmt(r[2])+' ₽</span></li>');names.push(n)});
     $('#vlist').innerHTML=items.join('');
     $('#vhint').style.display=ks.length?'none':'';
     $('#vsum').textContent=fmt(sum)+' ₽';
-    $('#vtime').textContent=tm>=60?(Math.floor(tm/60)+' ч '+(tm%60?tm%60+' мин':'')).trim():tm+' мин';
-    var s0=sel['0:2']&&sel['0:0'],cx=null;
-    if(s0&&sel['0:5'])cx=['1:2',['0:0','0:2','0:5'],'бикини + подмышки + ноги',3000];
-    else if(s0&&sel['0:3'])cx=['1:1',['0:0','0:2','0:3'],'бикини + подмышки + голени',2400];
-    else if(s0)cx=['1:0',['0:0','0:2'],'глубокое бикини + подмышки',1600];
-    else if(sel['0:5']&&sel['0:0'])cx=['1:3',['0:0','0:5'],'ноги + подмышки',1900];
-    W._cx=cx;
-    $('#vsave').innerHTML=cx?'Комплексом «'+cx[2]+'» выгоднее: '+fmt(cx[3])+' ₽<br><button type="button" id="vswap">Заменить на комплекс</button>':'';
+    $('#vtime').textContent=!tm?'—':tm>=60?(Math.floor(tm/60)+' ч '+(tm%60?tm%60+' мин':'')).trim():tm+' мин';
+    var hasF=ks.some(function(k){return k.charAt(0)==='2'});
+    $('#vsave').textContent=hasF?'Уход за лицом указан по ориентировочной цене.':'';
+    $('#vsum').textContent=(hasF?'≈ ':'')+fmt(sum)+' ₽';
     $('#vbtn').dataset.msg=ks.length?'Здравствуйте, Анастасия! Хочу записаться: '+names.join(', ')+'. Ориентировочно '+fmt(sum)+' ₽.':'Здравствуйте, Анастасия! Хочу записаться.';
     if(lenis)lenis.resize();
   }
-  $('#vsave').addEventListener('click',function(e){if(!e.target.closest('#vswap')||!W._cx)return;var cx=W._cx;cx[1].forEach(function(k){delete sel[k]});sel[cx[0]]=1;$$('.add',plist).forEach(function(a){a.classList.toggle('on',!!sel[a.dataset.k])});upd()});
   $('#vclr').addEventListener('click',function(){sel={};$$('.add.on',plist).forEach(function(a){a.classList.remove('on')});upd()});
   render(false);upd();
 
