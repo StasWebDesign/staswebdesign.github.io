@@ -576,6 +576,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
   .sc{min-height:0}
   .seg{display:grid;grid-template-columns:1fr 1fr;width:100%;border-radius:24px}
   .seg button{padding:0 10px}
+  .seg button:last-child:nth-child(odd){grid-column:span 2}
   .seg .lg{display:none}.seg .sm{display:inline}
   .plist{padding:4px 18px}
   .prow{gap:12px;padding:16px 0}
@@ -806,7 +807,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
   <div class="wrap">
     <div class="sh">
       <div><span class="lbl rv">Услуги</span><h2 class="rv d1">Всё для гладкой кожи <em>в одном кабинете</em></h2></div>
-      <p class="lead rv d2">Основное направление студии: шугаринг. Ещё делаю полимерную эпиляцию, уход за лицом и аппаратный массаж для коррекции фигуры.</p>
+      <p class="lead rv d2">Основное направление студии: шугаринг. Ещё делаю полимерную и мужскую эпиляцию, уход за лицом и аппаратный массаж для коррекции фигуры.</p>
     </div>
     <div class="svc">
       <a class="sc rv" href="#prices" data-tab="0"><img class="pl" src="img/wreath-sm.webp" alt="" loading="lazy"><div class="ic"><svg class="i"><use href="#i-sparkles"/></svg></div><span class="n">01</span><h3>Шугаринг</h3><p>Сахарная паста удаляет волоски по росту, поэтому меньше раздражения и врастания. Все зоны тела и лица.</p><div class="ft"><span class="pr"><small>от</small>200 ₽</span><span class="go"><svg class="i"><use href="#i-arrow-right"/></svg></span></div></a>
@@ -825,7 +826,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
       <p class="lead rv d2">Отметьте зоны плюсом: справа посчитается сумма и примерное время. Запись уйдёт Анастасии в WhatsApp уже со списком.</p>
     </div>
     <div class="seg rv" id="seg" role="tablist">
-      <button class="on" role="tab" aria-selected="true">Шугаринг</button><button role="tab" aria-selected="false"><span class="lg">Полимерная эпиляция</span><span class="sm">Полимер</span></button><button role="tab" aria-selected="false">Уход за лицом</button><button role="tab" aria-selected="false">Курсы массажа</button>
+      <button class="on" role="tab" aria-selected="true">Шугаринг</button><button role="tab" aria-selected="false"><span class="lg">Полимерная эпиляция</span><span class="sm">Полимер</span></button><button role="tab" aria-selected="false"><span class="lg">Мужская эпиляция</span><span class="sm">Для мужчин</span></button><button role="tab" aria-selected="false">Уход за лицом</button><button role="tab" aria-selected="false">Курсы массажа</button>
     </div>
     <div class="pg">
       <div>
@@ -1026,7 +1027,7 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
           <div class="fld"><label for="f-name">Имя</label><input id="f-name" type="text" autocomplete="given-name" placeholder=" "></div>
           <div class="fld"><label for="f-phone">Телефон</label><input id="f-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7"></div>
           <div class="fld sel" data-name="svc"><label>Услуга</label><button type="button" aria-haspopup="listbox" aria-expanded="false"><span>Шугаринг</span><svg class="i"><use href="#i-chevron-down"/></svg></button>
-            <ul role="listbox"><li class="on">Шугаринг</li><li>Полимерная эпиляция</li><li>Уход за лицом</li><li>Аппаратный массаж</li><li>Нужна консультация</li></ul></div>
+            <ul role="listbox"><li class="on">Шугаринг</li><li>Полимерная эпиляция</li><li>Мужская эпиляция</li><li>Уход за лицом</li><li>Аппаратный массаж</li><li>Нужна консультация</li></ul></div>
           <div class="fld sel" data-name="time"><label>Удобное время</label><button type="button" aria-haspopup="listbox" aria-expanded="false"><span>Любое</span><svg class="i"><use href="#i-chevron-down"/></svg></button>
             <ul role="listbox"><li class="on">Любое</li><li>Утро, 10:00–13:00</li><li>День, 13:00–17:00</li><li>Вечер, 17:00–20:00</li><li>Выходные</li></ul></div>
           <div class="fld w2"><label for="f-com">Комментарий</label><textarea id="f-com" placeholder=" "></textarea></div>
@@ -1167,10 +1168,11 @@ h2 em,h1 em{font-style:italic;font-weight:500;color:var(--tp)}
   var P=[
     [['Подмышки','10 мин',400,10],['Руки до локтя','15 мин',700,15],['Руки полностью','25 мин',1000,25],['Классическое бикини','по линии белья · 20 мин',1000,20],['Среднее бикини','25 мин',1200,25],['Глубокое бикини','30 мин',1500,30],['Ноги до колена','25 мин',1200,25],['Ноги полностью','40 мин',1800,40],['Лицо полностью','15 мин',1200,15],['Одна зона лица','например, верхняя губа · 5 мин',200,5]],
     [['Руки до локтя','15 мин',1000,15],['Руки полностью','25 мин',1200,25],['Классическое бикини','по линии белья · 20 мин',1200,20],['Среднее бикини','25 мин',1500,25],['Глубокое бикини','30 мин',1800,30],['Ноги до колена','25 мин',1500,25],['Ноги полностью','40 мин',2500,40]],
+    [['Подмышки','15 мин',600,15],['Плечи','15 мин',500,15],['Шея','15 мин',400,15],['Грудь','20 мин',1100,20],['Живот','20 мин',1000,20],['Грудь + живот','40 мин',1800,40],['Спина','30 мин',1600,30],['Поясница','20 мин',600,20],['Ягодицы','25 мин',800,25],['Глубокое бикини','1 ч',2500,60],['Голень или бедро','1 ч',1500,60],['Ноги полностью','2 ч 30 мин',2700,150],['Одна зона на лице','15 мин',250,15],['Окантовка бороды','20 мин',1100,20],['Лицо полностью','40 мин',1800,40]],
     [['Ультразвуковая чистка','глубокое очищение, ровный тон · 60 мин',2500,60],['Механическая чистка','чистка пор и чёрных точек · 60 мин',1500,60],['Пилинг','обновление кожи, сияние · 40 мин',3500,40],['RF + мезотерапия','лифтинг и питание кожи · 60 мин',3500,60],['Ультразвуковая чистка + мезотерапия','очищение и увлажнение · 90 мин',3500,90],['Ультразвук + дермапен','очищение и обновление текстуры · 90 мин',4500,90],['Консультация и подбор домашнего ухода','под ваш тип кожи',0,0]],
     [['Курс 10 массажей','1 000 ₽ за процедуру',10000,0],['Курс 15 массажей','≈ 867 ₽ за процедуру',13000,0],['Курс 20 массажей','850 ₽ за процедуру · самый выгодный',17000,0]]
   ];
-  var TAB=['','полимер','',''],sel={},ct=0,plist=$('#plist'),seg=$('#seg');
+  var TAB=['','полимер','для мужчин','',''],sel={},ct=0,plist=$('#plist'),seg=$('#seg');
   function key(t,i){return t+':'+i}
   function render(anim){
     var h=P[ct].map(function(r,i){
